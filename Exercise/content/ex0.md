@@ -25,7 +25,7 @@ Based on our experience, there are various ways to implement above tasks:
 You're free to pick your favourite but it's always a bit challenging for rookies to select their hero at the start of the game. 
 Here, we've chosen ArcGIS Pro as our main tool. You might be wondering: How did we make that decision? Go ahead, take a guess...
 
-```{admonition} 
+```{admonition} ❓ Why ArcGIS Pro
 - [ ] 🎯We spun the wheel and landed on it.
 - [ ] 🏛️TUM has already paid the license for us(<del>Most important</del>).
 - [ ] It looks pretty fancy(To be honest, vibe coding is much cooler🧑‍💻).
@@ -41,8 +41,8 @@ Normally, there will be two documents published of each exercise,
 1. This one — the overview, outlining what you need to do.
 2. Another one — a much more detailed, step-by-step guide to help you implement the tasks.
 
-You should start by reading this overview, and only refer to the detailed guide if you get stuck or need clarification.
-It’s **not necessary** to read the second document if you already understand what to do.
+You should start by reading this overview, and refer to the detailed guide if you get stuck or need clarification.
+It’s **not necessary** to read all details in the second document if you already understand what to do or how to do.
 
 
 ### Implementation
@@ -53,7 +53,6 @@ we strongly recommend completing the exercise in the **PC lab**.
 - You only need to submit the compulsory part of the exercise — optional tasks are for practice only.
 - You're also welcome to try completing the task using QGIS?.
 
-### Lecture Review
 
 
 
@@ -64,7 +63,8 @@ we strongly recommend completing the exercise in the **PC lab**.
 - [ ] Download the raw data from Moodle and save your work to your TUM WebDisk(his way, you can access your files from any device, anywhere.).
 - [ ] Follow proper naming conventions when creating folders and files for your project. 
 
-### Data Descriptions?
+### Descriptions
+- **Data**: Data-students.gdb
 
 ### Optional Task
 - For principle:
@@ -82,4 +82,8 @@ we strongly recommend completing the exercise in the **PC lab**.
     npm create ol-app my-map
     ```
 
-## Reference
+## Materials
+- [ArcGIS Pro help](http://pro.arcgis.com/en/pro-app/latest/help/main/welcome-to-the-arcgis-pro-app-help.htm)
+- [Esri GIS @TUM](https://gis.ifm.ls.tum.de/Esri/stud/pro.php)
+- [ArcGIS Pro, a video introduction](https://www.youtube.com/watch?v=vTcIquSnS-o&ab_channel=Esri)
+- [Getting Started with ArcGIS Pro for Beginners](https://www.youtube.com/watch?v=hiFCPYqjam0&list=PLgxX4AQ_KUQ-Ixy4B1Fv_CFU62Gr1h3ya&ab_channel=TerraSpatial)

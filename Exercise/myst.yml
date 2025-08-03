@@ -17,8 +17,12 @@ site:
   nav:
     - title: Home
       url: /chapter0
-    - title: exercise0
-      url: /e0
+    - title: Exercise0
+      url: /ex0
+    - title: Exercise1
+      url: /ex1
+    - title: Exercise2
+      url: /ex2
 parse:
   myst_enable_extensions:
     - colon_fence     # 支持 ::: 块语法（如 admonition）
