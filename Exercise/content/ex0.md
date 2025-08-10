@@ -35,6 +35,7 @@ Here, we've chosen ArcGIS Pro as our main tool. You might be wondering: How did 
 - [ ] It's the tool used in many government agencies and engineering firms(ArcGIS Pro might not be CEO's first love. Those license fees can sting).
 ```
 
+---
 
 ### Exercise Structure
 Normally, there will be two documents published of each exercise, 
@@ -42,7 +43,8 @@ Normally, there will be two documents published of each exercise,
 2. Another one — a much more detailed, step-by-step guide to help you implement the tasks.
 
 You should start by reading this overview, and refer to the detailed guide if you get stuck or need clarification.
-It’s **not necessary** to read all details in the second document if you already understand what to do or how to do.
+
+>It’s **not necessary** to read all details in the second document if you already understand what to do or how to do.
 
 
 ### Implementation
@@ -54,13 +56,13 @@ we strongly recommend completing the exercise in the **PC lab**.
 - You're also welcome to try completing the task using QGIS?.
 
 
-
+---
 
 ## Task
 ### Overview
-- [ ] Install ArcGIS Pro on your personal computer (Windows only, or via a virtual machine on macOS/Linux).
-- [ ] Learn how to log in to the TUM PC lab and launch ArcGIS Pro from there
-- [ ] Download the raw data from Moodle and save your work to your TUM WebDisk(his way, you can access your files from any device, anywhere.).
+- [ ] **Install ArcGIS Pro** on your personal computer (Windows only, or via a virtual machine on macOS/Linux).
+- [ ] Learn how to log in to the **TUM PC lab** and launch ArcGIS Pro from there
+- [ ] Download the raw data from Moodle and **save your work to your TUM WebDisk**(his way, you can access your files from any device, anywhere.).
 - [ ] Follow proper naming conventions when creating folders and files for your project. 
 
 ### Descriptions
@@ -68,7 +70,7 @@ we strongly recommend completing the exercise in the **PC lab**.
 
 ### Optional Task
 - For principle:
-    - What is .gbd?
+    - What is _.gbd_?
 - For Python: 
     - Create a [virtual environment](https://www.w3schools.com/python/python_virtualenv.asp) where you can install the required geospatial libraries (e.g. geopandas, shapely, scikit-learn, etc.).
         - 💡 We recommend using modern Python packaging tools such as [Conda](https://www.anaconda.com/docs/getting-started/miniconda/main), [Poetry](https://python-poetry.org/), or [uv](https://github.com/astral-sh/uv) to manage your environment and dependencies more efficiently.

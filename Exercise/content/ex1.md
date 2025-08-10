@@ -39,6 +39,8 @@ Features can be:
 - Extracted, filtered, or converted from original information (e.g., converting time to day of week, [PCA](https://scikit-learn.org/stable/modules/generated/sklearn.decomposition.PCA.html))
 - Learned through machine learning or deep learning models — though these learned features can sometimes be a bit mysterious 🤖✨
 
+---
+
 ### What Are Feature and what are Fields in a Shapefile?
 In this exercise, a **feature** specifically refers to a **geometry object** — such as a point, line, or polygon — representing a real-world location. Each feature typically consists of two parts:
 - **Geometry**:
@@ -74,6 +76,8 @@ Example: Traffic congestion in one district affects neighboring areas; deforesta
 ```
 > In today’s exercise, you’ll get hands-on experience with how to interact with these features and fields — the fundamental building blocks of geospatial data.
 
+---
+
 ## Task
 ### Overview
 
@@ -101,7 +105,9 @@ Example: Traffic congestion in one district affects neighboring areas; deforesta
 
 
 ### Descriptions
-- **Data**: Data Students.gdb, orthophoto.tiff(orthophoto of TUM main campus)
+#### Data
+- `Data Students.gdb`
+- `orthophoto.tif`
 
 ### Optional Task
 - Explore: ESRI Shapefile, TIFF.
@@ -124,6 +130,7 @@ Example: Traffic congestion in one district affects neighboring areas; deforesta
 - For **C++ or C#**: use `GDAL` or `OGR` for both vector and raster data handling.
 ```
 
+---
 
 ## Materials
 - [What is a Feature in Machine Learning and Data Science?(by Domino)](https://domino.ai/data-science-dictionary/feature)
