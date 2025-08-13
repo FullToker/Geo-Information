@@ -1,0 +1,688 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Exercise 2: Symbolization in a GIS &#8212; Geo-Information</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=eba8b062" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script src="../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../_static/copybutton.js?v=f281be69"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'content/ex2';</script>
+    <link rel="canonical" href="/Geo-Information/content/ex2.html" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Exercise3: Georeferencing and Modifying Features" href="ex3.html" />
+    <link rel="prev" title="Exercise1: Selecting and Editinfg Features" href="ex1.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../README.html">
+  
+  
+  
+  
+  
+  
+    <p class="title logo__title">Geo-Information</p>
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../README.html">
+                    Geo-Information
+                </a>
+            </li>
+        </ul>
+        <ul class="current nav bd-sidenav">
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="chapter0.html">Home Page</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="ex0.html">Exercise0: Introduction</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ex1.html">Exercise1: Selecting and Editinfg Features</a></li>
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">Exercise 2: Symbolization in a GIS</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ex3.html">Exercise3: Georeferencing and Modifying Features</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ex4.html">Exercise4: 3D Visualization and 3D Animation</a></li>
+</ul>
+</details></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../_sources/content/ex2.md" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.md</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Exercise 2: Symbolization in a GIS</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#warm-up">Warm Up</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#what-is-symbolization">What is Symbolization?</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#types-of-symbolization-in-gis">Types of Symbolization in GIS</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#task">Task</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#overview">Overview</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#descriptions-steps">Descriptions &amp; Steps</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#uniform-symbolization-bus-stops">1. Uniform Symbolization – Bus Stops</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#tram-stops-underground-stations-with-external-symbols">2. Tram Stops &amp; Underground Stations with External Symbols</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#qualitative-symbolization-museums-tum">3. Qualitative Symbolization – Museums &amp; TUM</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#quantitative-symbolization-building-heights">4. Quantitative Symbolization – Building Heights</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#proportional-symbols-roads-by-speed">5. Proportional Symbols – Roads by Speed</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#cased-line-features">6. Cased Line Features</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#scale-based-symbolization">7. Scale-Based Symbolization</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#transparency">8. Transparency</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#combining-skills-underground-lines">9. Combining Skills – Underground Lines</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#optional-task">Optional Task</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#materials">Materials</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="exercise-2-symbolization-in-a-gis">
+<h1>Exercise 2: Symbolization in a GIS<a class="headerlink" href="#exercise-2-symbolization-in-a-gis" title="Link to this heading">#</a></h1>
+<section id="warm-up">
+<h2>Warm Up<a class="headerlink" href="#warm-up" title="Link to this heading">#</a></h2>
+<p>Firstly, let’s talk about what <strong>symbolization</strong> actually means.<br />
+At its core, symbolization is about <strong>how we visually represent spatial data</strong> — turning raw points, lines, polygons, or rasters into something meaningful and readable on a map.</p>
+<section id="what-is-symbolization">
+<h3>What is Symbolization?<a class="headerlink" href="#what-is-symbolization" title="Link to this heading">#</a></h3>
+<p>Symbolization is the process of assigning <strong>visual variables</strong> (color, size, shape, pattern, transparency, etc.) to spatial features so they communicate information effectively.</p>
+<p>For example:</p>
+<ul class="simple">
+<li><p>🟢 <strong>Points</strong>: Size or color might indicate population of a city.</p></li>
+<li><p>📏 <strong>Lines</strong>: Thickness might show traffic capacity; dashed lines could represent underground routes.</p></li>
+<li><p>🗺️ <strong>Polygons</strong>: Fill color could show land use types; transparency could reveal imagery underneath.</p></li>
+<li><p>🖼 <strong>Rasters</strong>: Color ramps might represent elevation or temperature.</p></li>
+</ul>
+<p><strong>Goal</strong>: Ensure that the <strong>symbol</strong> (what you draw) matches the <strong>referent</strong> (what it means in the real world) — clearly, consistently, and intuitively.</p>
+<blockquote>
+<div><p>Cartographers have developed a set of <strong>visual variables</strong> (shape, size, orientation, color, pattern, transparency, etc.) to express these symbol–referent relationships. The choice of variable depends on whether your data is qualitative (categories) or quantitative (numbers).</p>
+</div></blockquote>
+</section>
+<hr class="docutils" />
+<section id="types-of-symbolization-in-gis">
+<h3>Types of Symbolization in GIS<a class="headerlink" href="#types-of-symbolization-in-gis" title="Link to this heading">#</a></h3>
+<p>We’ll work with multiple styles today:</p>
+<ol class="arabic simple">
+<li><p><strong>Uniform Symbolization</strong> – Same style for all features (e.g., all bus stops shown with the same icon).</p></li>
+<li><p><strong>Qualitative Symbolization</strong> – Different styles for different categories (e.g., different colors for museums vs. schools).</p></li>
+<li><p><strong>Quantitative Symbolization</strong> – Styles vary based on numeric values (e.g., darker shades for taller buildings).</p></li>
+<li><p><strong>Proportional &amp; Graduated Symbols</strong> – Symbol sizes vary with data values.</p></li>
+<li><p><strong>Cased Line Features</strong> – Multi-layered lines to improve visual clarity.</p></li>
+<li><p><strong>Scale-based Symbolization</strong> – Symbols change visibility or size depending on zoom level.</p></li>
+<li><p><strong>Transparency</strong> – See layers underneath while still keeping context.</p></li>
+</ol>
+</section>
+</section>
+<hr class="docutils" />
+<section id="task">
+<h2>Task<a class="headerlink" href="#task" title="Link to this heading">#</a></h2>
+<p>You will build on the project based on the <em><strong>Students.gdb</strong></em> and the project you created in <strong>Exercise2</strong>.</p>
+<section id="overview">
+<h3>Overview<a class="headerlink" href="#overview" title="Link to this heading">#</a></h3>
+<ul class="contains-task-list simple">
+<li class="task-list-item"><p><input class="task-list-item-checkbox" disabled="disabled" type="checkbox"> <strong>Add and symbolize public transport points</strong></p>
+<ul>
+<li><p>Symbolize bus stops with meaningful icons.</p></li>
+<li><p>Symbolize tram stops &amp; underground stations using official MVG vector logos.</p></li>
+</ul>
+</li>
+<li class="task-list-item"><p><input class="task-list-item-checkbox" disabled="disabled" type="checkbox"> <strong>Apply qualitative symbolization</strong> to polygons:</p>
+<ul>
+<li><p>Show museums and TUM buildings in distinct, meaningful colors.</p></li>
+</ul>
+</li>
+<li class="task-list-item"><p><input class="task-list-item-checkbox" disabled="disabled" type="checkbox"> <strong>Apply quantitative symbolization</strong>:</p>
+<ul>
+<li><p><strong>Apply graduated color symbology</strong> to buildings based on height (calculated from number of floors × 3.5m).</p></li>
+<li><p><strong>Classify data</strong> using different classification methods (equal interval, quantile, natural breaks, etc.).</p></li>
+<li><p><strong>Apply proportional line symbols</strong> to roads based on maximum speed.</p></li>
+</ul>
+</li>
+<li class="task-list-item"><p><input class="task-list-item-checkbox" disabled="disabled" type="checkbox"> Create <strong>cased</strong> road symbols and adjust drawing order to join/merge features visually.</p></li>
+<li class="task-list-item"><p><input class="task-list-item-checkbox" disabled="disabled" type="checkbox"> <strong>Use scale-based symbolization</strong>:</p>
+<ul>
+<li><p>Show main roads only at certain zoom levels.</p></li>
+<li><p>Adjust public transport symbol size by scale.</p></li>
+</ul>
+</li>
+<li class="task-list-item"><p><input class="task-list-item-checkbox" disabled="disabled" type="checkbox"> <strong>Apply transparency</strong> to blend buildings with the orthophoto.</p></li>
+<li class="task-list-item"><p><input class="task-list-item-checkbox" disabled="disabled" type="checkbox"> <strong>Combine skills</strong> to symbolize underground lines with dashed strokes for shared routes.</p></li>
+</ul>
+</section>
+<hr class="docutils" />
+<section id="descriptions-steps">
+<h3>Descriptions &amp; Steps<a class="headerlink" href="#descriptions-steps" title="Link to this heading">#</a></h3>
+<section id="uniform-symbolization-bus-stops">
+<h4>1. Uniform Symbolization – Bus Stops<a class="headerlink" href="#uniform-symbolization-bus-stops" title="Link to this heading">#</a></h4>
+<ul class="simple">
+<li><p>Add <strong>bus_stops</strong> layer from <code class="docutils literal notranslate"><span class="pre">Data</span> <span class="pre">Students.gdb</span></code>.</p></li>
+<li><p>Use <strong>Single Symbol</strong> style → choose an appropriate point symbol from the gallery.</p></li>
+<li><p>Adjust fill color and size under <strong>Properties → Appearance</strong>.</p></li>
+</ul>
+</section>
+<section id="tram-stops-underground-stations-with-external-symbols">
+<h4>2. Tram Stops &amp; Underground Stations with External Symbols<a class="headerlink" href="#tram-stops-underground-stations-with-external-symbols" title="Link to this heading">#</a></h4>
+<ul class="simple">
+<li><p>Open <strong>Format Point Symbol → Properties → Layers</strong>.</p></li>
+<li><p>Import <code class="docutils literal notranslate"><span class="pre">Tram_logo.svg</span></code> or <code class="docutils literal notranslate"><span class="pre">UBahn_logo.svg</span></code> from the Symbols folder.</p></li>
+<li><p>Adjust symbol size if needed.</p></li>
+</ul>
+</section>
+<section id="qualitative-symbolization-museums-tum">
+<h4>3. Qualitative Symbolization – Museums &amp; TUM<a class="headerlink" href="#qualitative-symbolization-museums-tum" title="Link to this heading">#</a></h4>
+<ul class="simple">
+<li><p><strong>Buildings layer</strong> → Symbolize by <code class="docutils literal notranslate"><span class="pre">tourism</span></code> field (Unique Values).</p></li>
+<li><p>Make museums stand out with a unique color.</p></li>
+<li><p>Add second field (<code class="docutils literal notranslate"><span class="pre">amenity</span></code>) to also show TUM buildings distinctly while keeping museums highlighted.</p></li>
+</ul>
+</section>
+<section id="quantitative-symbolization-building-heights">
+<h4>4. Quantitative Symbolization – Building Heights<a class="headerlink" href="#quantitative-symbolization-building-heights" title="Link to this heading">#</a></h4>
+<ul class="simple">
+<li><p>Use <strong>Graduated Colors</strong> on building height (calculated via Arcade: <code class="docutils literal notranslate"><span class="pre">$feature.level_num</span> <span class="pre">*</span> <span class="pre">3.5</span></code>).</p></li>
+<li><p>Test different classification methods; create a separate class for “no data” (color it light grey).</p></li>
+</ul>
+</section>
+<section id="proportional-symbols-roads-by-speed">
+<h4>5. Proportional Symbols – Roads by Speed<a class="headerlink" href="#proportional-symbols-roads-by-speed" title="Link to this heading">#</a></h4>
+<ul class="simple">
+<li><p><strong>Proportional Symbols</strong> style → Field: <code class="docutils literal notranslate"><span class="pre">speed_num</span></code>.</p></li>
+<li><p>Set minimum size = 0 to hide no data; choose an appropriate max size.</p></li>
+</ul>
+</section>
+<section id="cased-line-features">
+<h4>6. Cased Line Features<a class="headerlink" href="#cased-line-features" title="Link to this heading">#</a></h4>
+<ul class="simple">
+<li><p>Unique Values → Field: <code class="docutils literal notranslate"><span class="pre">type_of_road</span></code>.</p></li>
+<li><p>Select main road classes → apply cased road style.</p></li>
+<li><p>Move symbol layers to join and merge intersections properly.</p></li>
+</ul>
+</section>
+<section id="scale-based-symbolization">
+<h4>7. Scale-Based Symbolization<a class="headerlink" href="#scale-based-symbolization" title="Link to this heading">#</a></h4>
+<ul class="simple">
+<li><p>Roads:</p>
+<ul>
+<li><p>Main roads visible at 1:10,000 and larger.</p></li>
+<li><p>Minor roads visible at 1:5,000 and larger.</p></li>
+</ul>
+</li>
+<li><p>Public transport:</p>
+<ul>
+<li><p>Adjust size stops for different zoom levels (e.g., 50pt at 1:1,000 → 1pt at 1:100,000,000).</p></li>
+</ul>
+</li>
+</ul>
+</section>
+<section id="transparency">
+<h4>8. Transparency<a class="headerlink" href="#transparency" title="Link to this heading">#</a></h4>
+<ul class="simple">
+<li><p>Adjust building transparency so orthophoto shows through.</p></li>
+<li><p>Try the swipe tool to compare layers interactively.</p></li>
+</ul>
+</section>
+<section id="combining-skills-underground-lines">
+<h4>9. Combining Skills – Underground Lines<a class="headerlink" href="#combining-skills-underground-lines" title="Link to this heading">#</a></h4>
+<ul class="simple">
+<li><p>Create <code class="docutils literal notranslate"><span class="pre">line_number</span></code> field and populate values for U-Bahn lines.</p></li>
+<li><p>Symbolize by category:</p>
+<ul>
+<li><p>Solid strokes for U1/U2.</p></li>
+<li><p>Bicolored dashed+solid for shared lines U3/U6 and U4/U5.</p></li>
+</ul>
+</li>
+<li><p>Sort underground lines under buildings to indicate they’re below ground.</p></li>
+</ul>
+</section>
+</section>
+</section>
+<hr class="docutils" />
+<section id="optional-task">
+<h2>Optional Task<a class="headerlink" href="#optional-task" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p>Use <strong>Arcade expressions</strong> to create new fields dynamically.</p></li>
+<li><p>Use online tools such as <a class="reference external" href="https://maputnik.github.io/">Maputnik</a> to explore and experiment with additional map styles you like.</p></li>
+</ul>
+</section>
+<hr class="docutils" />
+<section id="materials">
+<h2>Materials<a class="headerlink" href="#materials" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p><a class="reference external" href="https://www.axismaps.com/guide/data/visual-variables">Visual Variables in Cartography</a></p></li>
+<li><p><a class="reference external" href="https://pro.arcgis.com/en/pro-app/latest/help/mapping/layer-properties/change-symbology.htm">ArcGIS Pro: Apply Symbology</a></p></li>
+<li><p><a class="reference external" href="https://developers.arcgis.com/arcade/">Arcade Expression Language</a></p></li>
+<li><p><a class="reference external" href="https://pro.arcgis.com/en/pro-app/latest/help/mapping/layer-properties/scale-based-symbol-classes.htm">Scale-Based Symbology in ArcGIS Pro</a></p></li>
+</ul>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./content"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="ex1.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Exercise1: Selecting and Editinfg Features</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="ex3.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Exercise3: Georeferencing and Modifying Features</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#warm-up">Warm Up</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#what-is-symbolization">What is Symbolization?</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#types-of-symbolization-in-gis">Types of Symbolization in GIS</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#task">Task</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#overview">Overview</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#descriptions-steps">Descriptions &amp; Steps</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#uniform-symbolization-bus-stops">1. Uniform Symbolization – Bus Stops</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#tram-stops-underground-stations-with-external-symbols">2. Tram Stops &amp; Underground Stations with External Symbols</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#qualitative-symbolization-museums-tum">3. Qualitative Symbolization – Museums &amp; TUM</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#quantitative-symbolization-building-heights">4. Quantitative Symbolization – Building Heights</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#proportional-symbols-roads-by-speed">5. Proportional Symbols – Roads by Speed</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#cased-line-features">6. Cased Line Features</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#scale-based-symbolization">7. Scale-Based Symbolization</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#transparency">8. Transparency</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#combining-skills-underground-lines">9. Combining Skills – Underground Lines</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#optional-task">Optional Task</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#materials">Materials</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Yushuo Feng
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2023.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
