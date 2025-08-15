@@ -30,7 +30,7 @@
 Sure, AI tools like ChatGPT, Copilot, and their cousins can be helpful — sometimes they explain things better than your textbooks, while sometimes they confidently make things up that sound real. 😅
 We’re not here to ban them — feel free to ask them for help. But here’s the deal:
 
-<strong>Don’t let AI do all the thinking for you</strong>. It’s like letting a GPS plan your road trip without checking if it’s sending you into a lake.
+<strong>Don’t let AI do all the thinking for you & Don't indulge in idle queries</strong>. It’s like letting a GPS plan your road trip without checking if it’s sending you into a lake.
 If you really want to learn, go beyond AI:
 → Read the official docs, watch a real tutorial, check the source code, struggle a bit — that’s how the magic happens.
 ```

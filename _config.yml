@@ -1,0 +1,6 @@
+title: Geo-Information
+author: Yushuo Feng
+execute:
+  execute_notebooks: "off"
+html:
+  baseurl: /Geo-Information/   # 项目站点建议设置，防止静态资源 404
