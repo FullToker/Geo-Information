@@ -28,11 +28,11 @@
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
 
-    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=03e43079" />
     <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=eba8b062" />
     <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="../_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css?v=6644e6bb" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
   
@@ -335,17 +335,17 @@ document.write(`
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#overview">Overview</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#descriptions">Descriptions</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#prepare-buildings-and-extrude">1. Prepare Buildings and Extrude</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#set-scene-crs">2. Set Scene CRS</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#create-3d-feature-classes">3. Create 3D Feature Classes</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#digitize-new-features">4. Digitize New Features</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#symbolize-with-3d-models">5. Symbolize with 3D Models</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#gnss-monuments">6. GNSS Monuments</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#d-animation">7. 3D Animation</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#descriptions-steps">Descriptions &amp; Steps</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#data">Data</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#preparing-and-extruding-buildings">1. Preparing and Extruding Buildings</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#coordinate-system-navigation">2. Coordinate System &amp; Navigation</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#digitizing-new-3d-features">3. Digitizing New 3D Features</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#d-symbolization">4. 3D Symbolization</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#capturing-displaying-gnss-points">5. Capturing &amp; Displaying GNSS Points</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#creating-a-3d-animation">6. Creating a 3D Animation</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#optional-task-programming-focus">Optional Task (Programming Focus)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#optional-task">Optional Task</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#materials">Materials</a></li>
 </ul>
             </nav>
@@ -365,108 +365,59 @@ document.write(`
 </section>
 <section id="task">
 <h2>Task<a class="headerlink" href="#task" title="Link to this heading">#</a></h2>
+<p>In this exercise, you’ll move from <strong>2D mapping</strong> to <strong>3D visualization</strong> in ArcGIS Pro. You will set up and display spatial information in three dimensions, create realistic <strong>3D symbols</strong> for buildings, street furniture, and monuments, capture GNSS points, and finish by producing a <strong>3D animation</strong> and exporting it as a video.</p>
 <section id="overview">
 <h3>Overview<a class="headerlink" href="#overview" title="Link to this heading">#</a></h3>
-<p>You will:</p>
 <ul class="contains-task-list simple">
-<li class="task-list-item"><p><input class="task-list-item-checkbox" disabled="disabled" type="checkbox"> Prepare and extrude building footprints into 3D using height attributes.</p></li>
-<li class="task-list-item"><p><input class="task-list-item-checkbox" disabled="disabled" type="checkbox"> Create a <strong>Local Scene</strong> in ArcGIS Pro and set the correct projected CRS.</p></li>
-<li class="task-list-item"><p><input class="task-list-item-checkbox" disabled="disabled" type="checkbox"> Create and digitize new 3D features (trees, benches, streetlights, anchor points).</p></li>
-<li class="task-list-item"><p><input class="task-list-item-checkbox" disabled="disabled" type="checkbox"> Symbolize features with <strong>built-in</strong> and <strong>custom 3D models</strong>.</p></li>
-<li class="task-list-item"><p><input class="task-list-item-checkbox" disabled="disabled" type="checkbox"> Capture and import GNSS points of monuments, then display them in 3D.</p></li>
-<li class="task-list-item"><p><input class="task-list-item-checkbox" disabled="disabled" type="checkbox"> Create a <strong>3D animation</strong> (keyframes, transparency, text overlay) and export as a video.</p></li>
-</ul>
-</section>
-</section>
-<hr class="docutils" />
-<section id="descriptions">
-<h2>Descriptions<a class="headerlink" href="#descriptions" title="Link to this heading">#</a></h2>
-<section id="prepare-buildings-and-extrude">
-<h3>1. Prepare Buildings and Extrude<a class="headerlink" href="#prepare-buildings-and-extrude" title="Link to this heading">#</a></h3>
-<ul class="simple">
-<li><p>Select buildings with <code class="docutils literal notranslate"><span class="pre">level_num</span></code> = 0 or NULL → set to 3.</p></li>
-<li><p>Insert a <strong>New Local Scene</strong>, add buildings and roads.</p></li>
-<li><p>Use <strong>Extrusion</strong> with Arcade expression <code class="docutils literal notranslate"><span class="pre">$feature.level_num</span> <span class="pre">*</span> <span class="pre">4</span></code> (4 m per level).</p></li>
-</ul>
-</section>
-<section id="set-scene-crs">
-<h3>2. Set Scene CRS<a class="headerlink" href="#set-scene-crs" title="Link to this heading">#</a></h3>
-<ul class="simple">
-<li><p>Change to <strong>ETRS 1989 UTM Zone 32N</strong> for better local accuracy.</p></li>
-</ul>
-</section>
-<section id="create-3d-feature-classes">
-<h3>3. Create 3D Feature Classes<a class="headerlink" href="#create-3d-feature-classes" title="Link to this heading">#</a></h3>
-<ul class="simple">
-<li><p>In the geodatabase, create Z-enabled feature classes:<br />
-<code class="docutils literal notranslate"><span class="pre">Trees</span></code> (points), <code class="docutils literal notranslate"><span class="pre">StreetLights</span></code> (points), <code class="docutils literal notranslate"><span class="pre">ParkBenches</span></code> (points), <code class="docutils literal notranslate"><span class="pre">OldPinakothek</span></code> (point), <code class="docutils literal notranslate"><span class="pre">TUM</span></code> (point).</p></li>
-</ul>
-</section>
-<section id="digitize-new-features">
-<h3>4. Digitize New Features<a class="headerlink" href="#digitize-new-features" title="Link to this heading">#</a></h3>
-<ul class="simple">
-<li><p>Add park cadastral plan and digitize trees, benches, and lamps.</p></li>
-<li><p>Add anchor points for Old Pinakothek and TUM.</p></li>
-</ul>
-</section>
-<section id="symbolize-with-3d-models">
-<h3>5. Symbolize with 3D Models<a class="headerlink" href="#symbolize-with-3d-models" title="Link to this heading">#</a></h3>
-<ul class="simple">
-<li><p>For <code class="docutils literal notranslate"><span class="pre">Trees</span></code>, <code class="docutils literal notranslate"><span class="pre">StreetLights</span></code>, <code class="docutils literal notranslate"><span class="pre">ParkBenches</span></code> → assign built-in 3D symbols.</p></li>
-<li><p>For benches:</p>
+<li class="task-list-item"><p><input class="task-list-item-checkbox" disabled="disabled" type="checkbox"> <strong>Prepare building layer and extrude into 3D</strong></p>
 <ul>
-<li><p>Add <code class="docutils literal notranslate"><span class="pre">Orient</span></code> field, categorize benches by orientation.</p></li>
-<li><p>Rotate models according to category.</p></li>
+<li><p>assign heights and visualize buildings in three dimensions.</p></li>
 </ul>
 </li>
-<li><p>Import custom <code class="docutils literal notranslate"><span class="pre">.dae</span></code> models for TUM and Old Pinakothek.</p></li>
-</ul>
-</section>
-<section id="gnss-monuments">
-<h3>6. GNSS Monuments<a class="headerlink" href="#gnss-monuments" title="Link to this heading">#</a></h3>
-<ul class="simple">
-<li><p>Capture points with GPS, export <code class="docutils literal notranslate"><span class="pre">.gpx</span></code>, convert to shapefiles.</p></li>
-<li><p>Define projection as WGS 1984.</p></li>
-<li><p>Symbolize monuments by type using custom 3D models and real-world units.</p></li>
-</ul>
-</section>
-<section id="d-animation">
-<h3>7. 3D Animation<a class="headerlink" href="#d-animation" title="Link to this heading">#</a></h3>
-<ul class="simple">
-<li><p>Create animation keyframes by navigating through viewpoints.</p></li>
-<li><p>Add transparency changes and text overlays.</p></li>
-<li><p>Export video (e.g., YouTube preset, MP4 format) and upload.</p></li>
-</ul>
-</section>
-</section>
-<hr class="docutils" />
-<section id="optional-task-programming-focus">
-<h2>Optional Task (Programming Focus)<a class="headerlink" href="#optional-task-programming-focus" title="Link to this heading">#</a></h2>
-<ul class="simple">
-<li><p><strong>3D extrusion from attributes</strong><br />
-Load building footprints (Shapefile/GeoPackage), extrude in a 3D library (e.g., <code class="docutils literal notranslate"><span class="pre">pyvista</span></code>, <code class="docutils literal notranslate"><span class="pre">vtk</span></code>) based on height attributes.</p></li>
-<li><p><strong>Custom symbol placement</strong><br />
-Read point features (trees, benches) and place corresponding 3D models programmatically.</p></li>
-<li><p><strong>GNSS data processing</strong><br />
-Parse GPX files in Python (<code class="docutils literal notranslate"><span class="pre">gpxpy</span></code>), transform to a projected CRS, and export as shapefiles.</p></li>
-<li><p><strong>Simple 3D animation</strong><br />
-Create a camera path around the scene using Python (e.g., <code class="docutils literal notranslate"><span class="pre">pyvista.Plotter</span></code>), export as MP4.</p></li>
-</ul>
-</section>
-<hr class="docutils" />
-<section id="materials">
-<h2>Materials<a class="headerlink" href="#materials" title="Link to this heading">#</a></h2>
-<ul class="simple">
-<li><p>ArcGIS Pro Documentation:</p>
+<li class="task-list-item"><p><input class="task-list-item-checkbox" disabled="disabled" type="checkbox"> <strong>Create and manage a Local Scene</strong></p>
 <ul>
-<li><p><a class="reference external" href="https://pro.arcgis.com/en/pro-app/latest/help/mapping/scenes/what-is-a-scene.htm">Scenes in ArcGIS Pro</a></p></li>
-<li><p><a class="reference external" href="https://pro.arcgis.com/en/pro-app/latest/help/mapping/layer-properties/extrude-features.htm">Extrusion in ArcGIS Pro</a></p></li>
-<li><p><a class="reference external" href="https://pro.arcgis.com/en/pro-app/latest/help/mapping/layer-properties/3d-symbology.htm">3D Symbology</a></p></li>
-<li><p><a class="reference external" href="https://pro.arcgis.com/en/pro-app/latest/help/mapping/animation/overview-of-animation.htm">Animation in ArcGIS Pro</a></p></li>
+<li><p>set up a 3D workspace using a local UTM projection for accurate measurements.</p></li>
 </ul>
 </li>
-<li><p>TUM Moodle files:</p>
+<li class="task-list-item"><p><input class="task-list-item-checkbox" disabled="disabled" type="checkbox"> <strong>Digitize and symbolize new 3D point features</strong></p>
 <ul>
+<li><p>add trees, streetlights, benches, and landmarks from imagery.</p></li>
+</ul>
+</li>
+<li class="task-list-item"><p><input class="task-list-item-checkbox" disabled="disabled" type="checkbox"> <strong>Classify and orient features</strong></p>
+<ul>
+<li><p>use attributes to control rotation, style, and size of symbols.</p></li>
+</ul>
+</li>
+<li class="task-list-item"><p><input class="task-list-item-checkbox" disabled="disabled" type="checkbox"> <strong>Import and position custom 3D models</strong></p>
+<ul>
+<li><p>replace simple shapes with detailed building/monument models.</p></li>
+</ul>
+</li>
+<li class="task-list-item"><p><input class="task-list-item-checkbox" disabled="disabled" type="checkbox"> <strong>Capture GNSS points and visualize in 3D</strong></p>
+<ul>
+<li><p>import GPS measurements and align them with the scene.</p></li>
+</ul>
+</li>
+<li class="task-list-item"><p><input class="task-list-item-checkbox" disabled="disabled" type="checkbox"> <strong>Create a fly-through animation</strong></p>
+<ul>
+<li><p>set camera paths, transparency changes, and annotations.</p></li>
+</ul>
+</li>
+<li class="task-list-item"><p><input class="task-list-item-checkbox" disabled="disabled" type="checkbox"> <strong>Export animation to video</strong></p>
+<ul>
+<li><p>produce a shareable MP4 file and submit.</p></li>
+</ul>
+</li>
+</ul>
+</section>
+</section>
+<hr class="docutils" />
+<section id="descriptions-steps">
+<h2>Descriptions &amp; Steps<a class="headerlink" href="#descriptions-steps" title="Link to this heading">#</a></h2>
+<section id="data">
+<h3>Data<a class="headerlink" href="#data" title="Link to this heading">#</a></h3>
+<ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">Data</span> <span class="pre">Students.gdb</span></code> (buildings, roads)</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">Park-cadastral.tif</span></code></p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">TUM.dae</span></code></p></li>
@@ -474,7 +425,73 @@ Create a camera path around the scene using Python (e.g., <code class="docutils 
 <li><p><code class="docutils literal notranslate"><span class="pre">Monuments.gpx</span></code></p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">Track.gpx</span></code></p></li>
 </ul>
-</li>
+</section>
+<section id="preparing-and-extruding-buildings">
+<h3>1. Preparing and Extruding Buildings<a class="headerlink" href="#preparing-and-extruding-buildings" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p>Select buildings with <code class="docutils literal notranslate"><span class="pre">level_num</span></code> = 0 or NULL and assign default value <strong>3</strong>.</p></li>
+<li><p>Create a <strong>Local Scene</strong> and add <code class="docutils literal notranslate"><span class="pre">Buildings</span></code> and <code class="docutils literal notranslate"><span class="pre">Roads</span></code>.</p></li>
+<li><p>Extrude buildings by <code class="docutils literal notranslate"><span class="pre">$feature.level_num</span> <span class="pre">*</span> <span class="pre">4</span></code> (meters per floor).</p></li>
+</ul>
+</section>
+<section id="coordinate-system-navigation">
+<h3>2. Coordinate System &amp; Navigation<a class="headerlink" href="#coordinate-system-navigation" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p>Change scene projection to <strong>ETRS 1989 UTM Zone 32N</strong>.</p></li>
+<li><p>Explore 3D navigation tools and mouse controls.</p></li>
+</ul>
+</section>
+<section id="digitizing-new-3d-features">
+<h3>3. Digitizing New 3D Features<a class="headerlink" href="#digitizing-new-3d-features" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p>Create point feature classes for trees, streetlights, benches, and landmarks with Z-values enabled.</p></li>
+<li><p>Digitize features from cadastral plan and aerial imagery.</p></li>
+<li><p>Place anchor points for TUM and Old Pinakothek.</p></li>
+</ul>
+</section>
+<section id="d-symbolization">
+<h3>4. 3D Symbolization<a class="headerlink" href="#d-symbolization" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p>Apply built-in 3D marker symbols to point layers.</p></li>
+<li><p>Classify park benches by <code class="docutils literal notranslate"><span class="pre">Orient</span></code> attribute and adjust rotation.</p></li>
+<li><p>Replace extruded landmark buildings with <strong>custom 3D models</strong> and position them correctly.</p></li>
+</ul>
+</section>
+<section id="capturing-displaying-gnss-points">
+<h3>5. Capturing &amp; Displaying GNSS Points<a class="headerlink" href="#capturing-displaying-gnss-points" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p>Use GPS device to record monument locations (20 averaged points each).</p></li>
+<li><p>Convert GPX files to shapefiles using GPS Utility.</p></li>
+<li><p>Define projection as WGS 1984 and symbolize monuments with custom 3D models.</p></li>
+</ul>
+</section>
+<section id="creating-a-3d-animation">
+<h3>6. Creating a 3D Animation<a class="headerlink" href="#creating-a-3d-animation" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p>Plan keyframes for viewpoints and transitions.</p></li>
+<li><p>Adjust transparency, add titles, and set duration.</p></li>
+<li><p>Export animation as MP4 (YouTube preset) and submit.</p></li>
+</ul>
+</section>
+</section>
+<hr class="docutils" />
+<section id="optional-task">
+<h2>Optional Task<a class="headerlink" href="#optional-task" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p>Write a script to update building heights from a CSV file.</p></li>
+<li><p>Automate GPX-to-shapefile conversion using <code class="docutils literal notranslate"><span class="pre">ogr2ogr</span></code>.</p></li>
+</ul>
+</section>
+<hr class="docutils" />
+<section id="materials">
+<h2>Materials<a class="headerlink" href="#materials" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p><a class="reference external" href="https://pro.arcgis.com/en/pro-app/latest/help/mapping/scenes/what-is-a-scene-.htm">Scenes in ArcGIS Pro</a></p></li>
+<li><p><a class="reference external" href="https://pro.arcgis.com/en/pro-app/latest/help/mapping/layer-properties/extrude-features-to-3d.htm">Extrude features to 3D</a></p></li>
+<li><p><a class="reference external" href="https://pro.arcgis.com/en/pro-app/latest/help/mapping/layer-properties/3d-symbols.htm">3D symbols and styles</a></p></li>
+<li><p><a class="reference external" href="https://pro.arcgis.com/en/pro-app/latest/help/mapping/layer-properties/import-3d-models.htm">Import 3D models</a></p></li>
+<li><p><a class="reference external" href="http://www.gpsu.co.uk/">GPS Utility</a></p></li>
+<li><p><a class="reference external" href="https://pro.arcgis.com/en/pro-app/latest/help/mapping/animation/overview-of-animation.htm">Animation in ArcGIS Pro</a></p></li>
 </ul>
 </section>
 </section>
@@ -539,17 +556,17 @@ Create a camera path around the scene using Python (e.g., <code class="docutils 
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#overview">Overview</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#descriptions">Descriptions</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#prepare-buildings-and-extrude">1. Prepare Buildings and Extrude</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#set-scene-crs">2. Set Scene CRS</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#create-3d-feature-classes">3. Create 3D Feature Classes</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#digitize-new-features">4. Digitize New Features</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#symbolize-with-3d-models">5. Symbolize with 3D Models</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#gnss-monuments">6. GNSS Monuments</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#d-animation">7. 3D Animation</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#descriptions-steps">Descriptions &amp; Steps</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#data">Data</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#preparing-and-extruding-buildings">1. Preparing and Extruding Buildings</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#coordinate-system-navigation">2. Coordinate System &amp; Navigation</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#digitizing-new-3d-features">3. Digitizing New 3D Features</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#d-symbolization">4. 3D Symbolization</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#capturing-displaying-gnss-points">5. Capturing &amp; Displaying GNSS Points</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#creating-a-3d-animation">6. Creating a 3D Animation</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#optional-task-programming-focus">Optional Task (Programming Focus)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#optional-task">Optional Task</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#materials">Materials</a></li>
 </ul>
   </nav></div>
