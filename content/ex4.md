@@ -1,6 +1,65 @@
 # Exercise4: 3D Visualization and 3D Animation
 ## Warm Up
+### Common Types of 3D Data
+3D data can appear in many formats and domains:  
+- **Point clouds** 🟢 (from LiDAR, photogrammetry, laser scanning)  
+- **Meshes** 🕸️ (triangular or polygonal surfaces from 3D modeling)  
+- **Voxel data** 🧊 (3D pixels, often used in medical imaging or volumetric models)  
+- **3D building models** 🏢 (e.g., CityGML, BIM data, CAD models)  
+- **DEM/DSM** (Digital Elevation/Surface Models, raster grids with height values)
+![Illustration of 3D data](../images/ex4/3D-data-diff.ppm "The illustration of various of 3D data")
 
+
+### 2.5D(Pseudo 3D) vs. 3D Data
+
+| Aspect               | 2.5D (Pseudo-3D)                        | True 3D                                  |
+|----------------------|------------------------------------------|------------------------------------------|
+| Geometry             | One z-value per (x, y)                   | Multiple z-values per (x, y) possible    |
+| Representation       | Raster grid (DEM/DSM), extruded polygons | Point clouds, meshes, voxels, solids     |
+| Complexity           | Relatively simple                       | More complex data structures             |
+| Storage & Processing | Lightweight, fast                        | Heavy, requires advanced computation     |
+| Can model overlaps?  | ❌ No                                    | ✅ Yes (bridges, tunnels, multi-floors)  |
+| Main Use Cases       | Terrain, surface analysis, quick 3D view | Urban modeling, subsurface, indoor 3D    |
+
+- **2.5D is enough** when you only care about terrain or building heights.  
+- **True 3D is necessary** when you need full volumetric analysis or overlapping structures.  
+- In geodesy, we often start with 2.5D (e.g., DEMs) but increasingly move to **full 3D** for city models, infrastructure, and digital twins.
+- 2.5D is also common in video games and VR.
+
+### How Do We Get 3D Data?
+
+This is a huge topic that connects to many industries: *Robotics, Autonomous Driving (AD), Gaming, Digital Design, Architecture, Geodesy*, and more.  
+Broadly speaking, there are two ways: **direct measurement** (sensors record 3D geometry in real-world coordinates) and **indirect reconstruction** (3D is inferred from 2D observations or designed manually).
+#### LiDAR Scanning (Airborne, Terrestrial, Mobile)
+- Captures dense **point clouds** with XYZ coordinates and intensity values.  
+- Can be mounted on drones, aircraft, cars, or tripods.
+
+#### Geodetic Surveying
+- GNSS / GPS surveying: directly measures 3D positions in global coordinates (WGS84, UTM, etc.).  
+- Total station or laser theodolite: high-precision ground-based measurement for engineering, construction, and geodesy.
+
+#### Photogrammetry (Multi-View Geometry)
+- Derives 3D geometry from overlapping images(aerial, drone, or satellite).
+- Large-scale projects: [SRTM](https://www.sciencedirect.com/science/article/pii/S0924271602001247) generated near-global elevation models.  
+
+#### 3D Computer Vision
+ - Structure from Motion (SfM): reconstructs camera positions + sparse point clouds from unordered photos, ([COLMAP](https://github.com/colmap/colmap)).  
+- Multi-View Stereo(MVS):  refines dense surface geometry given camera parameters, e.g. [MVSNet](https://arxiv.org/abs/1804.02505)
+- Deep learning approaches:  
+  - [VGGT (Vision Geometry Grounded Transformers)](https://vgg-t.github.io/): learns 3D scene geometry from multi-views.  
+  - Neural rendering methods:  
+    - [NeRF (Neural Radiance Fields)](https://www.matthewtancik.com/nerf) – photorealistic novel views.  
+    - [3D Gaussian Splatting](https://repo-sam.inria.fr/fungraph/3d-gaussian-splatting/) – real-time 3D rendering.
+ 
+#### Artificial Creation
+- Models created by artists or engineers in CAD, BIM, or 3D modeling tools (SketchUp, Blender, 3ds Max).  
+- Common in *gaming, movies, architectural visualization, digital twins*.  
+
+```{admonition} With or Without World Coordinates?
+- **Direct methods (LiDAR, GNSS, total station)** → usually already georeferenced, so they can be integrated into GIS immediately.  
+- **Indirect methods (SfM, photogrammetry without GCPs, manual design)** → typically start in **relative coordinates** only.  
+- If no information about **scale** or **world coordinates** is available, the dataset cannot be directly placed in a real-world CRS. This is why we require **Ground Control Points (GCPs)** or another external reference source (e.g., GNSS measurements) to restore accurate georeferencing.  
+```
 
 ## Task
 In this exercise, you’ll move from **2D mapping** to **3D visualization** in ArcGIS Pro. You will set up and display spatial information in three dimensions, create realistic **3D symbols** for buildings, street furniture, and monuments, capture GNSS points, and finish by producing a **3D animation** and exporting it as a video.
@@ -67,18 +126,19 @@ In this exercise, you’ll move from **2D mapping** to **3D visualization** in A
 ---
 
 ## Optional Task
-- Write a script to update building heights from a CSV file.
-- Automate GPX-to-shapefile conversion using `ogr2ogr`.
-
-
+- **Write a script**  
+  - Update building heights from a CSV file and re-extrude buildings.  
+  - Automate GPX-to-shapefile conversion (e.g., using `ogr2ogr` or `geopandas`).  
+- **Build your own 3D scene on the web** using [Cesium](https://cesium.com/) 
+  - Start with example datasets or use the building/monument data from this exercise. 
 ---
 
 ## Materials
-- [Scenes in ArcGIS Pro](https://pro.arcgis.com/en/pro-app/latest/help/mapping/scenes/what-is-a-scene-.htm)  
-- [Extrude features to 3D](https://pro.arcgis.com/en/pro-app/latest/help/mapping/layer-properties/extrude-features-to-3d.htm)  
-- [3D symbols and styles](https://pro.arcgis.com/en/pro-app/latest/help/mapping/layer-properties/3d-symbols.htm)  
-- [Import 3D models](https://pro.arcgis.com/en/pro-app/latest/help/mapping/layer-properties/import-3d-models.htm)  
+- [Scenes in ArcGIS Pro](https://pro.arcgis.com/en/pro-app/latest/help/mapping/map-authoring/scenes.htm) 
+- [3D in Arcgis Pro](https://learn.arcgis.com/zh-cn/paths/3d-in-arcgis-pro/)  
 - [GPS Utility](http://www.gpsu.co.uk/)  
-- [Animation in ArcGIS Pro](https://pro.arcgis.com/en/pro-app/latest/help/mapping/animation/overview-of-animation.htm)
+- [Animation basics](https://pro.arcgis.com/en/pro-app/latest/help/mapping/animation/overview-of-animation.htm)
+- [2.5D, From Wikipedia](https://en.wikipedia.org/wiki/2.5D)
+- [3D Computer Vision: A Comprehensive Guide](https://viso.ai/computer-vision/3d-computer-vision/)
 
 
