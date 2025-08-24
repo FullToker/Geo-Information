@@ -330,7 +330,19 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#warm-up">Warm Up</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#warm-up">Warm Up</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#common-types-of-3d-data">Common Types of 3D Data</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#d-pseudo-3d-vs-3d-data">2.5D(Pseudo 3D) vs. 3D Data</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#how-do-we-get-3d-data">How Do We Get 3D Data?</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#lidar-scanning-airborne-terrestrial-mobile">LiDAR Scanning (Airborne, Terrestrial, Mobile)</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#geodetic-surveying">Geodetic Surveying</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#photogrammetry-multi-view-geometry">Photogrammetry (Multi-View Geometry)</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#d-computer-vision">3D Computer Vision</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#artificial-creation">Artificial Creation</a></li>
+</ul>
+</li>
+</ul>
+</li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#task">Task</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#overview">Overview</a></li>
 </ul>
@@ -362,6 +374,118 @@ document.write(`
 <h1>Exercise4: 3D Visualization and 3D Animation<a class="headerlink" href="#exercise4-3d-visualization-and-3d-animation" title="Link to this heading">#</a></h1>
 <section id="warm-up">
 <h2>Warm Up<a class="headerlink" href="#warm-up" title="Link to this heading">#</a></h2>
+<section id="common-types-of-3d-data">
+<h3>Common Types of 3D Data<a class="headerlink" href="#common-types-of-3d-data" title="Link to this heading">#</a></h3>
+<p>3D data can appear in many formats and domains:</p>
+<ul class="simple">
+<li><p><strong>Point clouds</strong> 🟢 (from LiDAR, photogrammetry, laser scanning)</p></li>
+<li><p><strong>Meshes</strong> 🕸️ (triangular or polygonal surfaces from 3D modeling)</p></li>
+<li><p><strong>Voxel data</strong> 🧊 (3D pixels, often used in medical imaging or volumetric models)</p></li>
+<li><p><strong>3D building models</strong> 🏢 (e.g., CityGML, BIM data, CAD models)</p></li>
+<li><p><strong>DEM/DSM</strong> (Digital Elevation/Surface Models, raster grids with height values)
+<img alt="Illustration of 3D data" src="../_images/3D-data-diff.ppm" /></p></li>
+</ul>
+</section>
+<section id="d-pseudo-3d-vs-3d-data">
+<h3>2.5D(Pseudo 3D) vs. 3D Data<a class="headerlink" href="#d-pseudo-3d-vs-3d-data" title="Link to this heading">#</a></h3>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Aspect</p></th>
+<th class="head"><p>2.5D (Pseudo-3D)</p></th>
+<th class="head"><p>True 3D</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Geometry</p></td>
+<td><p>One z-value per (x, y)</p></td>
+<td><p>Multiple z-values per (x, y) possible</p></td>
+</tr>
+<tr class="row-odd"><td><p>Representation</p></td>
+<td><p>Raster grid (DEM/DSM), extruded polygons</p></td>
+<td><p>Point clouds, meshes, voxels, solids</p></td>
+</tr>
+<tr class="row-even"><td><p>Complexity</p></td>
+<td><p>Relatively simple</p></td>
+<td><p>More complex data structures</p></td>
+</tr>
+<tr class="row-odd"><td><p>Storage &amp; Processing</p></td>
+<td><p>Lightweight, fast</p></td>
+<td><p>Heavy, requires advanced computation</p></td>
+</tr>
+<tr class="row-even"><td><p>Can model overlaps?</p></td>
+<td><p>❌ No</p></td>
+<td><p>✅ Yes (bridges, tunnels, multi-floors)</p></td>
+</tr>
+<tr class="row-odd"><td><p>Main Use Cases</p></td>
+<td><p>Terrain, surface analysis, quick 3D view</p></td>
+<td><p>Urban modeling, subsurface, indoor 3D</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<ul class="simple">
+<li><p><strong>2.5D is enough</strong> when you only care about terrain or building heights.</p></li>
+<li><p><strong>True 3D is necessary</strong> when you need full volumetric analysis or overlapping structures.</p></li>
+<li><p>In geodesy, we often start with 2.5D (e.g., DEMs) but increasingly move to <strong>full 3D</strong> for city models, infrastructure, and digital twins.</p></li>
+<li><p>2.5D is also common in video games and VR.</p></li>
+</ul>
+</section>
+<section id="how-do-we-get-3d-data">
+<h3>How Do We Get 3D Data?<a class="headerlink" href="#how-do-we-get-3d-data" title="Link to this heading">#</a></h3>
+<p>This is a huge topic that connects to many industries: <em>Robotics, Autonomous Driving (AD), Gaming, Digital Design, Architecture, Geodesy</em>, and more.<br />
+Broadly speaking, there are two ways: <strong>direct measurement</strong> (sensors record 3D geometry in real-world coordinates) and <strong>indirect reconstruction</strong> (3D is inferred from 2D observations or designed manually).</p>
+<section id="lidar-scanning-airborne-terrestrial-mobile">
+<h4>LiDAR Scanning (Airborne, Terrestrial, Mobile)<a class="headerlink" href="#lidar-scanning-airborne-terrestrial-mobile" title="Link to this heading">#</a></h4>
+<ul class="simple">
+<li><p>Captures dense <strong>point clouds</strong> with XYZ coordinates and intensity values.</p></li>
+<li><p>Can be mounted on drones, aircraft, cars, or tripods.</p></li>
+</ul>
+</section>
+<section id="geodetic-surveying">
+<h4>Geodetic Surveying<a class="headerlink" href="#geodetic-surveying" title="Link to this heading">#</a></h4>
+<ul class="simple">
+<li><p>GNSS / GPS surveying: directly measures 3D positions in global coordinates (WGS84, UTM, etc.).</p></li>
+<li><p>Total station or laser theodolite: high-precision ground-based measurement for engineering, construction, and geodesy.</p></li>
+</ul>
+</section>
+<section id="photogrammetry-multi-view-geometry">
+<h4>Photogrammetry (Multi-View Geometry)<a class="headerlink" href="#photogrammetry-multi-view-geometry" title="Link to this heading">#</a></h4>
+<ul class="simple">
+<li><p>Derives 3D geometry from overlapping images(aerial, drone, or satellite).</p></li>
+<li><p>Large-scale projects: <a class="reference external" href="https://www.sciencedirect.com/science/article/pii/S0924271602001247">SRTM</a> generated near-global elevation models.</p></li>
+</ul>
+</section>
+<section id="d-computer-vision">
+<h4>3D Computer Vision<a class="headerlink" href="#d-computer-vision" title="Link to this heading">#</a></h4>
+<ul class="simple">
+<li><p>Structure from Motion (SfM): reconstructs camera positions + sparse point clouds from unordered photos, (<a class="reference external" href="https://github.com/colmap/colmap">COLMAP</a>).</p></li>
+<li><p>Multi-View Stereo(MVS):  refines dense surface geometry given camera parameters, e.g. <a class="reference external" href="https://arxiv.org/abs/1804.02505">MVSNet</a></p></li>
+<li><p>Deep learning approaches:</p>
+<ul>
+<li><p><a class="reference external" href="https://vgg-t.github.io/">VGGT (Vision Geometry Grounded Transformers)</a>: learns 3D scene geometry from multi-views.</p></li>
+<li><p>Neural rendering methods:</p>
+<ul>
+<li><p><a class="reference external" href="https://www.matthewtancik.com/nerf">NeRF (Neural Radiance Fields)</a> – photorealistic novel views.</p></li>
+<li><p><a class="reference external" href="https://repo-sam.inria.fr/fungraph/3d-gaussian-splatting/">3D Gaussian Splatting</a> – real-time 3D rendering.</p></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</section>
+<section id="artificial-creation">
+<h4>Artificial Creation<a class="headerlink" href="#artificial-creation" title="Link to this heading">#</a></h4>
+<ul class="simple">
+<li><p>Models created by artists or engineers in CAD, BIM, or 3D modeling tools (SketchUp, Blender, 3ds Max).</p></li>
+<li><p>Common in <em>gaming, movies, architectural visualization, digital twins</em>.</p></li>
+</ul>
+<div class="highlight-{admonition}With notranslate"><div class="highlight"><pre><span></span>- **Direct methods (LiDAR, GNSS, total station)** → usually already georeferenced, so they can be integrated into GIS immediately.  
+- **Indirect methods (SfM, photogrammetry without GCPs, manual design)** → typically start in **relative coordinates** only.  
+- If no information about **scale** or **world coordinates** is available, the dataset cannot be directly placed in a real-world CRS. This is why we require **Ground Control Points (GCPs)** or another external reference source (e.g., GNSS measurements) to restore accurate georeferencing.  
+</pre></div>
+</div>
+</section>
+</section>
 </section>
 <section id="task">
 <h2>Task<a class="headerlink" href="#task" title="Link to this heading">#</a></h2>
@@ -478,20 +602,29 @@ document.write(`
 <section id="optional-task">
 <h2>Optional Task<a class="headerlink" href="#optional-task" title="Link to this heading">#</a></h2>
 <ul class="simple">
-<li><p>Write a script to update building heights from a CSV file.</p></li>
-<li><p>Automate GPX-to-shapefile conversion using <code class="docutils literal notranslate"><span class="pre">ogr2ogr</span></code>.</p></li>
+<li><p><strong>Write a script</strong></p>
+<ul>
+<li><p>Update building heights from a CSV file and re-extrude buildings.</p></li>
+<li><p>Automate GPX-to-shapefile conversion (e.g., using <code class="docutils literal notranslate"><span class="pre">ogr2ogr</span></code> or <code class="docutils literal notranslate"><span class="pre">geopandas</span></code>).</p></li>
+</ul>
+</li>
+<li><p><strong>Build your own 3D scene on the web</strong> using <a class="reference external" href="https://cesium.com/">Cesium</a></p>
+<ul>
+<li><p>Start with example datasets or use the building/monument data from this exercise.</p></li>
+</ul>
+</li>
 </ul>
 </section>
 <hr class="docutils" />
 <section id="materials">
 <h2>Materials<a class="headerlink" href="#materials" title="Link to this heading">#</a></h2>
 <ul class="simple">
-<li><p><a class="reference external" href="https://pro.arcgis.com/en/pro-app/latest/help/mapping/scenes/what-is-a-scene-.htm">Scenes in ArcGIS Pro</a></p></li>
-<li><p><a class="reference external" href="https://pro.arcgis.com/en/pro-app/latest/help/mapping/layer-properties/extrude-features-to-3d.htm">Extrude features to 3D</a></p></li>
-<li><p><a class="reference external" href="https://pro.arcgis.com/en/pro-app/latest/help/mapping/layer-properties/3d-symbols.htm">3D symbols and styles</a></p></li>
-<li><p><a class="reference external" href="https://pro.arcgis.com/en/pro-app/latest/help/mapping/layer-properties/import-3d-models.htm">Import 3D models</a></p></li>
+<li><p><a class="reference external" href="https://pro.arcgis.com/en/pro-app/latest/help/mapping/map-authoring/scenes.htm">Scenes in ArcGIS Pro</a></p></li>
+<li><p><a class="reference external" href="https://learn.arcgis.com/zh-cn/paths/3d-in-arcgis-pro/">3D in Arcgis Pro</a></p></li>
 <li><p><a class="reference external" href="http://www.gpsu.co.uk/">GPS Utility</a></p></li>
-<li><p><a class="reference external" href="https://pro.arcgis.com/en/pro-app/latest/help/mapping/animation/overview-of-animation.htm">Animation in ArcGIS Pro</a></p></li>
+<li><p><a class="reference external" href="https://pro.arcgis.com/en/pro-app/latest/help/mapping/animation/overview-of-animation.htm">Animation basics</a></p></li>
+<li><p><a class="reference external" href="https://en.wikipedia.org/wiki/2.5D">2.5D, From Wikipedia</a></p></li>
+<li><p><a class="reference external" href="https://viso.ai/computer-vision/3d-computer-vision/">3D Computer Vision: A Comprehensive Guide</a></p></li>
 </ul>
 </section>
 </section>
@@ -551,7 +684,19 @@ document.write(`
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#warm-up">Warm Up</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#warm-up">Warm Up</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#common-types-of-3d-data">Common Types of 3D Data</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#d-pseudo-3d-vs-3d-data">2.5D(Pseudo 3D) vs. 3D Data</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#how-do-we-get-3d-data">How Do We Get 3D Data?</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#lidar-scanning-airborne-terrestrial-mobile">LiDAR Scanning (Airborne, Terrestrial, Mobile)</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#geodetic-surveying">Geodetic Surveying</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#photogrammetry-multi-view-geometry">Photogrammetry (Multi-View Geometry)</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#d-computer-vision">3D Computer Vision</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#artificial-creation">Artificial Creation</a></li>
+</ul>
+</li>
+</ul>
+</li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#task">Task</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#overview">Overview</a></li>
 </ul>
