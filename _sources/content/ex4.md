@@ -55,7 +55,7 @@ Broadly speaking, there are two ways: **direct measurement** (sensors record 3D 
 - Models created by artists or engineers in CAD, BIM, or 3D modeling tools (SketchUp, Blender, 3ds Max).  
 - Common in *gaming, movies, architectural visualization, digital twins*.  
 
-```{admonition}With or Without World Coordinates?
+```{admonition} With or Without World Coordinates?
 - **Direct methods (LiDAR, GNSS, total station)** → usually already georeferenced, so they can be integrated into GIS immediately.  
 - **Indirect methods (SfM, photogrammetry without GCPs, manual design)** → typically start in **relative coordinates** only.  
 - If no information about **scale** or **world coordinates** is available, the dataset cannot be directly placed in a real-world CRS. This is why we require **Ground Control Points (GCPs)** or another external reference source (e.g., GNSS measurements) to restore accurate georeferencing.  

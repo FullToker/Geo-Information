@@ -479,10 +479,13 @@ Broadly speaking, there are two ways: <strong>direct measurement</strong> (senso
 <li><p>Models created by artists or engineers in CAD, BIM, or 3D modeling tools (SketchUp, Blender, 3ds Max).</p></li>
 <li><p>Common in <em>gaming, movies, architectural visualization, digital twins</em>.</p></li>
 </ul>
-<div class="highlight-{admonition}With notranslate"><div class="highlight"><pre><span></span>- **Direct methods (LiDAR, GNSS, total station)** → usually already georeferenced, so they can be integrated into GIS immediately.  
-- **Indirect methods (SfM, photogrammetry without GCPs, manual design)** → typically start in **relative coordinates** only.  
-- If no information about **scale** or **world coordinates** is available, the dataset cannot be directly placed in a real-world CRS. This is why we require **Ground Control Points (GCPs)** or another external reference source (e.g., GNSS measurements) to restore accurate georeferencing.  
-</pre></div>
+<div class="admonition-with-or-without-world-coordinates admonition">
+<p class="admonition-title">With or Without World Coordinates?</p>
+<ul class="simple">
+<li><p><strong>Direct methods (LiDAR, GNSS, total station)</strong> → usually already georeferenced, so they can be integrated into GIS immediately.</p></li>
+<li><p><strong>Indirect methods (SfM, photogrammetry without GCPs, manual design)</strong> → typically start in <strong>relative coordinates</strong> only.</p></li>
+<li><p>If no information about <strong>scale</strong> or <strong>world coordinates</strong> is available, the dataset cannot be directly placed in a real-world CRS. This is why we require <strong>Ground Control Points (GCPs)</strong> or another external reference source (e.g., GNSS measurements) to restore accurate georeferencing.</p></li>
+</ul>
 </div>
 </section>
 </section>
