@@ -84,9 +84,9 @@ In this exercise, you’ll move from **2D mapping** to **3D visualization** in A
 
 ---
 
-## Descriptions & Steps
+### Descriptions & Steps
 
-### Data
+#### Data
   - `Data Students.gdb` (buildings, roads)  
   - `Park-cadastral.tif`  
   - `TUM.dae`  
@@ -94,38 +94,38 @@ In this exercise, you’ll move from **2D mapping** to **3D visualization** in A
   - `Monuments.gpx`  
   - `Track.gpx`
 
-### 1. Preparing and Extruding Buildings
+#### 1. Preparing and Extruding Buildings
 - Select buildings with `level_num` = 0 or NULL and assign default value **3**.
 - Create a **Local Scene** and add `Buildings` and `Roads`.
 - Extrude buildings by `$feature.level_num * 4` (meters per floor).
 
-### 2. Coordinate System & Navigation
+#### 2. Coordinate System & Navigation
 - Change scene projection to **ETRS 1989 UTM Zone 32N**.
 - Explore 3D navigation tools and mouse controls.
 
-### 3. Digitizing New 3D Features
+#### 3. Digitizing New 3D Features
 - Create point feature classes for trees, streetlights, benches, and landmarks with Z-values enabled.
 - Digitize features from cadastral plan and aerial imagery.
 - Place anchor points for TUM and Old Pinakothek.
 
-### 4. 3D Symbolization
+#### 4. 3D Symbolization
 - Apply built-in 3D marker symbols to point layers.
 - Classify park benches by `Orient` attribute and adjust rotation.
 - Replace extruded landmark buildings with **custom 3D models** and position them correctly.
 
-### 5. Capturing & Displaying GNSS Points
+#### 5. Capturing & Displaying GNSS Points
 - Use GPS device to record monument locations (20 averaged points each).
 - Convert GPX files to shapefiles using GPS Utility.
 - Define projection as WGS 1984 and symbolize monuments with custom 3D models.
 
-### 6. Creating a 3D Animation
+#### 6. Creating a 3D Animation
 - Plan keyframes for viewpoints and transitions.
 - Adjust transparency, add titles, and set duration.
 - Export animation as MP4 (YouTube preset) and submit.
 
 ---
 
-## Optional Task
+### Optional Task
 - **Write a script**  
   - Update building heights from a CSV file and re-extrude buildings.  
   - Automate GPX-to-shapefile conversion (e.g., using `ogr2ogr` or `geopandas`).  

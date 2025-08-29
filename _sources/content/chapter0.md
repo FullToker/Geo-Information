@@ -40,3 +40,7 @@ If you really want to learn, go beyond AI:
 - [Ex1](./ex1.md): Selecting and Editinfg Features
 - [Ex2](./ex2.md): Symbolization in a GIS
 - [Ex3](./ex3.md): Georeferencing and Modifying Features
+- [Ex4](./ex4.md): 3D Visualization and 3D Animation
+- [Ex5](./ex5.md): Spatial Analysis Methods
+- [Ex6]():
+- [Ex7]():
