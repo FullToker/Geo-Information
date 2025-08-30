@@ -1,7 +1,8 @@
 root: README
 entries:
-- file: content/ex0
+- file: content/Home
   entries:
+  - file: content/ex0
   - file: content/ex1
   - file: content/ex2
   - file: content/ex3
@@ -9,4 +10,5 @@ entries:
   - file: content/ex5
   - file: content/ex6
   - file: content/ex7
+
 
