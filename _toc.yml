@@ -1,8 +1,7 @@
 root: README
 entries:
-- file: content/chapter0
+- file: content/ex0
   entries:
-  - file: content/ex0
   - file: content/ex1
   - file: content/ex2
   - file: content/ex3

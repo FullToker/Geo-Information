@@ -3,9 +3,8 @@
 ## Warm Up
 
 ### Some Facts
-```{admonition} 
-Learning the tools and algorithms is only step one. The real goal is using them to solve real-world problems.
-```
+> Learning the tools and algorithms is only step one. The real goal is using them to solve real-world problems.
+
 
 In GIS, understanding how things work is important — but knowing why and where to use them is just as essential. Imagine you’re…
 - Planning a city-wide cycling event and want to find the safest, greenest, and flattest route for thousands of riders.
