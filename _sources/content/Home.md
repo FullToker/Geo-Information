@@ -1,11 +1,4 @@
 # Home Page
-
-## Teaching
-**Instructors:** [Prof. Dr.-Ing. Liqiu Meng](https://www.asg.ed.tum.de/lfk/team/members/liqiu-meng/)
-
-**Teaching Assistants:** [M.Sc. Zihan Liu](http://asg.ed.tum.de/lfk/team/members/zihan-liu/)
-
-
 ## Overview
 - Format: Lecture + Exercise
 - Exam: 
