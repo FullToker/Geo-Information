@@ -105,6 +105,7 @@ Example: Traffic congestion in one district affects neighboring areas; deforesta
 
 
 ### Descriptions
+Detailed instructions in {download}`Lesson 0 <../doc/Lesson 1.docx>`
 #### Data
 - `Data Students.gdb`
 - `orthophoto.tif`
