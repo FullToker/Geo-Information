@@ -7,6 +7,8 @@
 ### Overview
 
 ### Descriptions
+Detailed instructions in {download}`Lesson 0 <../doc/Lesson 9.docx>`
+
 #### Data
 
 

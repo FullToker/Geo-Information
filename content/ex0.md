@@ -45,7 +45,6 @@ You should start by reading this overview, and refer to the detailed guide if yo
 
 >It’s **not necessary** to read all details in the second document if you already understand what to do or how to do.
 
-
 ### Implementation
 - If you're unable to run ArcGIS Pro on your personal computer — for example, if you're using macOS, an older version of Windows, or your system doesn't meet the memory requirements — 
 we strongly recommend completing the exercise in the **PC lab**.
@@ -65,7 +64,10 @@ we strongly recommend completing the exercise in the **PC lab**.
 - [ ] Follow proper naming conventions when creating folders and files for your project. 
 
 ### Descriptions
-- **Data**: Data-students.gdb
+Detailed instructions in {download}`Lesson 0 <../doc/Lesson 0.docx>`
+
+#### Data 
+- Data-students.gdb
 
 ### Optional Task
 - For principle:
