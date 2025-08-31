@@ -4,3 +4,12 @@ execute:
   execute_notebooks: "off"
 html:
   baseurl: /Geo-Information/   # 项目站点建议设置，防止静态资源 404
+  favicon: images/TUM.ico
+  use_repository_button: true
+  use_issues_button: true
+  use_edit_page_button: true
+
+repository:
+  url: https://github.com/FullToker/Geo-Information
+  path_to_book: ""
+  branch: main

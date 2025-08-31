@@ -1,11 +1,4 @@
 # Home Page
-
-## Teaching
-**Instructors:** [Prof. Dr.-Ing. Liqiu Meng](https://www.asg.ed.tum.de/lfk/team/members/liqiu-meng/)
-
-**Teaching Assistants:** [M.Sc. Zihan Liu](http://asg.ed.tum.de/lfk/team/members/zihan-liu/)
-
-
 ## Overview
 - Format: Lecture + Exercise
 - Exam: 
@@ -44,3 +37,4 @@ If you really want to learn, go beyond AI:
 - [Ex5](./ex5.md): Spatial Analysis Methods
 - [Ex6](./ex6.md): Vertical and Hydrological Analysis
 - [Ex7](./ex7.md): Network Analysis
+- [Ex9](./ex9.md): Generalization

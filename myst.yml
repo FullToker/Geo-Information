@@ -11,12 +11,12 @@ project:
 site:
   template: book-theme
   options:
-    index: /chapter0.md
+    index: /Home.md
     logo: images/TUM.png
     favicon: images/TUM.ico
   nav:
     - title: Home
-      url: /chapter0
+      url: /Home
     #- title: Exercise0
     #  url: /ex0
     #- title: Exercise1
