@@ -85,6 +85,7 @@ In this exercise, you’ll move from **2D mapping** to **3D visualization** in A
 ---
 
 ### Descriptions & Steps
+Detailed instructions in {download}`Lesson 0 <../doc/Lesson 4.docx>`
 
 #### Data
   - `Data Students.gdb` (buildings, roads)  
