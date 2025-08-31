@@ -6,7 +6,7 @@
 **Teaching Assistants:** [M.Sc. Zihan Liu](http://asg.ed.tum.de/lfk/team/members/zihan-liu/)
 
 
-# Course Schedule
+## Course Schedule
 
 | Week | Date     | Room   | Lecture or Exercise Topic                          | Lecturer |
 |------|----------|--------|---------------------------------------------------|----------|

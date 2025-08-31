@@ -59,6 +59,7 @@
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'content/ex6';</script>
     <link rel="canonical" href="/Geo-Information/content/ex6.html" />
+    <link rel="icon" href="../_static/TUM.ico"/>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="Exercise7: Network Analysis" href="ex7.html" />
@@ -170,12 +171,13 @@
         <ul class="nav bd-sidenav bd-sidenav__home-link">
             <li class="toctree-l1">
                 <a class="reference internal" href="../README.html">
-                    Home Page
+                    Welcome to Geo-information 25-26WS
                 </a>
             </li>
         </ul>
         <ul class="current nav bd-sidenav">
-<li class="toctree-l1 current active has-children"><a class="reference internal" href="ex0.html">Exercise0: Introduction</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="Home.html">Home Page</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="ex0.html">Exercise0: Introduction</a></li>
 <li class="toctree-l2"><a class="reference internal" href="ex1.html">Exercise1: Selecting and Editinfg Features</a></li>
 <li class="toctree-l2"><a class="reference internal" href="ex2.html">Exercise 2: Symbolization in a GIS</a></li>
 <li class="toctree-l2"><a class="reference internal" href="ex3.html">Exercise3: Georeferencing and Modifying Features</a></li>
@@ -183,6 +185,7 @@
 <li class="toctree-l2"><a class="reference internal" href="ex5.html">Exercise5: Spatial Analysis Methods</a></li>
 <li class="toctree-l2 current active"><a class="current reference internal" href="#">Exercise6: Vertical and Hydrological Analysis</a></li>
 <li class="toctree-l2"><a class="reference internal" href="ex7.html">Exercise7: Network Analysis</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ex9.html">Exercise9: Generalization</a></li>
 </ul>
 </details></li>
 </ul>
@@ -226,6 +229,70 @@
         <div class="header-article-item">
 
 <div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/FullToker/Geo-Information" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/FullToker/Geo-Information/edit/main/content/ex6.md" target="_blank"
+   class="btn btn-sm btn-source-edit-button dropdown-item"
+   title="Suggest edit"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-pencil-alt"></i>
+  </span>
+<span class="btn__text-container">Suggest edit</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/FullToker/Geo-Information/issues/new?title=Issue%20on%20page%20%2Fcontent/ex6.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
 
 
 
@@ -333,8 +400,25 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#warm-up">Warm Up</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#task">Task</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#warm-up">Warm Up</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#why-do-we-care-about-slope">Why Do We Care About Slope?</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#finding-the-best-path-is-shortest-always-best">Finding the “Best” Path — Is Shortest Always Best?</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#task">Task</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#overview">Overview</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#descriptions-steps">Descriptions &amp; Steps</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#data">Data</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#vertical-analysis">1. Vertical Analysis</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#line-of-sight-viewshed">2. Line-of-Sight (Viewshed)</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#hydrological-analysis">3. Hydrological Analysis</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#cost-surface-analysis">4. Cost Surface Analysis</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#least-cost-path">5. Least Cost Path</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#optional-task">Optional Task</a></li>
+</ul>
+</li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#materials">Materials</a></li>
 </ul>
             </nav>
@@ -351,12 +435,217 @@ document.write(`
 <h1>Exercise6: Vertical and Hydrological Analysis<a class="headerlink" href="#exercise6-vertical-and-hydrological-analysis" title="Link to this heading">#</a></h1>
 <section id="warm-up">
 <h2>Warm Up<a class="headerlink" href="#warm-up" title="Link to this heading">#</a></h2>
+<section id="why-do-we-care-about-slope">
+<h3>Why Do We Care About Slope?<a class="headerlink" href="#why-do-we-care-about-slope" title="Link to this heading">#</a></h3>
+<blockquote>
+<div><p>Is every 500-meter path equally difficult? Or does slope change everything?</p>
+</div></blockquote>
+<p>As the following chart illustrates, many domains—from urban planning to emergency access—take <strong>slope</strong> and other <strong>vertical factors</strong> into account when designing spaces and systems.
+This applies not only to outdoor environments like roads and trails, but also to vertical spatial planning within buildings, where elevation impacts accessibility, function, and design logic. For a deeper dive into how slope and vertical costs influence movement and analysis in GIS, you can explore this article:<br />
+<a class="reference external" href="https://pro.arcgis.com/en/pro-app/latest/tool-reference/spatial-analyst/how-the-horizonal-and-vertical-factors-affect-path-distance.htm">How the horizontal and vertical factors affect path distance</a></p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Context</p></th>
+<th class="head"><p>Why Slope Matters</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>🚲 Urban Planning</p></td>
+<td><p>Bike lanes avoid slopes &gt;8% to stay rideable</p></td>
+</tr>
+<tr class="row-odd"><td><p>🚒 Emergency Access</p></td>
+<td><p>Fire trucks and ambulances struggle on steep roads</p></td>
+</tr>
+<tr class="row-even"><td><p>⛷️ Ski Resorts</p></td>
+<td><p>Slope determines difficulty level (green/blue/black)</p></td>
+</tr>
+<tr class="row-odd"><td><p>🧱 Vertical Planning</p></td>
+<td><p>Vertical spatial design affects building function layering and elevation access</p></td>
+</tr>
+<tr class="row-even"><td><p>🏗️ Construction</p></td>
+<td><p>Affects drainage, foundation design, and costs</p></td>
+</tr>
+<tr class="row-odd"><td><p>🚶 Accessibility</p></td>
+<td><p>Wheelchair paths require very gentle slopes</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p><img alt="Architecture" src="../_images/archi_vertical.jpg" /></p>
+</section>
+<section id="finding-the-best-path-is-shortest-always-best">
+<h3>Finding the “Best” Path — Is Shortest Always Best?<a class="headerlink" href="#finding-the-best-path-is-shortest-always-best" title="Link to this heading">#</a></h3>
+<blockquote>
+<div><p>“Why doesn’t Google Maps take me in a straight line?”<br />
+“Why can’t we just draw a line from A to B and walk it?”</p>
+</div></blockquote>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Route Type</p></th>
+<th class="head"><p>What Happens</p></th>
+<th class="head"><p>Why</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>🥾 Mountain Trails</p></td>
+<td><p>Zigzags instead of straight lines</p></td>
+<td><p>To avoid steep climbs</p></td>
+</tr>
+<tr class="row-odd"><td><p>🚗 City Driving</p></td>
+<td><p>Detours are often faster</p></td>
+<td><p>Due to traffic, turns, signals</p></td>
+</tr>
+<tr class="row-even"><td><p>🦌 Animal Migration</p></td>
+<td><p>Never straight lines</p></td>
+<td><p>Optimized for safety, energy, terrain</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<blockquote>
+<div><p>Key Concept: <strong>Shortest ≠ Optimal</strong>.</p>
+</div></blockquote>
+<p>The “best” route often minimizes <strong>cost</strong>, not distance.
+Cost can mean:</p>
+<ul class="simple">
+<li><p>Time</p></li>
+<li><p>Energy (e.g. uphill walking)</p></li>
+<li><p>Safety (avoiding cliffs or danger zones)</p></li>
+<li><p>Environmental impact (avoiding protected areas)</p></li>
+</ul>
+<p><strong>Least Cost Path Analysis</strong> in GIS finds the route from start to end that has the lowest total cost — not just in meters, but factoring in terrain and other variables.
+<img alt="Cost Path Analysis" src="../_images/Cost_path.jpg" /></p>
+</section>
 </section>
 <section id="task">
 <h2>Task<a class="headerlink" href="#task" title="Link to this heading">#</a></h2>
+<p>In this exercise, you will explore <strong>vertical, hydrological, and cost surface analysis</strong> using raster data in ArcGIS Pro.<br />
+The goal is to understand how elevation and terrain influence visibility, water flow, and optimal routing decisions in mountainous regions.</p>
+<section id="overview">
+<h3>Overview<a class="headerlink" href="#overview" title="Link to this heading">#</a></h3>
+<ul class="contains-task-list simple">
+<li class="task-list-item"><p><input class="task-list-item-checkbox" disabled="disabled" type="checkbox"> <strong>Vertical Analysis</strong></p>
+<ul>
+<li><p>visualize elevation, slope, aspect, and hypsometric tints in 3D scenes.</p></li>
+</ul>
+</li>
+<li class="task-list-item"><p><input class="task-list-item-checkbox" disabled="disabled" type="checkbox"> <strong>Line-of-Sight (Viewshed)</strong></p>
+<ul>
+<li><p>calculate visible areas from selected viewpoints using DEM.</p></li>
+</ul>
+</li>
+<li class="task-list-item"><p><input class="task-list-item-checkbox" disabled="disabled" type="checkbox"> <strong>Hydrological Analysis</strong></p>
+<ul>
+<li><p>compute flow direction, flow accumulation, and identify drainage basins.</p></li>
+</ul>
+</li>
+<li class="task-list-item"><p><input class="task-list-item-checkbox" disabled="disabled" type="checkbox"> <strong>Cost Surface Analysis</strong></p>
+<ul>
+<li><p>create a cost surface using slope and land cover data.</p></li>
+</ul>
+</li>
+<li class="task-list-item"><p><input class="task-list-item-checkbox" disabled="disabled" type="checkbox"> <strong>Least Cost Path</strong></p>
+<ul>
+<li><p>determine the optimal route between two points minimizing environmental and slope cost.</p></li>
+</ul>
+</li>
+</ul>
+</section>
+<hr class="docutils" />
+<section id="descriptions-steps">
+<h3>Descriptions &amp; Steps<a class="headerlink" href="#descriptions-steps" title="Link to this heading">#</a></h3>
+<section id="data">
+<h4>Data<a class="headerlink" href="#data" title="Link to this heading">#</a></h4>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">DEM_50m_Zugsp.tif</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">LandCover.tif</span></code></p></li>
+</ul>
+</section>
+<section id="vertical-analysis">
+<h4>1. Vertical Analysis<a class="headerlink" href="#vertical-analysis" title="Link to this heading">#</a></h4>
+<ul class="simple">
+<li><p>Start a <em>Local Scene</em> in ArcGIS Pro.</p></li>
+<li><p>Replace Esri’s default elevation with <code class="docutils literal notranslate"><span class="pre">DEM_50m_Zugsp.tif</span></code> as the custom <em>elevation source</em>.</p></li>
+<li><p>Run the <strong>Slope</strong> and <strong>Aspect</strong> tools from the Spatial Analyst toolbox.</p></li>
+<li><p>Generate a histogram of slope values.</p></li>
+<li><p>Apply <em>hypsometric tints</em> using symbology with equal interval classification.</p></li>
+</ul>
+</section>
+<section id="line-of-sight-viewshed">
+<h4>2. Line-of-Sight (Viewshed)<a class="headerlink" href="#line-of-sight-viewshed" title="Link to this heading">#</a></h4>
+<ul class="simple">
+<li><p>Use the <em>Viewshed</em> tool to simulate line-of-sight from observer points.</p></li>
+<li><p>Create points directly on the DEM within the local scene.</p></li>
+<li><p>Analyze which areas are visible based on terrain.</p></li>
+</ul>
+</section>
+<section id="hydrological-analysis">
+<h4>3. Hydrological Analysis<a class="headerlink" href="#hydrological-analysis" title="Link to this heading">#</a></h4>
+<ul class="simple">
+<li><p>Run the following tools on the DEM:</p>
+<ul>
+<li><p><em>Flow Direction</em> (D8 method, force edges to flow outward)</p></li>
+<li><p><em>Flow Accumulation</em></p></li>
+<li><p><em>Basin</em> tool to delineate drainage areas</p></li>
+</ul>
+</li>
+<li><p>Visualize drainage basins with unique colors and adjust transparency to overlay with flow accumulation.</p></li>
+</ul>
+</section>
+<section id="cost-surface-analysis">
+<h4>4. Cost Surface Analysis<a class="headerlink" href="#cost-surface-analysis" title="Link to this heading">#</a></h4>
+<ul class="simple">
+<li><p>Add <code class="docutils literal notranslate"><span class="pre">LandCover.tif</span></code> and Reclassify land use values based on environmental impact.</p></li>
+<li><p>Optionally Reclassify slope values to match scale.</p></li>
+<li><p>Combine reclassified rasters using the <em>Plus</em> tool to generate the <em>cost surface</em>.</p></li>
+</ul>
+</section>
+<section id="least-cost-path">
+<h4>5. Least Cost Path<a class="headerlink" href="#least-cost-path" title="Link to this heading">#</a></h4>
+<ul class="simple">
+<li><p>Change scene coordinate system to <code class="docutils literal notranslate"><span class="pre">WGS</span> <span class="pre">1984</span> <span class="pre">UTM</span> <span class="pre">Zone</span> <span class="pre">32N</span></code>.</p></li>
+<li><p>Use the <em>Least Cost Path</em> tool:</p>
+<ul>
+<li><p>Input your combined cost surface</p></li>
+<li><p>Create start and end points interactively</p></li>
+<li><p>Generate the optimal hiking trail based on your criteria</p></li>
+</ul>
+</li>
+</ul>
+</section>
+</section>
+<section id="optional-task">
+<h3>Optional Task<a class="headerlink" href="#optional-task" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p>Explore elevation and hydrological analysis in your programming environment. You can start with these examples:</p>
+<ul>
+<li><p><a class="reference external" href="https://www.youtube.com/watch?v=AcuTSXLvQxA">Terrain Analysis with Python and Rasterio</a></p></li>
+<li><p><a class="reference external" href="https://github.com/royalosyin/Work-with-DEM-data-using-Python-from-Simple-to-Complicated">Working with Digital Elevation Models in Python</a></p></li>
+</ul>
+</li>
+<li><p>Build a simple web map or dashboard:</p>
+<ul>
+<li><p>Use <strong>Leaflet.js</strong>, <strong>Mapbox</strong>, or <strong><a class="reference external" href="http://Kepler.gl">Kepler.gl</a></strong> to visualize slope maps or flow paths.</p></li>
+<li><p>Upload your cost surface and overlay the <em>least cost path</em> between two points.</p></li>
+<li><p>Allow user-defined input: choose start/end point and display results dynamically.</p></li>
+</ul>
+</li>
+</ul>
+<p>💡 Tip: Libraries you may want to explore include:
+<code class="docutils literal notranslate"><span class="pre">rasterio</span></code>, <code class="docutils literal notranslate"><span class="pre">geopandas</span></code>, <code class="docutils literal notranslate"><span class="pre">matplotlib</span></code>, <code class="docutils literal notranslate"><span class="pre">richdem</span></code>, <code class="docutils literal notranslate"><span class="pre">whitebox</span></code>, <code class="docutils literal notranslate"><span class="pre">folium</span></code>, <code class="docutils literal notranslate"><span class="pre">pyproj</span></code>, <code class="docutils literal notranslate"><span class="pre">shapely</span></code>, and <code class="docutils literal notranslate"><span class="pre">networkx</span></code> (for raster-to-network conversion).</p>
+</section>
 </section>
 <section id="materials">
 <h2>Materials<a class="headerlink" href="#materials" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p><a class="reference external" href="https://pro.arcgis.com/en/pro-app/latest/help/mapping/properties/vertical-coordinate-systems.htm">Vertical coordinate systems</a></p></li>
+<li><p><a class="reference external" href="https://pro.arcgis.com/en/pro-app/latest/tool-reference/spatial-analyst/viewshed.htm">Viewshed (Spatial Analyst)</a></p></li>
+<li><p><a class="reference external" href="https://pro.arcgis.com/en/pro-app/latest/tool-reference/3d-analyst/using-viewshed-and-observer-points-for-visibility.htm">Using Viewshed and Observer Points for visibility analysis</a></p></li>
+<li><p><a class="reference external" href="https://pro.arcgis.com/en/pro-app/latest/tool-reference/spatial-analyst/an-overview-of-the-hydrology-tools.htm">An overview of the Hydrology toolset</a></p></li>
+<li><p><a class="reference external" href="https://pro.arcgis.com/en/pro-app/latest/tool-reference/spatial-analyst/hydrologic-analysis-sample-applications.htm">Hydrologic analysis sample applications</a></p></li>
+<li><p><a class="reference external" href="https://pro.arcgis.com/en/pro-app/latest/tool-reference/spatial-analyst/creating-the-least-cost-path.htm">Creating the least-cost path</a></p></li>
+<li><p><a class="reference external" href="https://gisgeography.com/least-cost-path-analysis/">Least Cost Path Analysis in GIS</a></p></li>
+</ul>
 </section>
 </section>
 
@@ -424,8 +713,25 @@ document.write(`
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#warm-up">Warm Up</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#task">Task</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#warm-up">Warm Up</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#why-do-we-care-about-slope">Why Do We Care About Slope?</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#finding-the-best-path-is-shortest-always-best">Finding the “Best” Path — Is Shortest Always Best?</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#task">Task</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#overview">Overview</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#descriptions-steps">Descriptions &amp; Steps</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#data">Data</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#vertical-analysis">1. Vertical Analysis</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#line-of-sight-viewshed">2. Line-of-Sight (Viewshed)</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#hydrological-analysis">3. Hydrological Analysis</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#cost-surface-analysis">4. Cost Surface Analysis</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#least-cost-path">5. Least Cost Path</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#optional-task">Optional Task</a></li>
+</ul>
+</li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#materials">Materials</a></li>
 </ul>
   </nav></div>
