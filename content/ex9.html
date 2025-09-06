@@ -399,11 +399,24 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#warm-up">Warm Up</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#warm-up">Warm Up</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#the-coastline-paradox">The Coastline Paradox</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#some-facts">Some Facts</a></li>
+</ul>
+</li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#task">Task</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#overview">Overview</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#descriptions">Descriptions</a><ul class="nav section-nav flex-column">
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#data">Data</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#simplify-water-polygons">1. Simplify Water Polygons</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#aggregate-and-simplify-forests">2. Aggregate and Simplify Forests</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#exaggerate-watercourse-lines">3. Exaggerate Watercourse Lines</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#typify-underground-lines">4. Typify Underground Lines</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#aggregate-buildings">5. Aggregate Buildings</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#classify-land-use">6. Classify Land Use</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#select-and-symbolize-paths">7. Select and Symbolize Paths</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#displace-point-symbols">8. Displace Point Symbols</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#adjust-layer-order-and-export">9. Adjust Layer Order and Export</a></li>
 </ul>
 </li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#optional-task">Optional Task</a></li>
@@ -425,17 +438,154 @@ document.write(`
 <h1>Exercise9: Generalization<a class="headerlink" href="#exercise9-generalization" title="Link to this heading">#</a></h1>
 <section id="warm-up">
 <h2>Warm Up<a class="headerlink" href="#warm-up" title="Link to this heading">#</a></h2>
+<section id="the-coastline-paradox">
+<h3>The Coastline Paradox<a class="headerlink" href="#the-coastline-paradox" title="Link to this heading">#</a></h3>
+<blockquote>
+<div><p>How long is the coastline of the UK?</p>
+</div></blockquote>
+<p>You may be want to google but the answer actually is <strong>“It depends on how small your ruler is.”</strong>.</p>
+<p><img alt="Coastline Paradox" src="../_images/coastline.png" /></p>
+<p>In short, the coastline paradox illustrates that the length of a coastline increases as the measurement scale becomes smaller. The more detail you try to capture (bays, inlets, tiny rocks), the longer the line becomes. In theory, with an infinitely small ruler, the length could approach infinity. Mathematically, this phenomenon relates to the concept of fractal dimensions, where natural features exhibit complexity at every scale. You can explore this concept further with <a class="reference external" href="https://www.youtube.com/watch?v=gB9n2gHsHN4&amp;amp;t=706s">Fractals are typically not self-similar</a>, <a class="reference external" href="https://en.wikipedia.org/wiki/Coastline_paradox">Coastline paradox, from Wikipedia</a>, <a class="reference external" href="https://www.youtube.com/watch?v=kFjq8PX6F7I&amp;amp;pp=ygURY29hc3RsaW5lIHBhcmFkb3g%3D">The Coastline Paradox Explained</a>.</p>
+<blockquote>
+<div><p>The Earth’s features are complex, but maps are finite. Generalization helps us balance truth and usability.</p>
+</div></blockquote>
+</section>
+<section id="some-facts">
+<h3>Some Facts<a class="headerlink" href="#some-facts" title="Link to this heading">#</a></h3>
+<p>You can check <a class="reference external" href="https://cartography-playground.gitlab.io/playgrounds/cartographic-generalization/">cartography-playground</a> for easier hands-on.</p>
+</section>
 </section>
 <section id="task">
 <h2>Task<a class="headerlink" href="#task" title="Link to this heading">#</a></h2>
+<p>In this exercise, you will practice several <strong>fundamental cartographic generalization techniques</strong> in ArcGIS Pro.<br />
+The goal is to simplify and adapt map features for small-scale representation (1:25,000), while maintaining legibility and spatial logic.</p>
 <section id="overview">
 <h3>Overview<a class="headerlink" href="#overview" title="Link to this heading">#</a></h3>
+<ul class="contains-task-list simple">
+<li class="task-list-item"><p><input class="task-list-item-checkbox" disabled="disabled" type="checkbox"> <strong>Simplify Water Polygons</strong></p>
+<ul>
+<li><p>Reduce unnecessary nodes and smooth geometry of lakes and rivers.</p></li>
+</ul>
+</li>
+<li class="task-list-item"><p><input class="task-list-item-checkbox" disabled="disabled" type="checkbox"> <strong>Aggregate and Simplify Woodland Areas</strong></p>
+<ul>
+<li><p>Merge fragmented forest patches and generalize outlines while avoiding residential overlaps.</p></li>
+</ul>
+</li>
+<li class="task-list-item"><p><input class="task-list-item-checkbox" disabled="disabled" type="checkbox"> <strong>Exaggerate Watercourse Lines</strong></p>
+<ul>
+<li><p>Simplify and smooth creek geometries to emphasize characteristic curves.</p></li>
+</ul>
+</li>
+<li class="task-list-item"><p><input class="task-list-item-checkbox" disabled="disabled" type="checkbox"> <strong>Typify Double-Line Underground Features</strong></p>
+<ul>
+<li><p>Collapse double rail lines into single features.</p></li>
+</ul>
+</li>
+<li class="task-list-item"><p><input class="task-list-item-checkbox" disabled="disabled" type="checkbox"> <strong>Aggregate and Simplify Buildings</strong></p>
+<ul>
+<li><p>Combine small structures and preserve orthogonal forms.</p></li>
+</ul>
+</li>
+<li class="task-list-item"><p><input class="task-list-item-checkbox" disabled="disabled" type="checkbox"> <strong>Classify Land Use Layers</strong></p>
+<ul>
+<li><p>Merge land use types (e.g. grass, park, scrub) into generalized categories.</p></li>
+</ul>
+</li>
+<li class="task-list-item"><p><input class="task-list-item-checkbox" disabled="disabled" type="checkbox"> <strong>Select and Filter Road/Path Features</strong></p>
+<ul>
+<li><p>Retain only relevant road/path types for the final map scale.</p></li>
+</ul>
+</li>
+<li class="task-list-item"><p><input class="task-list-item-checkbox" disabled="disabled" type="checkbox"> <strong>Displace Point Symbols</strong></p>
+<ul>
+<li><p>Adjust symbol placement for better readability in dense areas.</p></li>
+</ul>
+</li>
+<li class="task-list-item"><p><input class="task-list-item-checkbox" disabled="disabled" type="checkbox"> <strong>Adjust Visual Layer Order</strong></p>
+<ul>
+<li><p>Organize and style layers to produce a clean and readable 1:25,000 map.</p></li>
+</ul>
+</li>
+</ul>
 </section>
 <section id="descriptions">
 <h3>Descriptions<a class="headerlink" href="#descriptions" title="Link to this heading">#</a></h3>
-<p>Detailed instructions in <a class="reference download internal" download="" href="../_downloads/7a483119f91e958862bae14f836118c1/Lesson%209.docx"><code class="xref download docutils literal notranslate"><span class="pre">Lesson</span> <span class="pre">0</span></code></a></p>
+<p>Detailed instructions in <a class="reference download internal" download="" href="../_downloads/7a483119f91e958862bae14f836118c1/Lesson%209.docx"><code class="xref download docutils literal notranslate"><span class="pre">Lesson</span> <span class="pre">9</span></code></a></p>
 <section id="data">
 <h4>Data<a class="headerlink" href="#data" title="Link to this heading">#</a></h4>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">E8_data.gbd</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Template.aprx</span></code></p></li>
+</ul>
+</section>
+<section id="simplify-water-polygons">
+<h4>1. Simplify Water Polygons<a class="headerlink" href="#simplify-water-polygons" title="Link to this heading">#</a></h4>
+<ul class="simple">
+<li><p>Select <code class="docutils literal notranslate"><span class="pre">osm_water</span></code> polygons &amp; Use <em>Simplify Polygon</em> with Douglas-Peucker algorithm.</p></li>
+<li><p>Then use <em>Smooth Polygon</em> with Bezier interpolation to refine shapes.</p></li>
+</ul>
+</section>
+<section id="aggregate-and-simplify-forests">
+<h4>2. Aggregate and Simplify Forests<a class="headerlink" href="#aggregate-and-simplify-forests" title="Link to this heading">#</a></h4>
+<ul class="simple">
+<li><p>Extract <code class="docutils literal notranslate"><span class="pre">forest</span></code> and <code class="docutils literal notranslate"><span class="pre">residential</span></code> land use from <code class="docutils literal notranslate"><span class="pre">osm_landuse</span></code>.</p></li>
+<li><p>Use <em>Aggregate Polygons</em> to merge forest patches.</p></li>
+<li><p>Use <em>Simplify Polygon</em> with Zhou-Jones algorithm, preserving boundaries with <code class="docutils literal notranslate"><span class="pre">residential</span></code> as a barrier.</p></li>
+<li><p>Apply <em>Smooth Polygon</em> to improve visual quality.</p></li>
+</ul>
+</section>
+<section id="exaggerate-watercourse-lines">
+<h4>3. Exaggerate Watercourse Lines<a class="headerlink" href="#exaggerate-watercourse-lines" title="Link to this heading">#</a></h4>
+<ul class="simple">
+<li><p>Use <em>Simplify Line</em> on <code class="docutils literal notranslate"><span class="pre">osm_waterways</span></code> with Douglas-Peucker.</p></li>
+<li><p>Prevent overlaps by adding <code class="docutils literal notranslate"><span class="pre">residential</span></code> as a barrier.</p></li>
+<li><p>Apply <em>Smooth Line</em> with Bezier interpolation to emphasize meandering.</p></li>
+</ul>
+</section>
+<section id="typify-underground-lines">
+<h4>4. Typify Underground Lines<a class="headerlink" href="#typify-underground-lines" title="Link to this heading">#</a></h4>
+<ul class="simple">
+<li><p>Use <em>Merge Divided Roads</em> on <code class="docutils literal notranslate"><span class="pre">osm_railways</span></code> to collapse parallel tracks into a single line.</p></li>
+<li><p>Filter by <code class="docutils literal notranslate"><span class="pre">code</span></code> field to merge only matching classes.</p></li>
+</ul>
+</section>
+<section id="aggregate-buildings">
+<h4>5. Aggregate Buildings<a class="headerlink" href="#aggregate-buildings" title="Link to this heading">#</a></h4>
+<ul class="simple">
+<li><p>Use <em>Aggregate Polygons</em> on <code class="docutils literal notranslate"><span class="pre">osm_buildings</span></code>.</p></li>
+<li><p>Enable <em>Preserve Orthogonal Shape</em> and add <code class="docutils literal notranslate"><span class="pre">osm_roads</span></code> as a barrier layer.</p></li>
+<li><p>Style generalized layer with dark grey fill, no outline.</p></li>
+</ul>
+</section>
+<section id="classify-land-use">
+<h4>6. Classify Land Use<a class="headerlink" href="#classify-land-use" title="Link to this heading">#</a></h4>
+<ul class="simple">
+<li><p>Combine green spaces (<code class="docutils literal notranslate"><span class="pre">park</span></code>, <code class="docutils literal notranslate"><span class="pre">grass</span></code>, <code class="docutils literal notranslate"><span class="pre">scrub</span></code>, <code class="docutils literal notranslate"><span class="pre">recreation_ground</span></code>) into a unified <code class="docutils literal notranslate"><span class="pre">park</span></code> layer.</p></li>
+<li><p>Merge <code class="docutils literal notranslate"><span class="pre">industrial</span></code> and <code class="docutils literal notranslate"><span class="pre">commercial</span></code> into one general use layer.</p></li>
+<li><p>Symbolize each layer with appropriate simple fills.</p></li>
+</ul>
+</section>
+<section id="select-and-symbolize-paths">
+<h4>7. Select and Symbolize Paths<a class="headerlink" href="#select-and-symbolize-paths" title="Link to this heading">#</a></h4>
+<ul class="simple">
+<li><p>In <code class="docutils literal notranslate"><span class="pre">osm_paths</span></code>, display only <code class="docutils literal notranslate"><span class="pre">track_grade5</span></code> class using <em>Symbology &gt; Unique Values</em>.</p></li>
+<li><p>Filter out other values and apply a simple gray line style.</p></li>
+</ul>
+</section>
+<section id="displace-point-symbols">
+<h4>8. Displace Point Symbols<a class="headerlink" href="#displace-point-symbols" title="Link to this heading">#</a></h4>
+<ul class="simple">
+<li><p>Manually move overlapping point symbols for better layout readability.</p></li>
+<li><p>Use <code class="docutils literal notranslate"><span class="pre">Modify</span> <span class="pre">Features</span> <span class="pre">&gt;</span> <span class="pre">Move</span></code> to reposition features without loss of meaning.</p></li>
+</ul>
+</section>
+<section id="adjust-layer-order-and-export">
+<h4>9. Adjust Layer Order and Export<a class="headerlink" href="#adjust-layer-order-and-export" title="Link to this heading">#</a></h4>
+<ul class="simple">
+<li><p>Style and order necessary layers properly.</p></li>
+<li><p>Export the 1:25,000 map layout to <em>PDF</em>.</p></li>
+</ul>
 </section>
 </section>
 <section id="optional-task">
@@ -502,11 +652,24 @@ document.write(`
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#warm-up">Warm Up</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#warm-up">Warm Up</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#the-coastline-paradox">The Coastline Paradox</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#some-facts">Some Facts</a></li>
+</ul>
+</li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#task">Task</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#overview">Overview</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#descriptions">Descriptions</a><ul class="nav section-nav flex-column">
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#data">Data</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#simplify-water-polygons">1. Simplify Water Polygons</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#aggregate-and-simplify-forests">2. Aggregate and Simplify Forests</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#exaggerate-watercourse-lines">3. Exaggerate Watercourse Lines</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#typify-underground-lines">4. Typify Underground Lines</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#aggregate-buildings">5. Aggregate Buildings</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#classify-land-use">6. Classify Land Use</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#select-and-symbolize-paths">7. Select and Symbolize Paths</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#displace-point-symbols">8. Displace Point Symbols</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#adjust-layer-order-and-export">9. Adjust Layer Order and Export</a></li>
 </ul>
 </li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#optional-task">Optional Task</a></li>

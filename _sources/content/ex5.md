@@ -64,7 +64,7 @@ The goal is to understand how spatial relationships can be modeled and analyzed 
   - Compute nearest public transport points for each café and visualize connections.  
 
 ### Descriptions & Steps
-Detailed instructions in {download}`Lesson 0 <../doc/Lesson 5.docx>`
+Detailed instructions in {download}`Lesson 5 <../doc/Lesson 5.docx>`
 
 #### Data
 - `Data Students.gdb` (Buildings, Roads, Underground Stations, Tram Stops, Cafés)
