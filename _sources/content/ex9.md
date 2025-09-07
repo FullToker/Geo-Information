@@ -12,9 +12,16 @@ In short, the coastline paradox illustrates that the length of a coastline incre
 
 > The Earth’s features are complex, but maps are finite. Generalization helps us balance truth and usability.
 
-### Some Facts
+### How Do We Measure Information?
+We often feel that more detail = more information. But is that really true? In cartography and map design, the concept of **user load** refers to the cognitive effort required to interpret and understand a map. It includes perceived complexity, visual density, and the mental processing burden on the user. 
 
-You can check [cartography-playground](https://cartography-playground.gitlab.io/playgrounds/cartographic-generalization/) for easier hands-on.
+On the other hand, there are also several **objective methods** for quantifying the amount of information a map contains, often borrowed from *information theory* and spatial data analysis. These include:
+
+- **Shannon Entropy**
+- **Symbol Density** 
+- **Compression Ratio** 
+
+> A good map strikes a balance—delivering the right amount of information without overwhelming the user.
 
 
 ## Task
@@ -90,5 +97,12 @@ Detailed instructions in {download}`Lesson 9 <../doc/Lesson 9.docx>`
 - Export the 1:25,000 map layout to *PDF*.
 
 ### Optional Task
+You can check [cartography-playground](https://cartography-playground.gitlab.io/playgrounds/cartographic-generalization/) for easier hands-on about catrographical generalization.
+
 
 ## Materials
+- [An overview of the Generalization toolset](https://pro.arcgis.com/en/pro-app/latest/tool-reference/cartography/an-overview-of-the-generalization-toolset.htm)
+- [A solution to the problem of the generalization of the Italian geographical databases from large to medium scale: approach definition, process design and operators implementation](https://kartographie.geo.tu-dresden.de/downloads/ica-gen/publications/savino.pdf)
+- [Understanding conflict resolution and generalization](https://pro.arcgis.com/en/pro-app/latest/tool-reference/cartography/understanding-conflict-resolution-and-generalization.htm)
+- [Cartographic generalization, from Wikipedia](https://en.wikipedia.org/wiki/Cartographic_generalization)
+- [Generalization in maps](https://docs.maptiler.com/guides/maps-apis/maps-platform/generalization-in-maps/)
