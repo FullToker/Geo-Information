@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Exercise0: Introduction &#8212; Geo-Information</title>
+    <title>E0: Introduction &#8212; Geo-Information</title>
   
   
   
@@ -62,7 +62,7 @@
     <link rel="icon" href="../_static/TUM.ico"/>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Exercise1: Selecting and Editinfg Features" href="ex1.html" />
+    <link rel="next" title="E1: Selecting and Editinfg Features" href="ex1.html" />
     <link rel="prev" title="Exercises" href="info_ex.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
@@ -102,8 +102,8 @@
          class="form-control"
          name="q"
          id="search-input"
-         placeholder="Search this book..."
-         aria-label="Search this book..."
+         placeholder="Search..."
+         aria-label="Search..."
          autocomplete="off"
          autocorrect="off"
          autocapitalize="off"
@@ -155,26 +155,24 @@
   
 </a></div>
         <div class="sidebar-primary-item">
-
- <script>
- document.write(`
-   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <i class="fa-solid fa-magnifying-glass"></i>
-    <span class="search-button__default-text">Search</span>
-    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
-   </button>
- `);
- </script></div>
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search..."
+         aria-label="Search..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
         <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item navbar-nav active">
-        
-        <ul class="nav bd-sidenav bd-sidenav__home-link">
-            <li class="toctree-l1">
-                <a class="reference internal" href="../README.html">
-                    Welcome to Geo-information 25-26WS
-                </a>
-            </li>
-        </ul>
         <ul class="current nav bd-sidenav">
 <li class="toctree-l1 has-children"><a class="reference internal" href="Home.html">About</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="about.html">Acknoledgement</a></li>
@@ -189,15 +187,15 @@
 </ul>
 </details></li>
 <li class="toctree-l1 current active has-children"><a class="reference internal" href="info_ex.html">Exercises</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
-<li class="toctree-l2 current active"><a class="current reference internal" href="#">Exercise0: Introduction</a></li>
-<li class="toctree-l2"><a class="reference internal" href="ex1.html">Exercise1: Selecting and Editinfg Features</a></li>
-<li class="toctree-l2"><a class="reference internal" href="ex2.html">Exercise 2: Symbolization in a GIS</a></li>
-<li class="toctree-l2"><a class="reference internal" href="ex3.html">Exercise3: Georeferencing and Modifying Features</a></li>
-<li class="toctree-l2"><a class="reference internal" href="ex4.html">Exercise4: 3D Visualization and 3D Animation</a></li>
-<li class="toctree-l2"><a class="reference internal" href="ex5.html">Exercise5: Spatial Analysis Methods</a></li>
-<li class="toctree-l2"><a class="reference internal" href="ex6.html">Exercise6: Vertical and Hydrological Analysis</a></li>
-<li class="toctree-l2"><a class="reference internal" href="ex7.html">Exercise7: Network Analysis</a></li>
-<li class="toctree-l2"><a class="reference internal" href="ex9.html">Exercise9: Generalization</a></li>
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">E0: Introduction</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ex1.html">E1: Selecting and Editinfg Features</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ex2.html">E2: Symbolization in a GIS</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ex3.html">E3: Georeferencing and Modifying Features</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ex4.html">E4: 3D Visualization and 3D Animation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ex5.html">E5: Spatial Analysis Methods</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ex6.html">E6: Vertical and Hydrological Analysis</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ex7.html">E7: Network Analysis</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ex9.html">E9: Generalization</a></li>
 </ul>
 </details></li>
 </ul>
@@ -241,70 +239,6 @@
         <div class="header-article-item">
 
 <div class="article-header-buttons">
-
-
-
-
-
-<div class="dropdown dropdown-source-buttons">
-  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
-    <i class="fab fa-github"></i>
-  </button>
-  <ul class="dropdown-menu">
-      
-      
-      
-      <li><a href="https://github.com/FullToker/Geo-Information" target="_blank"
-   class="btn btn-sm btn-source-repository-button dropdown-item"
-   title="Source repository"
-   data-bs-placement="left" data-bs-toggle="tooltip"
->
-  
-
-<span class="btn__icon-container">
-  <i class="fab fa-github"></i>
-  </span>
-<span class="btn__text-container">Repository</span>
-</a>
-</li>
-      
-      
-      
-      
-      <li><a href="https://github.com/FullToker/Geo-Information/edit/main/content/ex0.md" target="_blank"
-   class="btn btn-sm btn-source-edit-button dropdown-item"
-   title="Suggest edit"
-   data-bs-placement="left" data-bs-toggle="tooltip"
->
-  
-
-<span class="btn__icon-container">
-  <i class="fas fa-pencil-alt"></i>
-  </span>
-<span class="btn__text-container">Suggest edit</span>
-</a>
-</li>
-      
-      
-      
-      
-      <li><a href="https://github.com/FullToker/Geo-Information/issues/new?title=Issue%20on%20page%20%2Fcontent/ex0.html&body=Your%20issue%20content%20here." target="_blank"
-   class="btn btn-sm btn-source-issues-button dropdown-item"
-   title="Open an issue"
-   data-bs-placement="left" data-bs-toggle="tooltip"
->
-  
-
-<span class="btn__icon-container">
-  <i class="fas fa-lightbulb"></i>
-  </span>
-<span class="btn__text-container">Open issue</span>
-</a>
-</li>
-      
-  </ul>
-</div>
-
 
 
 
@@ -402,7 +336,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Exercise0: Introduction</h1>
+    <h1>E0: Introduction</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -412,15 +346,15 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#warm-up">Warm Up</a><ul class="nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#warm-up">Warm Up</a><ul class="visible nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#some-facts">Some Facts</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-structure">Exercise Structure</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#implementation">Implementation</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#task">Task</a><ul class="nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#task">Task</a><ul class="visible nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#overview">Overview</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#descriptions">Descriptions</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#descriptions">Descriptions</a><ul class="visible nav section-nav flex-column">
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#data">Data</a></li>
 </ul>
 </li>
@@ -439,8 +373,8 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="exercise0-introduction">
-<h1>Exercise0: Introduction<a class="headerlink" href="#exercise0-introduction" title="Link to this heading">#</a></h1>
+  <section class="tex2jax_ignore mathjax_ignore" id="e0-introduction">
+<h1>E0: Introduction<a class="headerlink" href="#e0-introduction" title="Link to this heading">#</a></h1>
 <section id="warm-up">
 <h2>Warm Up<a class="headerlink" href="#warm-up" title="Link to this heading">#</a></h2>
 <section id="some-facts">
@@ -623,7 +557,7 @@ we strongly recommend completing the exercise in the <strong>PC lab</strong>.</p
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Exercise1: Selecting and Editinfg Features</p>
+        <p class="prev-next-title">E1: Selecting and Editinfg Features</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -643,15 +577,15 @@ we strongly recommend completing the exercise in the <strong>PC lab</strong>.</p
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#warm-up">Warm Up</a><ul class="nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#warm-up">Warm Up</a><ul class="visible nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#some-facts">Some Facts</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-structure">Exercise Structure</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#implementation">Implementation</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#task">Task</a><ul class="nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#task">Task</a><ul class="visible nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#overview">Overview</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#descriptions">Descriptions</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#descriptions">Descriptions</a><ul class="visible nav section-nav flex-column">
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#data">Data</a></li>
 </ul>
 </li>

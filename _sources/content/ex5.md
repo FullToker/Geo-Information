@@ -1,4 +1,4 @@
-# Exercise5: Spatial Analysis Methods
+# E5: Spatial Analysis Methods
 
 ## Warm Up
 ### Some Facts

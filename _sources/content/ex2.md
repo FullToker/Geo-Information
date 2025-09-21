@@ -1,4 +1,4 @@
-# Exercise 2: Symbolization in a GIS
+# E2: Symbolization in a GIS
 
 ## Warm Up
 Firstly, let’s talk about what **symbolization** actually means.  

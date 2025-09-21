@@ -1,4 +1,4 @@
-# Exercise0: Introduction
+# E0: Introduction
 
 ## Warm Up
 

@@ -1,4 +1,4 @@
-# Exercise1: Selecting and Editinfg Features
+# E1: Selecting and Editinfg Features
 
 ## Warm Up
 Firstly, let’s take a moment to talk about a very important (and maybe slightly mysterious) word:

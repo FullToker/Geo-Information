@@ -1,4 +1,4 @@
-# Exercise9: Generalization
+# E9: Generalization
 
 ## Warm Up
 ### The Coastline Paradox

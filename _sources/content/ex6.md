@@ -1,4 +1,4 @@
-# Exercise6: Vertical and Hydrological Analysis
+# E6: Vertical and Hydrological Analysis
 
 ## Warm Up
 
