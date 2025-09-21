@@ -1,4 +1,4 @@
-# Exercise3: Georeferencing and Modifying Features
+# E3: Georeferencing and Modifying Features
 ## Warm Up
 
 You will find detailed guidance and general information about **CRS** (Coordinate Reference Systems) and **map projections** in another document associated with this exercise.  

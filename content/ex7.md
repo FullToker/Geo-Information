@@ -1,4 +1,4 @@
-# Exercise7: Network Analysis
+# E7: Network Analysis
 
 ## Warm Up
 ### Graph Theory & Graph Neural Networks

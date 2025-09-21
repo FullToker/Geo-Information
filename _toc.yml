@@ -9,6 +9,9 @@ entries:
   entries:
   - file: lectures/lec01
   - file: lectures/lec02
+  - file: lectures/lec03
+  - file: lectures/lec04
+  - file: lectures/lec05
 - file: content/info_ex
   title: Exercises
   entries:

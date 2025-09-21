@@ -12,6 +12,8 @@
 
 
 ## Course Structure
+
+[Lectures](../lectures/info_lec.md)
 1. Introduction to Geoinformation
 2. Spatial-temporal representations and databases
 3. Spatial data analysis I
@@ -62,3 +64,5 @@
 
 
 ## Exercises
+
+[Exercises](../content/info_ex.md)

@@ -1,4 +1,4 @@
-# Exercise4: 3D Visualization and 3D Animation
+# E4: 3D Visualization and 3D Animation
 ## Warm Up
 ### Common Types of 3D Data
 3D data can appear in many formats and domains:  

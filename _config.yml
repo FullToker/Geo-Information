@@ -8,8 +8,28 @@ html:
   use_repository_button: true
   use_issues_button: true
   use_edit_page_button: true
+  collapse_navigation: false  # Keep TOC expanded
+  show_navbar_depth: 3        # Show up to 3 levels in navbar
+  expand_subsections: true    # Expand all subsections by default
+  show_toc_level: 3           # Show up to 3 levels in right sidebar TOC
+  use_multitoc_numbering: true # Enable numbering across chapters
+
+# Enable global table of contents in right sidebar
+sphinx:
+  config:
+    html_show_sourcelink: false
+    html_sidebars:
+      "**": ["navbar-logo.html", "search-field.html", "sbt-sidebar-nav.html"]
+    html_theme_options:
+      show_toc_level: 3
+      navigation_depth: 3
+      globaltoc_depth: 3
+      globaltoc_collapse: false
+      globaltoc_includehidden: true
 
 repository:
   url: https://github.com/FullToker/Geo-Information
   path_to_book: ""
   branch: main
+
+include_patterns: ["src/**", "*.pdf"]
