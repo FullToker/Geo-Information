@@ -1,4 +1,4 @@
-# Home Page
+# Welcome
 ## Overview
 - Format: Lecture + Exercise
 - Exam: 
@@ -29,12 +29,12 @@ If you really want to learn, go beyond AI:
 ```
 
 
-- [Ex0](./ex0.md): Introduction
-- [Ex1](./ex1.md): Selecting and Editinfg Features
-- [Ex2](./ex2.md): Symbolization in a GIS
-- [Ex3](./ex3.md): Georeferencing and Modifying Features
-- [Ex4](./ex4.md): 3D Visualization and 3D Animation
-- [Ex5](./ex5.md): Spatial Analysis Methods
-- [Ex6](./ex6.md): Vertical and Hydrological Analysis
-- [Ex7](./ex7.md): Network Analysis
-- [Ex9](./ex9.md): Generalization
+- [E0](./ex0.md): Introduction
+- [E1](./ex1.md): Selecting and Editinfg Features
+- [E2](./ex2.md): Symbolization in a GIS
+- [E3](./ex3.md): Georeferencing and Modifying Features
+- [E4](./ex4.md): 3D Visualization and 3D Animation
+- [E5](./ex5.md): Spatial Analysis Methods
+- [E6](./ex6.md): Vertical and Hydrological Analysis
+- [E7](./ex7.md): Network Analysis
+- [E9](./ex9.md): Generalization
