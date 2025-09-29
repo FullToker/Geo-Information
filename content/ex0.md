@@ -66,6 +66,8 @@ we strongly recommend completing the exercise in the **PC lab**.
 ### Descriptions
 Detailed instructions in {download}`Lesson 0 <../doc/Lesson 0.docx>`
 
+& You can [Click here to look](./lessons/lesson0.md)
+
 #### Data 
 - Data-students.gdb
 

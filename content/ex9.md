@@ -50,6 +50,8 @@ The goal is to simplify and adapt map features for small-scale representation (1
 ### Descriptions
 Detailed instructions in {download}`Lesson 9 <../doc/Lesson 9.docx>`
 
+& You can [Click here to look](./lessons/lesson9.md)
+
 
 #### Data
 - `E8_data.gbd`  

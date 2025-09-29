@@ -26,6 +26,7 @@ sphinx:
       globaltoc_depth: 3
       globaltoc_collapse: false
       globaltoc_includehidden: true
+    html_extra_path: ['src'] 
 
 repository:
   url: https://github.com/FullToker/Geo-Information

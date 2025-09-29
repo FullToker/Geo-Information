@@ -66,6 +66,8 @@ The goal is to understand how elevation and terrain influence visibility, water 
 ### Descriptions & Steps
 Detailed instructions in {download}`Lesson 6 <../doc/[Outdated] Lesson 6.docx>`
 
+& You can [Click here to look](./lessons/lesson6.md)
+
 #### Data
 - `DEM_50m_Zugsp.tif`  
 - `LandCover.tif`  

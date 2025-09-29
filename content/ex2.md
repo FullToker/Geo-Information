@@ -57,6 +57,8 @@ You will build on the project based on the _**Students.gdb**_ and the project yo
 ### Descriptions & Steps
 Detailed instructions in {download}`Lesson 2 <../doc/Lesson 2.docx>`
 
+& You can [Click here to look](./lessons/lesson2.md)
+
 #### 1. Uniform Symbolization – Bus Stops
 - Add **bus_stops** layer from `Data Students.gdb`.
 - Use **Single Symbol** style → choose an appropriate point symbol from the gallery.

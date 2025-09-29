@@ -80,6 +80,8 @@ In this exercise, you’ll deepen your understanding of **coordinate reference s
 ### Descriptions & Steps
 Detailed instructions in {download}`Lesson 3 <../doc/Lesson 3.docx>`
 
+& You can [Click here to look](./lessons/lesson3.md)
+
 #### Data
   - `Data Students.gdb`
   - `orthophoto.tif`
