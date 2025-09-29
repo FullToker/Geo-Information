@@ -64,7 +64,7 @@
 
 
 
-## Exam
+## Important dates
 
 ## Exercises
 
