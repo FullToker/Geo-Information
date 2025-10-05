@@ -372,9 +372,11 @@ document.write(`
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#task">Task</a><ul class="visible nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#overview">Overview</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#descriptions-steps">Descriptions &amp; Steps</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#descriptions">Descriptions</a><ul class="visible nav section-nav flex-column">
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#data">Data</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#overview">Overview</a><ul class="visible nav section-nav flex-column">
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#preparing-and-extruding-buildings">1. Preparing and Extruding Buildings</a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#coordinate-system-navigation">2. Coordinate System &amp; Navigation</a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#digitizing-new-3d-features">3. Digitizing New 3D Features</a></li>
@@ -383,7 +385,7 @@ document.write(`
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#creating-a-3d-animation">6. Creating a 3D Animation</a></li>
 </ul>
 </li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#optional-task">Optional Task</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#advance-task">Advance Task</a></li>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#materials">Materials</a></li>
@@ -410,9 +412,14 @@ document.write(`
 <li><p><strong>Meshes</strong> 🕸️ (triangular or polygonal surfaces from 3D modeling)</p></li>
 <li><p><strong>Voxel data</strong> 🧊 (3D pixels, often used in medical imaging or volumetric models)</p></li>
 <li><p><strong>3D building models</strong> 🏢 (e.g., CityGML, BIM data, CAD models)</p></li>
-<li><p><strong>DEM/DSM</strong> (Digital Elevation/Surface Models, raster grids with height values)
-<img alt="Illustration of 3D data" src="../_images/3D-data-diff.ppm" /></p></li>
+<li><p><strong>DEM/DSM</strong> (Digital Elevation/Surface Models, raster grids with height values)</p></li>
 </ul>
+<figure class="align-default" id="illustration-of-3d-data">
+<img alt="../_images/3D-data-diff.ppm" src="../_images/3D-data-diff.ppm" />
+<figcaption>
+<p><span class="caption-number">Fig. 3 </span><span class="caption-text">The illustration of various of 3D data</span><a class="headerlink" href="#illustration-of-3d-data" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
 </section>
 <section id="d-pseudo-3d-vs-3d-data">
 <h3>2.5D(Pseudo 3D) vs. 3D Data<a class="headerlink" href="#d-pseudo-3d-vs-3d-data" title="Link to this heading">#</a></h3>
@@ -424,27 +431,27 @@ document.write(`
 </tr>
 </thead>
 <tbody>
-<tr class="row-even"><td><p>Geometry</p></td>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">Geometry</span></code></p></td>
 <td><p>One z-value per (x, y)</p></td>
 <td><p>Multiple z-values per (x, y) possible</p></td>
 </tr>
-<tr class="row-odd"><td><p>Representation</p></td>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">Representation</span></code></p></td>
 <td><p>Raster grid (DEM/DSM), extruded polygons</p></td>
 <td><p>Point clouds, meshes, voxels, solids</p></td>
 </tr>
-<tr class="row-even"><td><p>Complexity</p></td>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">Complexity</span></code></p></td>
 <td><p>Relatively simple</p></td>
 <td><p>More complex data structures</p></td>
 </tr>
-<tr class="row-odd"><td><p>Storage &amp; Processing</p></td>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">Storage</span> <span class="pre">&amp;</span> <span class="pre">Processing</span></code></p></td>
 <td><p>Lightweight, fast</p></td>
 <td><p>Heavy, requires advanced computation</p></td>
 </tr>
-<tr class="row-even"><td><p>Can model overlaps?</p></td>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">Can</span> <span class="pre">model</span> <span class="pre">overlaps?</span></code></p></td>
 <td><p>❌ No</p></td>
 <td><p>✅ Yes (bridges, tunnels, multi-floors)</p></td>
 </tr>
-<tr class="row-odd"><td><p>Main Use Cases</p></td>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">Main</span> <span class="pre">Use</span> <span class="pre">Cases</span></code></p></td>
 <td><p>Terrain, surface analysis, quick 3D view</p></td>
 <td><p>Urban modeling, subsurface, indoor 3D</p></td>
 </tr>
@@ -520,9 +527,26 @@ Broadly speaking, there are two ways: <strong>direct measurement</strong> (senso
 </section>
 <section id="task">
 <h2>Task<a class="headerlink" href="#task" title="Link to this heading">#</a></h2>
-<p>In this exercise, you’ll move from <strong>2D mapping</strong> to <strong>3D visualization</strong> in ArcGIS Pro. You will set up and display spatial information in three dimensions, create realistic <strong>3D symbols</strong> for buildings, street furniture, and monuments, capture GNSS points, and finish by producing a <strong>3D animation</strong> and exporting it as a video.</p>
+<section id="descriptions">
+<h3>Descriptions<a class="headerlink" href="#descriptions" title="Link to this heading">#</a></h3>
+<p>In this exercise, you’ll move from <strong>2D mapping</strong> to <strong>3D visualization</strong> in ArcGIS Pro. You will set up and display spatial information in three dimensions, create realistic <strong>3D symbols</strong> for buildings, street furniture, and monuments, capture GNSS points, and finish by producing a <strong>3D animation</strong> and exporting it as a video. Detailed instructions in <a class="reference download internal" download="" href="../_downloads/75b66c340cf97363c3f1aba51e542a73/Lesson%204.docx"><code class="xref download docutils literal notranslate"><span class="pre">Lesson</span> <span class="pre">4</span></code></a></p>
+<p>&amp; You can <a class="reference internal" href="lessons/lesson4.html"><span class="std std-doc">Click here to look</span></a></p>
+<section id="data">
+<h4>Data<a class="headerlink" href="#data" title="Link to this heading">#</a></h4>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">Data</span> <span class="pre">Students.gdb</span></code> (buildings, roads)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Park-cadastral.tif</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">TUM.dae</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Old_Pinakothek.dae</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Monuments.gpx</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Track.gpx</span></code></p></li>
+</ul>
+</section>
+</section>
 <section id="overview">
 <h3>Overview<a class="headerlink" href="#overview" title="Link to this heading">#</a></h3>
+<div class="dropdown admonition note">
+<p class="admonition-title">Note</p>
 <ul class="contains-task-list simple">
 <li class="task-list-item"><p><input class="task-list-item-checkbox" disabled="disabled" type="checkbox"> <strong>Prepare building layer and extrude into 3D</strong></p>
 <ul>
@@ -565,23 +589,7 @@ Broadly speaking, there are two ways: <strong>direct measurement</strong> (senso
 </ul>
 </li>
 </ul>
-</section>
-<hr class="docutils" />
-<section id="descriptions-steps">
-<h3>Descriptions &amp; Steps<a class="headerlink" href="#descriptions-steps" title="Link to this heading">#</a></h3>
-<p>Detailed instructions in <a class="reference download internal" download="" href="../_downloads/75b66c340cf97363c3f1aba51e542a73/Lesson%204.docx"><code class="xref download docutils literal notranslate"><span class="pre">Lesson</span> <span class="pre">4</span></code></a></p>
-<p>&amp; You can <a class="reference internal" href="lessons/lesson4.html"><span class="std std-doc">Click here to look</span></a></p>
-<section id="data">
-<h4>Data<a class="headerlink" href="#data" title="Link to this heading">#</a></h4>
-<ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">Data</span> <span class="pre">Students.gdb</span></code> (buildings, roads)</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">Park-cadastral.tif</span></code></p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">TUM.dae</span></code></p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">Old_Pinakothek.dae</span></code></p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">Monuments.gpx</span></code></p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">Track.gpx</span></code></p></li>
-</ul>
-</section>
+</div>
 <section id="preparing-and-extruding-buildings">
 <h4>1. Preparing and Extruding Buildings<a class="headerlink" href="#preparing-and-extruding-buildings" title="Link to this heading">#</a></h4>
 <ul class="simple">
@@ -631,18 +639,46 @@ Broadly speaking, there are two ways: <strong>direct measurement</strong> (senso
 </section>
 </section>
 <hr class="docutils" />
-<section id="optional-task">
-<h3>Optional Task<a class="headerlink" href="#optional-task" title="Link to this heading">#</a></h3>
+<section id="advance-task">
+<h3>Advance Task<a class="headerlink" href="#advance-task" title="Link to this heading">#</a></h3>
 <ul class="simple">
-<li><p><strong>Write a script</strong></p>
+<li><p>Automate the workflow
+Try scripting repetitive steps such as updating attributes, extruding buildings, or converting data.</p></li>
+</ul>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Update Building Heights from CSV</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">arcpy</span>
+<span class="n">building_fc</span> <span class="o">=</span> <span class="s2">&quot;path/to/Buildings&quot;</span>
+<span class="n">csv_table</span> <span class="o">=</span> <span class="s2">&quot;path/to/building_heights.csv&quot;</span>
+<span class="n">arcpy</span><span class="o">.</span><span class="n">management</span><span class="o">.</span><span class="n">AddJoin</span><span class="p">(</span><span class="n">building_fc</span><span class="p">,</span> <span class="s2">&quot;building_id&quot;</span><span class="p">,</span> <span class="n">csv_table</span><span class="p">,</span> <span class="s2">&quot;building_id&quot;</span><span class="p">)</span>
+<span class="n">expression</span> <span class="o">=</span> <span class="s2">&quot;!building_heights.levels! * 4&quot;</span>
+<span class="n">arcpy</span><span class="o">.</span><span class="n">management</span><span class="o">.</span><span class="n">CalculateField</span><span class="p">(</span><span class="n">building_fc</span><span class="p">,</span> <span class="s2">&quot;extrude_height&quot;</span><span class="p">,</span> <span class="n">expression</span><span class="p">,</span> <span class="s2">&quot;PYTHON3&quot;</span><span class="p">)</span>
+
+<span class="c1"># Convert GPX to Shapefile (Python + Geopandas)</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">geopandas</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">gpd</span>
+<span class="n">gpx_file</span> <span class="o">=</span> <span class="s2">&quot;monuments.gpx&quot;</span>
+<span class="n">points</span> <span class="o">=</span> <span class="n">gpd</span><span class="o">.</span><span class="n">read_file</span><span class="p">(</span><span class="n">gpx_file</span><span class="p">,</span> <span class="n">layer</span><span class="o">=</span><span class="s1">&#39;waypoints&#39;</span><span class="p">)</span>
+<span class="n">points</span><span class="o">.</span><span class="n">to_file</span><span class="p">(</span><span class="s2">&quot;monuments.shp&quot;</span><span class="p">,</span> <span class="n">driver</span><span class="o">=</span><span class="s2">&quot;ESRI Shapefile&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li><p><strong>Exploring Heights Across Coordinate Systems</strong>
+<strong>Elevation (Z-values)</strong> is not as straightforward as it seems. The meaning and interpretation of “height” depends heavily on the <strong>coordinate system</strong> in use. You can investigate how <strong>height values</strong> described on the different spatial reference system.</p></li>
+<li><p><strong>Visualize Real Flight Trajectories in 3D</strong></p>
 <ul>
-<li><p>Update building heights from a CSV file and re-extrude buildings.</p></li>
-<li><p>Automate GPX-to-shapefile conversion (e.g., using <code class="docutils literal notranslate"><span class="pre">ogr2ogr</span></code> or <code class="docutils literal notranslate"><span class="pre">geopandas</span></code>).</p></li>
+<li><p>Explore <strong>real-world aviation data</strong>, download a flight track, visualize it as a <strong>3D path</strong> in <strong>Google Earth</strong> or <strong>ArcGIS Pro</strong>, and see how these data is organized.</p></li>
+<li><p>Download and process Real Flight Data from flight websites like:</p>
+<ul>
+<li><p><a class="reference external" href="https://www.flightradar24.com/">FlightRadar24</a></p></li>
+<li><p><a class="reference external" href="https://opensky-network.org/">OpenSky Network</a></p></li>
+<li><p><a class="reference external" href="https://globe.adsbexchange.com/">ADS-B Exchange</a></p></li>
+<li><p><a class="reference external" href="https://www.gpsvisualizer.com/map_input?form=googleearth">GPSVisualizer</a></p></li>
 </ul>
 </li>
-<li><p><strong>Build your own 3D scene on the web</strong> using <a class="reference external" href="https://cesium.com/">Cesium</a></p>
+<li><p>Visualize in <a class="reference external" href="https://earth.google.com/web/">Google Earth</a></p>
 <ul>
-<li><p>Start with example datasets or use the building/monument data from this exercise.</p></li>
+<li><p>Google Earth can directly open <strong>KML</strong> or <strong>GPX</strong> files with 3D elevation data.</p></li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>
@@ -740,9 +776,11 @@ Broadly speaking, there are two ways: <strong>direct measurement</strong> (senso
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#task">Task</a><ul class="visible nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#overview">Overview</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#descriptions-steps">Descriptions &amp; Steps</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#descriptions">Descriptions</a><ul class="visible nav section-nav flex-column">
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#data">Data</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#overview">Overview</a><ul class="visible nav section-nav flex-column">
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#preparing-and-extruding-buildings">1. Preparing and Extruding Buildings</a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#coordinate-system-navigation">2. Coordinate System &amp; Navigation</a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#digitizing-new-3d-features">3. Digitizing New 3D Features</a></li>
@@ -751,7 +789,7 @@ Broadly speaking, there are two ways: <strong>direct measurement</strong> (senso
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#creating-a-3d-animation">6. Creating a 3D Animation</a></li>
 </ul>
 </li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#optional-task">Optional Task</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#advance-task">Advance Task</a></li>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#materials">Materials</a></li>

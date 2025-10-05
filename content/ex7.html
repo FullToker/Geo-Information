@@ -365,9 +365,11 @@ document.write(`
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#task">Task</a><ul class="visible nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#overview">Overview</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#descriptions-steps">Descriptions &amp; Steps</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#descriptions">Descriptions</a><ul class="visible nav section-nav flex-column">
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#data">Data</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#overview">Overview</a><ul class="visible nav section-nav flex-column">
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#build-the-network-dataset">1. Build the Network Dataset</a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#explore-the-network">2. Explore the Network</a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#od-cost-matrix">3. OD Cost Matrix</a></li>
@@ -376,7 +378,7 @@ document.write(`
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#isochrones-service-areas">6. Isochrones (Service Areas)</a></li>
 </ul>
 </li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#optional-task">Optional Task</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#advance-task">Advance Task</a></li>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#materials">Materials</a></li>
@@ -399,8 +401,13 @@ document.write(`
 <h3>Graph Theory &amp; Graph Neural Networks<a class="headerlink" href="#graph-theory-graph-neural-networks" title="Link to this heading">#</a></h3>
 <p>Closely related to <strong>network analysis</strong> are the fields of <strong>graph theory</strong> and <strong>graph neural networks (GNNs)</strong>.</p>
 <p>Graph theory originates from the famous <strong>Königsberg Seven Bridges Problem</strong> proposed by Euler in the 18th century. He asked whether it was possible to walk through the city of Königsberg and cross each of its seven bridges exactly once.
-Although the answer was “no,” this puzzle laid the foundation for graph theory — the mathematical study of <strong>nodes (vertices)</strong> and <strong>edges (links)</strong>.<br />
-<img alt="Seven Bridges Problem" src="../_images/Konigsberg_bridges.png" /></p>
+Although the answer was “no,” this puzzle laid the foundation for graph theory — the mathematical study of <strong>nodes (vertices)</strong> and <strong>edges (links)</strong>.</p>
+<figure class="align-default" id="seven-bridges-problem">
+<img alt="../_images/Konigsberg_bridges.png" src="../_images/Konigsberg_bridges.png" />
+<figcaption>
+<p><span class="caption-number">Fig. 4 </span><span class="caption-text">The illustration of Königsberg Bridge problem</span><a class="headerlink" href="#seven-bridges-problem" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
 <blockquote>
 <div><p>In graph theory, a tree is essentially a special kind of graph — one that is connected and contains no cycles.</p>
 </div></blockquote>
@@ -449,10 +456,22 @@ In 2024, it was even proved to have <strong>Universal Optimality</strong> (meani
 </section>
 <section id="task">
 <h2>Task<a class="headerlink" href="#task" title="Link to this heading">#</a></h2>
+<section id="descriptions">
+<h3>Descriptions<a class="headerlink" href="#descriptions" title="Link to this heading">#</a></h3>
 <p>In this exercise, you will practice several <strong>fundamental network analysis methods</strong> in ArcGIS Pro.<br />
-The goal is to understand how networks can be built from road data and analyzed for accessibility, connectivity, and routing problems.</p>
+The goal is to understand how networks can be built from road data and analyzed for accessibility, connectivity, and routing problems. Detailed instructions in <a class="reference download internal" download="" href="../_downloads/3f9b920cacde8a567a57c1af93c1b5ed/Lesson%207.docx"><code class="xref download docutils literal notranslate"><span class="pre">Lesson</span> <span class="pre">7</span></code></a></p>
+<p>&amp; You can <a class="reference internal" href="lessons/lesson7.html"><span class="std std-doc">Click here to look</span></a></p>
+<section id="data">
+<h4>Data<a class="headerlink" href="#data" title="Link to this heading">#</a></h4>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">Data</span> <span class="pre">Students.gdb</span></code></p></li>
+</ul>
+</section>
+</section>
 <section id="overview">
 <h3>Overview<a class="headerlink" href="#overview" title="Link to this heading">#</a></h3>
+<div class="dropdown admonition note">
+<p class="admonition-title">Note</p>
 <ul class="contains-task-list simple">
 <li class="task-list-item"><p><input class="task-list-item-checkbox" disabled="disabled" type="checkbox"> <strong>Build a network dataset</strong></p>
 <ul>
@@ -485,18 +504,8 @@ The goal is to understand how networks can be built from road data and analyzed 
 </ul>
 </li>
 </ul>
-</section>
+</div>
 <hr class="docutils" />
-<section id="descriptions-steps">
-<h3>Descriptions &amp; Steps<a class="headerlink" href="#descriptions-steps" title="Link to this heading">#</a></h3>
-<p>Detailed instructions in <a class="reference download internal" download="" href="../_downloads/3f9b920cacde8a567a57c1af93c1b5ed/Lesson%207.docx"><code class="xref download docutils literal notranslate"><span class="pre">Lesson</span> <span class="pre">7</span></code></a></p>
-<p>&amp; You can <a class="reference internal" href="lessons/lesson7.html"><span class="std std-doc">Click here to look</span></a></p>
-<section id="data">
-<h4>Data<a class="headerlink" href="#data" title="Link to this heading">#</a></h4>
-<ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">Data</span> <span class="pre">Students.gdb</span></code></p></li>
-</ul>
-</section>
 <section id="build-the-network-dataset">
 <h4>1. Build the Network Dataset<a class="headerlink" href="#build-the-network-dataset" title="Link to this heading">#</a></h4>
 <ul class="simple">
@@ -541,8 +550,8 @@ The goal is to understand how networks can be built from road data and analyzed 
 </ul>
 </section>
 </section>
-<section id="optional-task">
-<h3>Optional Task<a class="headerlink" href="#optional-task" title="Link to this heading">#</a></h3>
+<section id="advance-task">
+<h3>Advance Task<a class="headerlink" href="#advance-task" title="Link to this heading">#</a></h3>
 <ul class="simple">
 <li><p>Explore network analysis in your programming environment. You can start with these examples:</p>
 <ul>
@@ -551,14 +560,29 @@ The goal is to understand how networks can be built from road data and analyzed 
 <li><p><a class="reference external" href="https://programminghistorian.org/en/lessons/exploring-and-analyzing-network-data-with-python">Exploring and Analyzing Network Data with Python</a></p></li>
 </ul>
 </li>
-<li><p>Build your own interactive web map:</p>
+<li><p>Export OD Cost Matrix and Analyze with Excel or Python</p>
 <ul>
-<li><p>Choose two locations and compute the <strong>shortest path</strong> using a web map service.</p></li>
-<li><p>Set different travel modes (car, bicycle, or foot) and compare routes.</p></li>
-<li><p>Select one location, define a radius, and <strong>visualize the buffer area</strong> on the map.</p></li>
+<li><p>Use the OD Cost Matrix tool to generate <strong>a full matrix</strong> between multiple origins and destinations (e.g., cafes and tram stops).</p></li>
+<li><p>Export the table to <code class="docutils literal notranslate"><span class="pre">.csv</span></code>.</p></li>
+<li><p>Open in <strong>Excel</strong> or <strong>Pandas</strong>, visualize and explore:</p>
+<ul>
+<li><p>Which pair has the shortest distance?</p></li>
+<li><p>Are there any unreachable destinations?</p></li>
+<li><p>Plot a histogram of cost values.</p></li>
 </ul>
 </li>
 </ul>
+</li>
+</ul>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">pandas</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pd</span>
+<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">&quot;OD_cost_matrix.csv&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">describe</span><span class="p">())</span>
+
+<span class="c1"># Find shortest trip</span>
+<span class="n">shortest</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;Total_Minutes&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;Total_Minutes&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">min</span><span class="p">()]</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">shortest</span><span class="p">)</span>
+</pre></div>
+</div>
 </section>
 </section>
 <section id="materials">
@@ -643,9 +667,11 @@ The goal is to understand how networks can be built from road data and analyzed 
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#task">Task</a><ul class="visible nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#overview">Overview</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#descriptions-steps">Descriptions &amp; Steps</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#descriptions">Descriptions</a><ul class="visible nav section-nav flex-column">
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#data">Data</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#overview">Overview</a><ul class="visible nav section-nav flex-column">
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#build-the-network-dataset">1. Build the Network Dataset</a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#explore-the-network">2. Explore the Network</a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#od-cost-matrix">3. OD Cost Matrix</a></li>
@@ -654,7 +680,7 @@ The goal is to understand how networks can be built from road data and analyzed 
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#isochrones-service-areas">6. Isochrones (Service Areas)</a></li>
 </ul>
 </li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#optional-task">Optional Task</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#advance-task">Advance Task</a></li>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#materials">Materials</a></li>

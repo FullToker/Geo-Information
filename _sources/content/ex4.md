@@ -7,19 +7,24 @@
 - **Voxel data** 🧊 (3D pixels, often used in medical imaging or volumetric models)  
 - **3D building models** 🏢 (e.g., CityGML, BIM data, CAD models)  
 - **DEM/DSM** (Digital Elevation/Surface Models, raster grids with height values)
-![Illustration of 3D data](../images/ex4/3D-data-diff.ppm "The illustration of various of 3D data")
+```{figure} ../images/ex4/3D-data-diff.ppm
+---
+name: Illustration-of-3D-data
+---
+The illustration of various of 3D data
+```
 
 
 ### 2.5D(Pseudo 3D) vs. 3D Data
 
 | Aspect               | 2.5D (Pseudo-3D)                        | True 3D                                  |
 |----------------------|------------------------------------------|------------------------------------------|
-| Geometry             | One z-value per (x, y)                   | Multiple z-values per (x, y) possible    |
-| Representation       | Raster grid (DEM/DSM), extruded polygons | Point clouds, meshes, voxels, solids     |
-| Complexity           | Relatively simple                       | More complex data structures             |
-| Storage & Processing | Lightweight, fast                        | Heavy, requires advanced computation     |
-| Can model overlaps?  | ❌ No                                    | ✅ Yes (bridges, tunnels, multi-floors)  |
-| Main Use Cases       | Terrain, surface analysis, quick 3D view | Urban modeling, subsurface, indoor 3D    |
+| `Geometry`            | One z-value per (x, y)                   | Multiple z-values per (x, y) possible    |
+| `Representation`       | Raster grid (DEM/DSM), extruded polygons | Point clouds, meshes, voxels, solids     |
+| `Complexity`           | Relatively simple                       | More complex data structures             |
+| `Storage & Processing` | Lightweight, fast                        | Heavy, requires advanced computation     |
+| `Can model overlaps?`  | ❌ No                                    | ✅ Yes (bridges, tunnels, multi-floors)  |
+| `Main Use Cases`       | Terrain, surface analysis, quick 3D view | Urban modeling, subsurface, indoor 3D    |
 
 - **2.5D is enough** when you only care about terrain or building heights.  
 - **True 3D is necessary** when you need full volumetric analysis or overlapping structures.  
@@ -62,9 +67,23 @@ Broadly speaking, there are two ways: **direct measurement** (sensors record 3D 
 ```
 
 ## Task
-In this exercise, you’ll move from **2D mapping** to **3D visualization** in ArcGIS Pro. You will set up and display spatial information in three dimensions, create realistic **3D symbols** for buildings, street furniture, and monuments, capture GNSS points, and finish by producing a **3D animation** and exporting it as a video.
+### Descriptions
+In this exercise, you’ll move from **2D mapping** to **3D visualization** in ArcGIS Pro. You will set up and display spatial information in three dimensions, create realistic **3D symbols** for buildings, street furniture, and monuments, capture GNSS points, and finish by producing a **3D animation** and exporting it as a video. Detailed instructions in {download}`Lesson 4 <../doc/Lesson 4.docx>`
+
+& You can [Click here to look](./lessons/lesson4.md)
+
+#### Data
+  - `Data Students.gdb` (buildings, roads)  
+  - `Park-cadastral.tif`  
+  - `TUM.dae`  
+  - `Old_Pinakothek.dae`  
+  - `Monuments.gpx`  
+  - `Track.gpx`
+
 
 ### Overview
+```{note}
+:class: dropdown
 - [ ] **Prepare building layer and extrude into 3D**
   - assign heights and visualize buildings in three dimensions.  
 - [ ] **Create and manage a Local Scene** 
@@ -81,21 +100,8 @@ In this exercise, you’ll move from **2D mapping** to **3D visualization** in A
   - set camera paths, transparency changes, and annotations.  
 - [ ] **Export animation to video** 
   - produce a shareable MP4 file and submit.  
+```
 
----
-
-### Descriptions & Steps
-Detailed instructions in {download}`Lesson 4 <../doc/Lesson 4.docx>`
-
-& You can [Click here to look](./lessons/lesson4.md)
-
-#### Data
-  - `Data Students.gdb` (buildings, roads)  
-  - `Park-cadastral.tif`  
-  - `TUM.dae`  
-  - `Old_Pinakothek.dae`  
-  - `Monuments.gpx`  
-  - `Track.gpx`
 
 #### 1. Preparing and Extruding Buildings
 - Select buildings with `level_num` = 0 or NULL and assign default value **3**.
@@ -128,12 +134,37 @@ Detailed instructions in {download}`Lesson 4 <../doc/Lesson 4.docx>`
 
 ---
 
-### Optional Task
-- **Write a script**  
-  - Update building heights from a CSV file and re-extrude buildings.  
-  - Automate GPX-to-shapefile conversion (e.g., using `ogr2ogr` or `geopandas`).  
-- **Build your own 3D scene on the web** using [Cesium](https://cesium.com/) 
-  - Start with example datasets or use the building/monument data from this exercise. 
+### Advance Task
+- Automate the workflow
+  Try scripting repetitive steps such as updating attributes, extruding buildings, or converting data.
+```{code} python
+# Update Building Heights from CSV
+import arcpy
+building_fc = "path/to/Buildings"
+csv_table = "path/to/building_heights.csv"
+arcpy.management.AddJoin(building_fc, "building_id", csv_table, "building_id")
+expression = "!building_heights.levels! * 4"
+arcpy.management.CalculateField(building_fc, "extrude_height", expression, "PYTHON3")
+
+# Convert GPX to Shapefile (Python + Geopandas)
+import geopandas as gpd
+gpx_file = "monuments.gpx"
+points = gpd.read_file(gpx_file, layer='waypoints')
+points.to_file("monuments.shp", driver="ESRI Shapefile")
+```
+- **Exploring Heights Across Coordinate Systems**
+**Elevation (Z-values)** is not as straightforward as it seems. The meaning and interpretation of “height” depends heavily on the **coordinate system** in use. You can investigate how **height values** described on the different spatial reference system.
+
+- **Visualize Real Flight Trajectories in 3D**
+  - Explore **real-world aviation data**, download a flight track, visualize it as a **3D path** in **Google Earth** or **ArcGIS Pro**, and see how these data is organized.
+  - Download and process Real Flight Data from flight websites like:
+    - [FlightRadar24](https://www.flightradar24.com/)  
+    - [OpenSky Network](https://opensky-network.org/)  
+    - [ADS-B Exchange](https://globe.adsbexchange.com/)
+    - [GPSVisualizer](https://www.gpsvisualizer.com/map_input?form=googleearth)
+  - Visualize in [Google Earth](https://earth.google.com/web/)
+    - Google Earth can directly open **KML** or **GPX** files with 3D elevation data.
+
 ---
 
 ## Materials

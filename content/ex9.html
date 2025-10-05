@@ -364,9 +364,11 @@ document.write(`
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#task">Task</a><ul class="visible nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#overview">Overview</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#descriptions">Descriptions</a><ul class="visible nav section-nav flex-column">
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#data">Data</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#overview">Overview</a><ul class="visible nav section-nav flex-column">
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#simplify-water-polygons">1. Simplify Water Polygons</a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#aggregate-and-simplify-forests">2. Aggregate and Simplify Forests</a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#exaggerate-watercourse-lines">3. Exaggerate Watercourse Lines</a></li>
@@ -378,7 +380,7 @@ document.write(`
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#adjust-layer-order-and-export">9. Adjust Layer Order and Export</a></li>
 </ul>
 </li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#optional-task">Optional Task</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#advance-task">Advance Task</a></li>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#materials">Materials</a></li>
@@ -403,7 +405,12 @@ document.write(`
 <div><p>How long is the coastline of the UK?</p>
 </div></blockquote>
 <p>You may be want to google but the answer actually is <strong>“It depends on how small your ruler is.”</strong>.</p>
-<p><img alt="Coastline Paradox" src="../_images/coastline.png" /></p>
+<figure class="align-default" id="coastline-paradox">
+<img alt="../_images/coastline.png" src="../_images/coastline.png" />
+<figcaption>
+<p><span class="caption-number">Fig. 5 </span><span class="caption-text">The illustration of Coastline paradox</span><a class="headerlink" href="#coastline-paradox" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
 <p>In short, the coastline paradox illustrates that the length of a coastline increases as the measurement scale becomes smaller. The more detail you try to capture (bays, inlets, tiny rocks), the longer the line becomes. In theory, with an infinitely small ruler, the length could approach infinity. Mathematically, this phenomenon relates to the concept of fractal dimensions, where natural features exhibit complexity at every scale. You can explore this concept further with <a class="reference external" href="https://www.youtube.com/watch?v=gB9n2gHsHN4&amp;amp;t=706s">Fractals are typically not self-similar</a>, <a class="reference external" href="https://en.wikipedia.org/wiki/Coastline_paradox">Coastline paradox, from Wikipedia</a>, <a class="reference external" href="https://www.youtube.com/watch?v=kFjq8PX6F7I&amp;amp;pp=ygURY29hc3RsaW5lIHBhcmFkb3g%3D">The Coastline Paradox Explained</a>.</p>
 <blockquote>
 <div><p>The Earth’s features are complex, but maps are finite. Generalization helps us balance truth and usability.</p>
@@ -425,10 +432,23 @@ document.write(`
 </section>
 <section id="task">
 <h2>Task<a class="headerlink" href="#task" title="Link to this heading">#</a></h2>
+<section id="descriptions">
+<h3>Descriptions<a class="headerlink" href="#descriptions" title="Link to this heading">#</a></h3>
 <p>In this exercise, you will practice several <strong>fundamental cartographic generalization techniques</strong> in ArcGIS Pro.<br />
-The goal is to simplify and adapt map features for small-scale representation (1:25,000), while maintaining legibility and spatial logic.</p>
+The goal is to simplify and adapt map features for small-scale representation (1:25,000), while maintaining legibility and spatial logic. Detailed instructions in <a class="reference download internal" download="" href="../_downloads/7a483119f91e958862bae14f836118c1/Lesson%209.docx"><code class="xref download docutils literal notranslate"><span class="pre">Lesson</span> <span class="pre">9</span></code></a></p>
+<p>&amp; You can <a class="reference internal" href="lessons/lesson9.html"><span class="std std-doc">Click here to look</span></a></p>
+<section id="data">
+<h4>Data<a class="headerlink" href="#data" title="Link to this heading">#</a></h4>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">E8_data.gbd</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Template.aprx</span></code></p></li>
+</ul>
+</section>
+</section>
 <section id="overview">
 <h3>Overview<a class="headerlink" href="#overview" title="Link to this heading">#</a></h3>
+<div class="dropdown admonition note">
+<p class="admonition-title">Note</p>
 <ul class="contains-task-list simple">
 <li class="task-list-item"><p><input class="task-list-item-checkbox" disabled="disabled" type="checkbox"> <strong>Simplify Water Polygons</strong></p>
 <ul>
@@ -476,18 +496,7 @@ The goal is to simplify and adapt map features for small-scale representation (1
 </ul>
 </li>
 </ul>
-</section>
-<section id="descriptions">
-<h3>Descriptions<a class="headerlink" href="#descriptions" title="Link to this heading">#</a></h3>
-<p>Detailed instructions in <a class="reference download internal" download="" href="../_downloads/7a483119f91e958862bae14f836118c1/Lesson%209.docx"><code class="xref download docutils literal notranslate"><span class="pre">Lesson</span> <span class="pre">9</span></code></a></p>
-<p>&amp; You can <a class="reference internal" href="lessons/lesson9.html"><span class="std std-doc">Click here to look</span></a></p>
-<section id="data">
-<h4>Data<a class="headerlink" href="#data" title="Link to this heading">#</a></h4>
-<ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">E8_data.gbd</span></code></p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">Template.aprx</span></code></p></li>
-</ul>
-</section>
+</div>
 <section id="simplify-water-polygons">
 <h4>1. Simplify Water Polygons<a class="headerlink" href="#simplify-water-polygons" title="Link to this heading">#</a></h4>
 <ul class="simple">
@@ -557,8 +566,8 @@ The goal is to simplify and adapt map features for small-scale representation (1
 </ul>
 </section>
 </section>
-<section id="optional-task">
-<h3>Optional Task<a class="headerlink" href="#optional-task" title="Link to this heading">#</a></h3>
+<section id="advance-task">
+<h3>Advance Task<a class="headerlink" href="#advance-task" title="Link to this heading">#</a></h3>
 <p>You can check <a class="reference external" href="https://cartography-playground.gitlab.io/playgrounds/cartographic-generalization/">cartography-playground</a> for easier hands-on about catrographical generalization.</p>
 </section>
 </section>
@@ -644,9 +653,11 @@ The goal is to simplify and adapt map features for small-scale representation (1
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#task">Task</a><ul class="visible nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#overview">Overview</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#descriptions">Descriptions</a><ul class="visible nav section-nav flex-column">
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#data">Data</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#overview">Overview</a><ul class="visible nav section-nav flex-column">
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#simplify-water-polygons">1. Simplify Water Polygons</a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#aggregate-and-simplify-forests">2. Aggregate and Simplify Forests</a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#exaggerate-watercourse-lines">3. Exaggerate Watercourse Lines</a></li>
@@ -658,7 +669,7 @@ The goal is to simplify and adapt map features for small-scale representation (1
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#adjust-layer-order-and-export">9. Adjust Layer Order and Export</a></li>
 </ul>
 </li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#optional-task">Optional Task</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#advance-task">Advance Task</a></li>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#materials">Materials</a></li>

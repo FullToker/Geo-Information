@@ -365,16 +365,18 @@ document.write(`
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#task">Task</a><ul class="visible nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#overview">Overview</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#descriptions-steps">Descriptions &amp; Steps</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#descriptions">Descriptions</a><ul class="visible nav section-nav flex-column">
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#data">Data</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#overview">Overview</a><ul class="visible nav section-nav flex-column">
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#specifying-map-projections-and-coordinates">1. Specifying Map Projections and Coordinates</a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#georeferencing-a-raster">2. Georeferencing a Raster</a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#adding-tables">3. Adding Tables</a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#modifying-features">4. Modifying Features</a></li>
 </ul>
 </li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#optional-task">Optional Task</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#advance-task">Advance Task</a></li>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#materials">Materials</a></li>
@@ -429,8 +431,15 @@ In many map projections, this shortest route appears <strong>curved</strong> —
 <li><p><strong>Geodesy and surveying</strong>: Accurate shortest-path computation requires the Earth’s ellipsoidal shape, not just a sphere.</p></li>
 </ul>
 </li>
-<li><p><em>Example</em>: The flight path from Frankfurt to Los Angeles looks like an arc over Greenland on a Mercator map, but it is nearly a straight great-circle route on a globe.
-<img alt="FRA-LAX Flight" src="../_images/FRA-LAX.png" /></p></li>
+<li><p><em>Example</em>: The flight path from Frankfurt to Los Angeles looks like an arc over Greenland on a Mercator map, but it is nearly a straight great-circle route on a globe.</p></li>
+</ul>
+<figure class="align-default" id="fra-lax-fig">
+<img alt="../_images/FRA-LAX.png" src="../_images/FRA-LAX.png" />
+<figcaption>
+<p><span class="caption-number">Fig. 1 </span><span class="caption-text">The flight path from Frankfurt to Los Angeles</span><a class="headerlink" href="#fra-lax-fig" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<ul class="simple">
 <li><p>From the perspective of <em>geodesy</em>, a <strong>geodetic line</strong> is the shortest path between two points on a curved surface, such as the Earth’s surface.</p>
 <ul>
 <li><p>On a sphere, it corresponds to a great circle; on an <em>ellipsoid</em>, it is slightly curved and does not maintain a constant bearing.</p></li>
@@ -447,10 +456,17 @@ In many map projections, this shortest route appears <strong>curved</strong> —
 <li><p><strong>Conformal projections</strong> — preserve local angles/shapes (e.g., Mercator, Lambert Conformal Conic).</p></li>
 <li><p><strong>Equal-area projections</strong> — preserve area measurements (e.g., Albers Equal Area, Mollweide).</p></li>
 <li><p><strong>Equidistant projections</strong> — preserve distances from one or two points/lines (e.g., Azimuthal Equidistant).</p></li>
-<li><p><strong>Compromise projections</strong> — minimize overall distortion without fully preserving one property (e.g., Robinson, Winkel Tripel).
-<img alt="Mercator VS True Size" src="../_images/mercator_size.gif" /></p></li>
+<li><p><strong>Compromise projections</strong> — minimize overall distortion without fully preserving one property (e.g., Robinson, Winkel Tripel).</p></li>
 </ol>
 </li>
+</ul>
+<figure class="align-default" id="mercator-fig">
+<img alt="../_images/mercator_size.gif" src="../_images/mercator_size.gif" />
+<figcaption>
+<p><span class="caption-number">Fig. 2 </span><span class="caption-text">World Mercator projection with country going to true size</span><a class="headerlink" href="#mercator-fig" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<ul class="simple">
 <li><p><strong>Units and computation in a CRS</strong>:</p>
 <ul>
 <li><p>In <strong>projected coordinate systems</strong>, distances and areas are measured in linear units (meters, feet).</p></li>
@@ -472,9 +488,25 @@ In many map projections, this shortest route appears <strong>curved</strong> —
 </section>
 <section id="task">
 <h2>Task<a class="headerlink" href="#task" title="Link to this heading">#</a></h2>
-<p>In this exercise, you’ll deepen your understanding of <strong>coordinate reference systems (CRS)</strong> and <strong>map projections</strong>, learn how to <strong>minimize distortion</strong> by reprojecting data into a local system, and practice <strong>spatial editing workflows</strong> in ArcGIS Pro.</p>
+<section id="descriptions">
+<h3>Descriptions<a class="headerlink" href="#descriptions" title="Link to this heading">#</a></h3>
+<p>In this exercise, you’ll deepen your understanding of <strong>coordinate reference systems (CRS)</strong> and <strong>map projections</strong>, learn how to <strong>minimize distortion</strong> by reprojecting data into a local system, and practice <strong>spatial editing workflows</strong> in ArcGIS Pro. Detailed instructions in <a class="reference download internal" download="" href="../_downloads/2292502f0d2509dee83e3851393d1af5/Lesson%203.docx"><code class="xref download docutils literal notranslate"><span class="pre">Lesson</span> <span class="pre">3</span></code></a></p>
+<p>&amp; You can <a class="reference internal" href="lessons/lesson3.html"><span class="std std-doc">Click here to look</span></a></p>
+<section id="data">
+<h4>Data<a class="headerlink" href="#data" title="Link to this heading">#</a></h4>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">Data</span> <span class="pre">Students.gdb</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">orthophoto.tif</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">construction_plan.png</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Address_points.txt</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Housenumbers.txt</span></code></p></li>
+</ul>
+</section>
+</section>
 <section id="overview">
 <h3>Overview<a class="headerlink" href="#overview" title="Link to this heading">#</a></h3>
+<div class="dropdown admonition note">
+<p class="admonition-title">Note</p>
 <ul class="contains-task-list simple">
 <li class="task-list-item"><p><input class="task-list-item-checkbox" disabled="disabled" type="checkbox"> Change the map projection to a local <strong>UTM</strong> projection and set units to meters.</p></li>
 <li class="task-list-item"><p><input class="task-list-item-checkbox" disabled="disabled" type="checkbox"> Calculate and assign the correct <strong>UTM zone</strong> to your dataset.</p></li>
@@ -494,32 +526,17 @@ In many map projections, this shortest route appears <strong>curved</strong> —
 </ul>
 </li>
 </ul>
-</section>
-<hr class="docutils" />
-<section id="descriptions-steps">
-<h3>Descriptions &amp; Steps<a class="headerlink" href="#descriptions-steps" title="Link to this heading">#</a></h3>
-<p>Detailed instructions in <a class="reference download internal" download="" href="../_downloads/2292502f0d2509dee83e3851393d1af5/Lesson%203.docx"><code class="xref download docutils literal notranslate"><span class="pre">Lesson</span> <span class="pre">3</span></code></a></p>
-<p>&amp; You can <a class="reference internal" href="lessons/lesson3.html"><span class="std std-doc">Click here to look</span></a></p>
-<section id="data">
-<h4>Data<a class="headerlink" href="#data" title="Link to this heading">#</a></h4>
-<ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">Data</span> <span class="pre">Students.gdb</span></code></p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">orthophoto.tif</span></code></p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">construction_plan.png</span></code></p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">Address_points.txt</span></code></p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">Housenumbers.txt</span></code></p></li>
-</ul>
-</section>
+</div>
 <section id="specifying-map-projections-and-coordinates">
 <h4>1. Specifying Map Projections and Coordinates<a class="headerlink" href="#specifying-map-projections-and-coordinates" title="Link to this heading">#</a></h4>
-<ul class="simple">
-<li><p><strong>Calculate the UTM Zone</strong>:</p>
+<ul class="contains-task-list simple">
+<li class="task-list-item"><p><input class="task-list-item-checkbox" disabled="disabled" type="checkbox"> <strong>Calculate the UTM Zone</strong>:</p>
 <ul>
 <li><p>Add a new text field <code class="docutils literal notranslate"><span class="pre">UTM_zone</span></code> to the buildings layer (length = 600).</p></li>
 <li><p>Use the <strong>Calculate UTM Zone</strong> tool to determine the correct zone (likely <code class="docutils literal notranslate"><span class="pre">ETRS</span> <span class="pre">1989</span> <span class="pre">UTM</span> <span class="pre">Zone</span> <span class="pre">32N</span></code>).</p></li>
 </ul>
 </li>
-<li><p><strong>Change Map Projection</strong>:</p>
+<li class="task-list-item"><p><input class="task-list-item-checkbox" disabled="disabled" type="checkbox"> <strong>Change Map Projection</strong>:</p>
 <ul>
 <li><p>Open <strong>Map Properties → Coordinate Systems</strong>.</p></li>
 <li><p>Set to <strong>ETRS 1989 UTM Zone 32N</strong> under <em>Projected Coordinate System &gt; UTM &gt; Europe</em>.</p></li>
@@ -530,10 +547,10 @@ In many map projections, this shortest route appears <strong>curved</strong> —
 </section>
 <section id="georeferencing-a-raster">
 <h4>2. Georeferencing a Raster<a class="headerlink" href="#georeferencing-a-raster" title="Link to this heading">#</a></h4>
-<ul class="simple">
-<li><p>Toggle on the orthophoto layer.</p></li>
-<li><p>Zoom to the target vector layer (buildings).</p></li>
-<li><p>Use <strong>Imagery → Georeference</strong> tools:</p>
+<ul class="contains-task-list simple">
+<li class="task-list-item"><p><input class="task-list-item-checkbox" disabled="disabled" type="checkbox"> Toggle on the orthophoto layer.</p></li>
+<li class="task-list-item"><p><input class="task-list-item-checkbox" disabled="disabled" type="checkbox"> Zoom to the target vector layer (buildings).</p></li>
+<li class="task-list-item"><p><input class="task-list-item-checkbox" disabled="disabled" type="checkbox"> Use <strong>Imagery → Georeference</strong> tools:</p>
 <ul>
 <li><p>Set SRS, turn off unrelated layers.</p></li>
 <li><p>Add 6–10 <strong>control points</strong> matching raster features (e.g., building corners) to vector data.</p></li>
@@ -545,14 +562,14 @@ In many map projections, this shortest route appears <strong>curved</strong> —
 </section>
 <section id="adding-tables">
 <h4>3. Adding Tables<a class="headerlink" href="#adding-tables" title="Link to this heading">#</a></h4>
-<ul class="simple">
-<li><p><strong>Coordinate Table to Points</strong>:</p>
+<ul class="contains-task-list simple">
+<li class="task-list-item"><p><input class="task-list-item-checkbox" disabled="disabled" type="checkbox"> <strong>Coordinate Table to Points</strong>:</p>
 <ul>
 <li><p>Add <code class="docutils literal notranslate"><span class="pre">Address_points.txt</span></code> to the project.</p></li>
 <li><p>Use <strong>XY Table To Point</strong> tool: X = Longitude, Y = Latitude, CRS = WGS84.</p></li>
 </ul>
 </li>
-<li><p><strong>Geocoding</strong>:</p>
+<li class="task-list-item"><p><input class="task-list-item-checkbox" disabled="disabled" type="checkbox"> <strong>Geocoding</strong>:</p>
 <ul>
 <li><p>Add <code class="docutils literal notranslate"><span class="pre">Housenumbers.txt</span></code>.</p></li>
 <li><p>Use <strong>Geocode Table</strong> guided workflow:</p>
@@ -570,20 +587,20 @@ In many map projections, this shortest route appears <strong>curved</strong> —
 </section>
 <section id="modifying-features">
 <h4>4. Modifying Features<a class="headerlink" href="#modifying-features" title="Link to this heading">#</a></h4>
-<ul class="simple">
-<li><p>Snapping</p>
+<ul class="contains-task-list simple">
+<li class="task-list-item"><p><input class="task-list-item-checkbox" disabled="disabled" type="checkbox"> Snapping</p>
 <ul>
 <li><p>Enable <strong>Vertex Snapping</strong> in <em>Edit → Snapping</em>.</p></li>
 </ul>
 </li>
-<li><p>Modify Vertices</p>
+<li class="task-list-item"><p><input class="task-list-item-checkbox" disabled="disabled" type="checkbox"> Modify Vertices</p>
 <ul>
 <li><p>Select building with <code class="docutils literal notranslate"><span class="pre">OBJECTID=954</span></code>.</p></li>
 <li><p>Enable <strong>Map Topology</strong>.</p></li>
 <li><p>Use <strong>Modify → Edit Vertices</strong> to align it with adjacent building rows.</p></li>
 </ul>
 </li>
-<li><p>Reshape &amp; Add Vertices</p>
+<li class="task-list-item"><p><input class="task-list-item-checkbox" disabled="disabled" type="checkbox"> Reshape &amp; Add Vertices</p>
 <ul>
 <li><p>Georeference <code class="docutils literal notranslate"><span class="pre">construction_plan.png</span></code> to buildings layer.</p></li>
 <li><p>Delete demolished buildings (<code class="docutils literal notranslate"><span class="pre">OBJECTID=1901</span></code> &amp; <code class="docutils literal notranslate"><span class="pre">1902</span></code>).</p></li>
@@ -592,14 +609,14 @@ In many map projections, this shortest route appears <strong>curved</strong> —
 <li><p>Save edits; create a new template if needed.</p></li>
 </ul>
 </li>
-<li><p>Split a Feature</p>
+<li class="task-list-item"><p><input class="task-list-item-checkbox" disabled="disabled" type="checkbox"> Split a Feature</p>
 <ul>
 <li><p>Select polygon with <code class="docutils literal notranslate"><span class="pre">OBJECTID=1859</span></code> (State Museum of Egyptian Art + University of Television and Film).</p></li>
 <li><p>Use <strong>Modify → Split</strong> to separate into two polygons.</p></li>
 <li><p>Update <code class="docutils literal notranslate"><span class="pre">name</span></code> field accordingly.</p></li>
 </ul>
 </li>
-<li><p>Clip a Feature</p>
+<li class="task-list-item"><p><input class="task-list-item-checkbox" disabled="disabled" type="checkbox"> Clip a Feature</p>
 <ul>
 <li><p>Select lawn polygon from Lesson 1.</p></li>
 <li><p>Use <strong>Clip</strong> tool with Alte Pinakothek building as clip feature.</p></li>
@@ -609,8 +626,8 @@ In many map projections, this shortest route appears <strong>curved</strong> —
 </ul>
 </section>
 </section>
-<section id="optional-task">
-<h3>Optional Task<a class="headerlink" href="#optional-task" title="Link to this heading">#</a></h3>
+<section id="advance-task">
+<h3>Advance Task<a class="headerlink" href="#advance-task" title="Link to this heading">#</a></h3>
 <ul class="simple">
 <li><p><strong>Vector data (e.g., Shapefile)</strong></p>
 <ul>
@@ -720,16 +737,18 @@ In many map projections, this shortest route appears <strong>curved</strong> —
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#task">Task</a><ul class="visible nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#overview">Overview</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#descriptions-steps">Descriptions &amp; Steps</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#descriptions">Descriptions</a><ul class="visible nav section-nav flex-column">
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#data">Data</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#overview">Overview</a><ul class="visible nav section-nav flex-column">
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#specifying-map-projections-and-coordinates">1. Specifying Map Projections and Coordinates</a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#georeferencing-a-raster">2. Georeferencing a Raster</a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#adding-tables">3. Adding Tables</a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#modifying-features">4. Modifying Features</a></li>
 </ul>
 </li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#optional-task">Optional Task</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#advance-task">Advance Task</a></li>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#materials">Materials</a></li>

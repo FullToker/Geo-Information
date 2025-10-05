@@ -365,9 +365,11 @@ document.write(`
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#task">Task</a><ul class="visible nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#overview">Overview</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#descriptions-steps">Descriptions &amp; Steps</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#descriptions">Descriptions</a><ul class="visible nav section-nav flex-column">
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#data">Data</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#overview">Overview</a><ul class="visible nav section-nav flex-column">
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#thiessen-polygons">1. Thiessen Polygons</a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#buffer-analysis">2. Buffer Analysis</a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#multiple-ring-buffers">3. Multiple Ring Buffers</a></li>
@@ -376,7 +378,7 @@ document.write(`
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#spatial-statistics">6. Spatial Statistics</a></li>
 </ul>
 </li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#optional-task">Optional Task</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#advance-task">Advance Task</a></li>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#materials">Materials</a></li>
@@ -454,10 +456,23 @@ Deals with prediction at unsampled locations, including deterministic interpolat
 </section>
 <section id="task">
 <h2>Task<a class="headerlink" href="#task" title="Link to this heading">#</a></h2>
+<section id="descriptions">
+<h3>Descriptions<a class="headerlink" href="#descriptions" title="Link to this heading">#</a></h3>
 <p>In this exercise, you will practice several <strong>fundamental spatial analysis methods</strong> in ArcGIS Pro.
-The goal is to understand how spatial relationships can be modeled and analyzed with GIS.</p>
+The goal is to understand how spatial relationships can be modeled and analyzed with GIS. Detailed instructions in <a class="reference download internal" download="" href="../_downloads/c66ba510f9c05c7469de2c5a399d7e1d/Lesson%205.docx"><code class="xref download docutils literal notranslate"><span class="pre">Lesson</span> <span class="pre">5</span></code></a></p>
+<p>&amp; You can <a class="reference internal" href="lessons/lesson5.html"><span class="std std-doc">Click here to look</span></a></p>
+<section id="data">
+<h4>Data<a class="headerlink" href="#data" title="Link to this heading">#</a></h4>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">Data</span> <span class="pre">Students.gdb</span></code> (Buildings, Roads, Underground Stations, Tram Stops, Cafés)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">orthophoto.tif</span></code> (optional reference imagery)</p></li>
+</ul>
+</section>
+</section>
 <section id="overview">
 <h3>Overview<a class="headerlink" href="#overview" title="Link to this heading">#</a></h3>
+<div class="dropdown admonition note">
+<p class="admonition-title">Note</p>
 <ul class="contains-task-list simple">
 <li class="task-list-item"><p><input class="task-list-item-checkbox" disabled="disabled" type="checkbox"> <strong>Thiessen (Voronoi) Polygons</strong></p>
 <ul>
@@ -506,18 +521,7 @@ The goal is to understand how spatial relationships can be modeled and analyzed 
 </ul>
 </li>
 </ul>
-</section>
-<section id="descriptions-steps">
-<h3>Descriptions &amp; Steps<a class="headerlink" href="#descriptions-steps" title="Link to this heading">#</a></h3>
-<p>Detailed instructions in <a class="reference download internal" download="" href="../_downloads/c66ba510f9c05c7469de2c5a399d7e1d/Lesson%205.docx"><code class="xref download docutils literal notranslate"><span class="pre">Lesson</span> <span class="pre">5</span></code></a></p>
-<p>&amp; You can <a class="reference internal" href="lessons/lesson5.html"><span class="std std-doc">Click here to look</span></a></p>
-<section id="data">
-<h4>Data<a class="headerlink" href="#data" title="Link to this heading">#</a></h4>
-<ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">Data</span> <span class="pre">Students.gdb</span></code> (Buildings, Roads, Underground Stations, Tram Stops, Cafés)</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">orthophoto.tif</span></code> (optional reference imagery)</p></li>
-</ul>
-</section>
+</div>
 <section id="thiessen-polygons">
 <h4>1. Thiessen Polygons<a class="headerlink" href="#thiessen-polygons" title="Link to this heading">#</a></h4>
 <ul class="simple">
@@ -561,8 +565,8 @@ The goal is to understand how spatial relationships can be modeled and analyzed 
 </ul>
 </section>
 </section>
-<section id="optional-task">
-<h3>Optional Task<a class="headerlink" href="#optional-task" title="Link to this heading">#</a></h3>
+<section id="advance-task">
+<h3>Advance Task<a class="headerlink" href="#advance-task" title="Link to this heading">#</a></h3>
 <ul class="simple">
 <li><p>Try to build up some <strong>basic statistics knowledge</strong> — such as <em>Gaussian distribution</em>, <em>hypothesis testing</em>, <em>principal component analysis (PCA)</em>, and <em>linear regression</em>. Meanwhile, practice using <strong>R</strong> or <strong>Jupyter Notebook</strong> to explore these concepts through hands-on examples and simple experiments.</p>
 <ul>
@@ -572,7 +576,6 @@ The goal is to understand how spatial relationships can be modeled and analyzed 
 <li><p>Write a program to load your analysis results (e.g., Thiessen polygons, buffers, or Near table), <strong>visualize them</strong>, and <strong>export the map</strong> to an image (PNG/SVG) or an interactive HTML map</p>
 <ul>
 <li><p>Visualizing standard media files such as images is usually straightforward — for example, with <a class="reference external" href="https://pypi.org/project/pillow/">PIL</a> or <a class="reference external" href="https://opencv.org/">OpenCV</a>.</p></li>
-<li><p>In contrast, directly displaying <strong>geo-related data</strong> (like Shapefiles) is often more challenging and not very beginner-friendly. In practice, using a <strong>web map service</strong> is often much easier, like <strong><a class="reference external" href="https://python-visualization.github.io/folium/">folium</a></strong> for interactive web maps.</p></li>
 </ul>
 </li>
 </ul>
@@ -661,9 +664,11 @@ The goal is to understand how spatial relationships can be modeled and analyzed 
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#task">Task</a><ul class="visible nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#overview">Overview</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#descriptions-steps">Descriptions &amp; Steps</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#descriptions">Descriptions</a><ul class="visible nav section-nav flex-column">
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#data">Data</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#overview">Overview</a><ul class="visible nav section-nav flex-column">
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#thiessen-polygons">1. Thiessen Polygons</a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#buffer-analysis">2. Buffer Analysis</a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#multiple-ring-buffers">3. Multiple Ring Buffers</a></li>
@@ -672,7 +677,7 @@ The goal is to understand how spatial relationships can be modeled and analyzed 
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#spatial-statistics">6. Spatial Statistics</a></li>
 </ul>
 </li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#optional-task">Optional Task</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#advance-task">Advance Task</a></li>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#materials">Materials</a></li>

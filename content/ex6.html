@@ -364,9 +364,11 @@ document.write(`
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#task">Task</a><ul class="visible nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#overview">Overview</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#descriptions-steps">Descriptions &amp; Steps</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#descriptions">Descriptions</a><ul class="visible nav section-nav flex-column">
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#data">Data</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#overview">Overview</a><ul class="visible nav section-nav flex-column">
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#vertical-analysis">1. Vertical Analysis</a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#line-of-sight-viewshed">2. Line-of-Sight (Viewshed)</a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#hydrological-analysis">3. Hydrological Analysis</a></li>
@@ -374,7 +376,7 @@ document.write(`
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#least-cost-path">5. Least Cost Path</a></li>
 </ul>
 </li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#optional-task">Optional Task</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#advance-task">Advance Task</a></li>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#materials">Materials</a></li>
@@ -477,10 +479,23 @@ Cost can mean:</p>
 </section>
 <section id="task">
 <h2>Task<a class="headerlink" href="#task" title="Link to this heading">#</a></h2>
+<section id="descriptions">
+<h3>Descriptions<a class="headerlink" href="#descriptions" title="Link to this heading">#</a></h3>
 <p>In this exercise, you will explore <strong>vertical, hydrological, and cost surface analysis</strong> using raster data in ArcGIS Pro.<br />
-The goal is to understand how elevation and terrain influence visibility, water flow, and optimal routing decisions in mountainous regions.</p>
+The goal is to understand how elevation and terrain influence visibility, water flow, and optimal routing decisions in mountainous regions. Detailed instructions in <a class="reference download internal" download="" href="../_downloads/1766b94f1fd3d248b8269c6482b63ed7/%5BOutdated%5D%20Lesson%206.docx"><code class="xref download docutils literal notranslate"><span class="pre">Lesson</span> <span class="pre">6</span></code></a></p>
+<p>&amp; You can <a class="reference internal" href="lessons/lesson6.html"><span class="std std-doc">Click here to look</span></a></p>
+<section id="data">
+<h4>Data<a class="headerlink" href="#data" title="Link to this heading">#</a></h4>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">DEM_50m_Zugsp.tif</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">LandCover.tif</span></code></p></li>
+</ul>
+</section>
+</section>
 <section id="overview">
 <h3>Overview<a class="headerlink" href="#overview" title="Link to this heading">#</a></h3>
+<div class="dropdown admonition note">
+<p class="admonition-title">Note</p>
 <ul class="contains-task-list simple">
 <li class="task-list-item"><p><input class="task-list-item-checkbox" disabled="disabled" type="checkbox"> <strong>Vertical Analysis</strong></p>
 <ul>
@@ -508,19 +523,8 @@ The goal is to understand how elevation and terrain influence visibility, water 
 </ul>
 </li>
 </ul>
-</section>
+</div>
 <hr class="docutils" />
-<section id="descriptions-steps">
-<h3>Descriptions &amp; Steps<a class="headerlink" href="#descriptions-steps" title="Link to this heading">#</a></h3>
-<p>Detailed instructions in <a class="reference download internal" download="" href="../_downloads/1766b94f1fd3d248b8269c6482b63ed7/%5BOutdated%5D%20Lesson%206.docx"><code class="xref download docutils literal notranslate"><span class="pre">Lesson</span> <span class="pre">6</span></code></a></p>
-<p>&amp; You can <a class="reference internal" href="lessons/lesson6.html"><span class="std std-doc">Click here to look</span></a></p>
-<section id="data">
-<h4>Data<a class="headerlink" href="#data" title="Link to this heading">#</a></h4>
-<ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">DEM_50m_Zugsp.tif</span></code></p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">LandCover.tif</span></code></p></li>
-</ul>
-</section>
 <section id="vertical-analysis">
 <h4>1. Vertical Analysis<a class="headerlink" href="#vertical-analysis" title="Link to this heading">#</a></h4>
 <ul class="simple">
@@ -574,8 +578,8 @@ The goal is to understand how elevation and terrain influence visibility, water 
 </ul>
 </section>
 </section>
-<section id="optional-task">
-<h3>Optional Task<a class="headerlink" href="#optional-task" title="Link to this heading">#</a></h3>
+<section id="advance-task">
+<h3>Advance Task<a class="headerlink" href="#advance-task" title="Link to this heading">#</a></h3>
 <ul class="simple">
 <li><p>Explore elevation and hydrological analysis in your programming environment. You can start with these examples:</p>
 <ul>
@@ -583,16 +587,8 @@ The goal is to understand how elevation and terrain influence visibility, water 
 <li><p><a class="reference external" href="https://github.com/royalosyin/Work-with-DEM-data-using-Python-from-Simple-to-Complicated">Working with Digital Elevation Models in Python</a></p></li>
 </ul>
 </li>
-<li><p>Build a simple web map or dashboard:</p>
-<ul>
-<li><p>Use <strong>Leaflet.js</strong>, <strong>Mapbox</strong>, or <strong><a class="reference external" href="http://Kepler.gl">Kepler.gl</a></strong> to visualize slope maps or flow paths.</p></li>
-<li><p>Upload your cost surface and overlay the <em>least cost path</em> between two points.</p></li>
-<li><p>Allow user-defined input: choose start/end point and display results dynamically.</p></li>
+<li><p>Another one?</p></li>
 </ul>
-</li>
-</ul>
-<p>💡 Tip: Libraries you may want to explore include:
-<code class="docutils literal notranslate"><span class="pre">rasterio</span></code>, <code class="docutils literal notranslate"><span class="pre">geopandas</span></code>, <code class="docutils literal notranslate"><span class="pre">matplotlib</span></code>, <code class="docutils literal notranslate"><span class="pre">richdem</span></code>, <code class="docutils literal notranslate"><span class="pre">whitebox</span></code>, <code class="docutils literal notranslate"><span class="pre">folium</span></code>, <code class="docutils literal notranslate"><span class="pre">pyproj</span></code>, <code class="docutils literal notranslate"><span class="pre">shapely</span></code>, and <code class="docutils literal notranslate"><span class="pre">networkx</span></code> (for raster-to-network conversion).</p>
 </section>
 </section>
 <section id="materials">
@@ -679,9 +675,11 @@ The goal is to understand how elevation and terrain influence visibility, water 
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#task">Task</a><ul class="visible nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#overview">Overview</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#descriptions-steps">Descriptions &amp; Steps</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#descriptions">Descriptions</a><ul class="visible nav section-nav flex-column">
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#data">Data</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#overview">Overview</a><ul class="visible nav section-nav flex-column">
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#vertical-analysis">1. Vertical Analysis</a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#line-of-sight-viewshed">2. Line-of-Sight (Viewshed)</a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#hydrological-analysis">3. Hydrological Analysis</a></li>
@@ -689,7 +687,7 @@ The goal is to understand how elevation and terrain influence visibility, water 
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#least-cost-path">5. Least Cost Path</a></li>
 </ul>
 </li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#optional-task">Optional Task</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#advance-task">Advance Task</a></li>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#materials">Materials</a></li>

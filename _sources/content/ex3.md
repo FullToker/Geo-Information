@@ -32,7 +32,12 @@ In many map projections, this shortest route appears **curved** — especially i
   - **Aviation and maritime navigation**: Great-circle routes minimize fuel and time.
   - **Geodesy and surveying**: Accurate shortest-path computation requires the Earth’s ellipsoidal shape, not just a sphere.
 - *Example*: The flight path from Frankfurt to Los Angeles looks like an arc over Greenland on a Mercator map, but it is nearly a straight great-circle route on a globe.
-![FRA-LAX Flight](../images/ex3/FRA-LAX.png "The flight path from Frankfurt to Los Angeles")
+```{figure} ../images/ex3/FRA-LAX.png
+---
+name: FRA-LAX-fig
+---
+The flight path from Frankfurt to Los Angeles
+```
 
 - From the perspective of *geodesy*, a **geodetic line** is the shortest path between two points on a curved surface, such as the Earth’s surface.
     - On a sphere, it corresponds to a great circle; on an *ellipsoid*, it is slightly curved and does not maintain a constant bearing.
@@ -44,12 +49,18 @@ In many map projections, this shortest route appears **curved** — especially i
   2. **Equal-area projections** — preserve area measurements (e.g., Albers Equal Area, Mollweide).  
   3. **Equidistant projections** — preserve distances from one or two points/lines (e.g., Azimuthal Equidistant).  
   4. **Compromise projections** — minimize overall distortion without fully preserving one property (e.g., Robinson, Winkel Tripel).
-![Mercator VS True Size](../images/ex3/mercator_size.gif "World Mercator projection with country going to true size")
+
+```{figure} ../images/ex3/mercator_size.gif
+---
+name: Mercator-fig
+---
+World Mercator projection with country going to true size
+```
+
 - **Units and computation in a CRS**:  
   - In **projected coordinate systems**, distances and areas are measured in linear units (meters, feet).  
   - In **geographic coordinate systems**, coordinates are in degrees; calculating distances requires spherical or ellipsoidal formulas.  
   - Area computation on a sphere/ellipsoid involves integrating over curved surfaces and must account for the CRS.
-
 
 ---
 
@@ -61,9 +72,22 @@ In many map projections, this shortest route appears **curved** — especially i
 
 
 ## Task
-In this exercise, you’ll deepen your understanding of **coordinate reference systems (CRS)** and **map projections**, learn how to **minimize distortion** by reprojecting data into a local system, and practice **spatial editing workflows** in ArcGIS Pro.
+### Descriptions
+In this exercise, you’ll deepen your understanding of **coordinate reference systems (CRS)** and **map projections**, learn how to **minimize distortion** by reprojecting data into a local system, and practice **spatial editing workflows** in ArcGIS Pro. Detailed instructions in {download}`Lesson 3 <../doc/Lesson 3.docx>`
+
+& You can [Click here to look](./lessons/lesson3.md)
+
+#### Data
+  - `Data Students.gdb`
+  - `orthophoto.tif`
+  - `construction_plan.png`
+  - `Address_points.txt`
+  - `Housenumbers.txt`
+
 
 ### Overview
+```{note}
+:class: dropdown
 - [ ] Change the map projection to a local **UTM** projection and set units to meters.
 - [ ] Calculate and assign the correct **UTM zone** to your dataset.
 - [ ] **Georeference** a raster (orthophoto and construction plan) to align with existing vector data.
@@ -75,43 +99,32 @@ In this exercise, you’ll deepen your understanding of **coordinate reference s
   - Adding new polygons from construction plans.
   - Splitting polygons into separate features.
   - Clipping polygons to remove overlaps.
----
+```
 
-### Descriptions & Steps
-Detailed instructions in {download}`Lesson 3 <../doc/Lesson 3.docx>`
-
-& You can [Click here to look](./lessons/lesson3.md)
-
-#### Data
-  - `Data Students.gdb`
-  - `orthophoto.tif`
-  - `construction_plan.png`
-  - `Address_points.txt`
-  - `Housenumbers.txt`
 
 #### 1. Specifying Map Projections and Coordinates
-- **Calculate the UTM Zone**:
+- [ ] **Calculate the UTM Zone**:
   - Add a new text field `UTM_zone` to the buildings layer (length = 600).
   - Use the **Calculate UTM Zone** tool to determine the correct zone (likely `ETRS 1989 UTM Zone 32N`).
-- **Change Map Projection**:
+- [ ] **Change Map Projection**:
   - Open **Map Properties → Coordinate Systems**.
   - Set to **ETRS 1989 UTM Zone 32N** under *Projected Coordinate System > UTM > Europe*.
   - Change display units to **Meters**.
 
 #### 2. Georeferencing a Raster
-- Toggle on the orthophoto layer.
-- Zoom to the target vector layer (buildings).
-- Use **Imagery → Georeference** tools:
+- [ ] Toggle on the orthophoto layer.
+- [ ] Zoom to the target vector layer (buildings).
+- [ ] Use **Imagery → Georeference** tools:
   - Set SRS, turn off unrelated layers.
   - Add 6–10 **control points** matching raster features (e.g., building corners) to vector data.
   - Use a **1st Order Polynomial** transformation.
   - Remove points with high residuals, then **Save**.
 
 #### 3. Adding Tables
-- **Coordinate Table to Points**:
+- [ ] **Coordinate Table to Points**:
   - Add `Address_points.txt` to the project.
   - Use **XY Table To Point** tool: X = Longitude, Y = Latitude, CRS = WGS84.
-- **Geocoding**:
+- [ ] **Geocoding**:
   - Add `Housenumbers.txt`.
   - Use **Geocode Table** guided workflow:
     - Locator: ArcGIS World Geocoding Service.
@@ -122,28 +135,28 @@ Detailed instructions in {download}`Lesson 3 <../doc/Lesson 3.docx>`
 
 #### 4. Modifying Features
 
-- Snapping
+- [ ] Snapping
     - Enable **Vertex Snapping** in *Edit → Snapping*.
--  Modify Vertices
+- [ ] Modify Vertices
     - Select building with `OBJECTID=954`.
     - Enable **Map Topology**.
     - Use **Modify → Edit Vertices** to align it with adjacent building rows.
-- Reshape & Add Vertices
+- [ ] Reshape & Add Vertices
     - Georeference `construction_plan.png` to buildings layer.
     - Delete demolished buildings (`OBJECTID=1901` & `1902`).
     - Reshape `OBJECTID=1653` to reflect partial demolition.
     - Digitize new building footprints from the plan.
     - Save edits; create a new template if needed.
-- Split a Feature
+- [ ] Split a Feature
     - Select polygon with `OBJECTID=1859` (State Museum of Egyptian Art + University of Television and Film).
     - Use **Modify → Split** to separate into two polygons.
     - Update `name` field accordingly.
-- Clip a Feature
+- [ ] Clip a Feature
     - Select lawn polygon from Lesson 1.
     - Use **Clip** tool with Alte Pinakothek building as clip feature.
     - Discard clipped interior and preserve remainder.
 
-### Optional Task
+### Advance Task
 - **Vector data (e.g., Shapefile)**  
   - Load and print basic info: CRS, feature count, extent.  
   - Reproject to another CRS and compare length/area differences.  

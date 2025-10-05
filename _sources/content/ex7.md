@@ -7,7 +7,12 @@ Closely related to **network analysis** are the fields of **graph theory** and *
 
 Graph theory originates from the famous **Königsberg Seven Bridges Problem** proposed by Euler in the 18th century. He asked whether it was possible to walk through the city of Königsberg and cross each of its seven bridges exactly once. 
 Although the answer was “no,” this puzzle laid the foundation for graph theory — the mathematical study of **nodes (vertices)** and **edges (links)**.  
-![Seven Bridges Problem](../images/ex7/Konigsberg_bridges.png "The illustration of Königsberg Bridge problem")
+```{figure} ../images/ex7/Konigsberg_bridges.png
+---
+name: Seven-Bridges-Problem
+---
+The illustration of Königsberg Bridge problem
+```
 
 > In graph theory, a tree is essentially a special kind of graph — one that is connected and contains no cycles.
 
@@ -42,10 +47,18 @@ In 2024, it was even proved to have **Universal Optimality** (meaning that a sin
 - **Rich-Club Coefficient**: Describes the tendency of highly connected nodes to also connect with each other, forming an "elite club." 
 
 ## Task
+### Descriptions
 In this exercise, you will practice several **fundamental network analysis methods** in ArcGIS Pro.  
-The goal is to understand how networks can be built from road data and analyzed for accessibility, connectivity, and routing problems.  
+The goal is to understand how networks can be built from road data and analyzed for accessibility, connectivity, and routing problems. Detailed instructions in {download}`Lesson 7 <../doc/Lesson 7.docx>`
+
+& You can [Click here to look](./lessons/lesson7.md)
+
+#### Data
+- `Data Students.gdb`
 
 ### Overview
+```{note}
+:class: dropdown
 - [ ] **Build a network dataset**  
   - preprocess OSM road data, clean topology, and configure travel modes (e.g., walking).  
 - [ ] **Explore the network**  
@@ -58,16 +71,8 @@ The goal is to understand how networks can be built from road data and analyzed 
   - compute the shortest tour visiting all given stops.  
 - [ ] **Isochrones (Service Areas)**  
   - construct reachable areas (e.g., 5-min walk) around transport stops.  
-
 ---
-
-### Descriptions & Steps
-Detailed instructions in {download}`Lesson 7 <../doc/Lesson 7.docx>`
-
-& You can [Click here to look](./lessons/lesson7.md)
-
-#### Data
-- `Data Students.gdb`
+```
 
 #### 1. Build the Network Dataset
 - Create a new feature dataset in the geodatabase.  
@@ -95,17 +100,29 @@ Detailed instructions in {download}`Lesson 7 <../doc/Lesson 7.docx>`
 - Visualize and compare reachability zones.  
 
 
-### Optional Task
+### Advance Task
 - Explore network analysis in your programming environment. You can start with these examples:  
   - [Introduction to Network Analysis in Python](https://trenton3983.github.io/posts/intro-network-analysis/)  
   - [Automating GIS: Network analysis in Python](https://autogis-site.readthedocs.io/en/latest/lessons/lesson-6/network-analysis.html)  
   - [Exploring and Analyzing Network Data with Python](https://programminghistorian.org/en/lessons/exploring-and-analyzing-network-data-with-python)  
 
-- Build your own interactive web map:  
-  - Choose two locations and compute the **shortest path** using a web map service.  
-  - Set different travel modes (car, bicycle, or foot) and compare routes.  
-  - Select one location, define a radius, and **visualize the buffer area** on the map.
+- Export OD Cost Matrix and Analyze with Excel or Python
+  - Use the OD Cost Matrix tool to generate **a full matrix** between multiple origins and destinations (e.g., cafes and tram stops).
+  - Export the table to `.csv`.
+  - Open in **Excel** or **Pandas**, visualize and explore:
+    - Which pair has the shortest distance?
+    - Are there any unreachable destinations?
+    - Plot a histogram of cost values.
 
+```{code} python
+import pandas as pd
+df = pd.read_csv("OD_cost_matrix.csv")
+print(df.describe())
+
+# Find shortest trip
+shortest = df[df['Total_Minutes'] == df['Total_Minutes'].min()]
+print(shortest)
+```
 
 
 ## Materials

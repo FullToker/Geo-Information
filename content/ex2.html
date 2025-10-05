@@ -364,8 +364,11 @@ document.write(`
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#task">Task</a><ul class="visible nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#overview">Overview</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#descriptions-steps">Descriptions &amp; Steps</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#descriptions">Descriptions</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#data">Data</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#overview">Overview</a><ul class="visible nav section-nav flex-column">
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#uniform-symbolization-bus-stops">1. Uniform Symbolization – Bus Stops</a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#tram-stops-underground-stations-with-external-symbols">2. Tram Stops &amp; Underground Stations with External Symbols</a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#qualitative-symbolization-museums-tum">3. Qualitative Symbolization – Museums &amp; TUM</a></li>
@@ -379,7 +382,7 @@ document.write(`
 </li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#optional-task">Optional Task</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#advance-task">Advance Task</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#materials">Materials</a></li>
 </ul>
             </nav>
@@ -431,44 +434,20 @@ At its core, symbolization is about <strong>how we visually represent spatial da
 <hr class="docutils" />
 <section id="task">
 <h2>Task<a class="headerlink" href="#task" title="Link to this heading">#</a></h2>
-<p>You will build on the project based on the <em><strong>Students.gdb</strong></em> and the project you created in <strong>Exercise2</strong>.</p>
-<section id="overview">
-<h3>Overview<a class="headerlink" href="#overview" title="Link to this heading">#</a></h3>
-<ul class="contains-task-list simple">
-<li class="task-list-item"><p><input class="task-list-item-checkbox" disabled="disabled" type="checkbox"> <strong>Add and symbolize public transport points</strong></p>
-<ul>
-<li><p>Symbolize bus stops with meaningful icons.</p></li>
-<li><p>Symbolize tram stops &amp; underground stations using official MVG vector logos.</p></li>
-</ul>
-</li>
-<li class="task-list-item"><p><input class="task-list-item-checkbox" disabled="disabled" type="checkbox"> <strong>Apply qualitative symbolization</strong> to polygons:</p>
-<ul>
-<li><p>Show museums and TUM buildings in distinct, meaningful colors.</p></li>
-</ul>
-</li>
-<li class="task-list-item"><p><input class="task-list-item-checkbox" disabled="disabled" type="checkbox"> <strong>Apply quantitative symbolization</strong>:</p>
-<ul>
-<li><p><strong>Apply graduated color symbology</strong> to buildings based on height (calculated from number of floors × 3.5m).</p></li>
-<li><p><strong>Classify data</strong> using different classification methods (equal interval, quantile, natural breaks, etc.).</p></li>
-<li><p><strong>Apply proportional line symbols</strong> to roads based on maximum speed.</p></li>
-</ul>
-</li>
-<li class="task-list-item"><p><input class="task-list-item-checkbox" disabled="disabled" type="checkbox"> Create <strong>cased</strong> road symbols and adjust drawing order to join/merge features visually.</p></li>
-<li class="task-list-item"><p><input class="task-list-item-checkbox" disabled="disabled" type="checkbox"> <strong>Use scale-based symbolization</strong>:</p>
-<ul>
-<li><p>Show main roads only at certain zoom levels.</p></li>
-<li><p>Adjust public transport symbol size by scale.</p></li>
-</ul>
-</li>
-<li class="task-list-item"><p><input class="task-list-item-checkbox" disabled="disabled" type="checkbox"> <strong>Apply transparency</strong> to blend buildings with the orthophoto.</p></li>
-<li class="task-list-item"><p><input class="task-list-item-checkbox" disabled="disabled" type="checkbox"> <strong>Combine skills</strong> to symbolize underground lines with dashed strokes for shared routes.</p></li>
-</ul>
-</section>
-<hr class="docutils" />
-<section id="descriptions-steps">
-<h3>Descriptions &amp; Steps<a class="headerlink" href="#descriptions-steps" title="Link to this heading">#</a></h3>
+<section id="descriptions">
+<h3>Descriptions<a class="headerlink" href="#descriptions" title="Link to this heading">#</a></h3>
 <p>Detailed instructions in <a class="reference download internal" download="" href="../_downloads/e683208ca84d5de1004ac7022c42ca86/Lesson%202.docx"><code class="xref download docutils literal notranslate"><span class="pre">Lesson</span> <span class="pre">2</span></code></a></p>
 <p>&amp; You can <a class="reference internal" href="lessons/lesson2.html"><span class="std std-doc">Click here to look</span></a></p>
+<section id="data">
+<h4>Data<a class="headerlink" href="#data" title="Link to this heading">#</a></h4>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">Students.gdb</span></code></p></li>
+<li><p>Project created in <strong>E1</strong>.</p></li>
+</ul>
+</section>
+</section>
+<section id="overview">
+<h3>Overview<a class="headerlink" href="#overview" title="Link to this heading">#</a></h3>
 <section id="uniform-symbolization-bus-stops">
 <h4>1. Uniform Symbolization – Bus Stops<a class="headerlink" href="#uniform-symbolization-bus-stops" title="Link to this heading">#</a></h4>
 <ul class="simple">
@@ -554,8 +533,8 @@ At its core, symbolization is about <strong>how we visually represent spatial da
 </section>
 </section>
 <hr class="docutils" />
-<section id="optional-task">
-<h2>Optional Task<a class="headerlink" href="#optional-task" title="Link to this heading">#</a></h2>
+<section id="advance-task">
+<h2>Advance Task<a class="headerlink" href="#advance-task" title="Link to this heading">#</a></h2>
 <ul class="simple">
 <li><p>Use <strong>Arcade expressions</strong> to create new fields dynamically.</p></li>
 <li><p>Use online tools such as <a class="reference external" href="https://maputnik.github.io/">Maputnik</a> to explore and experiment with additional map styles you like.</p></li>
@@ -643,8 +622,11 @@ At its core, symbolization is about <strong>how we visually represent spatial da
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#task">Task</a><ul class="visible nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#overview">Overview</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#descriptions-steps">Descriptions &amp; Steps</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#descriptions">Descriptions</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#data">Data</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#overview">Overview</a><ul class="visible nav section-nav flex-column">
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#uniform-symbolization-bus-stops">1. Uniform Symbolization – Bus Stops</a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#tram-stops-underground-stations-with-external-symbols">2. Tram Stops &amp; Underground Stations with External Symbols</a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#qualitative-symbolization-museums-tum">3. Qualitative Symbolization – Museums &amp; TUM</a></li>
@@ -658,7 +640,7 @@ At its core, symbolization is about <strong>how we visually represent spatial da
 </li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#optional-task">Optional Task</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#advance-task">Advance Task</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#materials">Materials</a></li>
 </ul>
   </nav></div>

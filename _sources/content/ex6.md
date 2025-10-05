@@ -46,10 +46,19 @@ Cost can mean:
 ![Cost Path Analysis](../images/ex6/Cost_path.jpg "An example of cost path")
 
 ## Task
+### Descriptions
 In this exercise, you will explore **vertical, hydrological, and cost surface analysis** using raster data in ArcGIS Pro.  
-The goal is to understand how elevation and terrain influence visibility, water flow, and optimal routing decisions in mountainous regions.
+The goal is to understand how elevation and terrain influence visibility, water flow, and optimal routing decisions in mountainous regions. Detailed instructions in {download}`Lesson 6 <../doc/[Outdated] Lesson 6.docx>`
+
+& You can [Click here to look](./lessons/lesson6.md)
+
+#### Data
+- `DEM_50m_Zugsp.tif`  
+- `LandCover.tif`  
 
 ### Overview
+```{note}
+:class: dropdown
 - [ ] **Vertical Analysis**  
   - visualize elevation, slope, aspect, and hypsometric tints in 3D scenes.  
 - [ ] **Line-of-Sight (Viewshed)**  
@@ -60,17 +69,8 @@ The goal is to understand how elevation and terrain influence visibility, water 
   - create a cost surface using slope and land cover data.  
 - [ ] **Least Cost Path**  
   - determine the optimal route between two points minimizing environmental and slope cost.  
-
 ---
-
-### Descriptions & Steps
-Detailed instructions in {download}`Lesson 6 <../doc/[Outdated] Lesson 6.docx>`
-
-& You can [Click here to look](./lessons/lesson6.md)
-
-#### Data
-- `DEM_50m_Zugsp.tif`  
-- `LandCover.tif`  
+```
 
 #### 1. Vertical Analysis
 - Start a *Local Scene* in ArcGIS Pro.  
@@ -104,19 +104,13 @@ Detailed instructions in {download}`Lesson 6 <../doc/[Outdated] Lesson 6.docx>`
   - Generate the optimal hiking trail based on your criteria
 
 
-### Optional Task
+### Advance Task
 
 - Explore elevation and hydrological analysis in your programming environment. You can start with these examples:
   - [Terrain Analysis with Python and Rasterio](https://www.youtube.com/watch?v=AcuTSXLvQxA)  
   - [Working with Digital Elevation Models in Python](https://github.com/royalosyin/Work-with-DEM-data-using-Python-from-Simple-to-Complicated) 
 
-- Build a simple web map or dashboard:
-  - Use **Leaflet.js**, **Mapbox**, or **Kepler.gl** to visualize slope maps or flow paths.
-  - Upload your cost surface and overlay the *least cost path* between two points.
-  - Allow user-defined input: choose start/end point and display results dynamically.
-
-💡 Tip: Libraries you may want to explore include:
-`rasterio`, `geopandas`, `matplotlib`, `richdem`, `whitebox`, `folium`, `pyproj`, `shapely`, and `networkx` (for raster-to-network conversion).
+- Another one?
 
 
 ## Materials

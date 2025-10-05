@@ -17,6 +17,7 @@ These features feed into your models, visualizations, and decisions. This proces
 > Data collection -> Raw data → Preprocessing → Feature extraction → Model / Analysis
 
 ```{admonition} Features of Special Format
+:class: dropdown
 In other fields, “features” can look very different:
 - 🖼️ In **computer vision**:  
   Each pixel can be considered a feature — or features might be higher-level elements like **color patterns**, **shapes**, or **edges**.
@@ -33,6 +34,7 @@ In other fields, “features” can look very different:
 
 And just like in other fields, we still care about their properties — but now they’re stored in attribute tables.
 ```
+
 > Take it easy — imagine you're the computer. For every item in a dataset, the things you store or know about it are called features.
 Features can be:
 - Built-in (directly collected from raw data)
@@ -79,6 +81,15 @@ Example: Traffic congestion in one district affects neighboring areas; deforesta
 ---
 
 ## Task
+### Descriptions
+Detailed instructions in {download}`Lesson 1 <../doc/Lesson 1.docx>`
+
+& You can [Click here to look](./lessons/lesson1.md)
+
+#### Data
+- `Data Students.gdb`
+- `orthophoto.tif`
+
 ### Overview
 
 - [ ] **Create a new project**, import the provided dataset as a layer, and add a **base map or image layer** to your map view. 
@@ -104,16 +115,7 @@ Example: Traffic congestion in one district affects neighboring areas; deforesta
   - Combine editing techniques for efficient workflows  
 
 
-### Descriptions
-Detailed instructions in {download}`Lesson 1 <../doc/Lesson 1.docx>`
-
-& You can [Click here to look](./lessons/lesson1.md)
-
-#### Data
-- `Data Students.gdb`
-- `orthophoto.tif`
-
-### Optional Task
+### Advance Task
 - Explore: ESRI Shapefile, TIFF.
 - Write a program that loads a shapefile, and try to complete the following tasks:
   - Display the **shape** (rows and columns) and print an **overview** of the data (e.g., first 5 rows or metadata).
