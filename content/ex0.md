@@ -57,21 +57,23 @@ we strongly recommend completing the exercise in the **PC lab**.
 ---
 
 ## Task
-### Overview
-- [ ] **Install ArcGIS Pro** on your personal computer (Windows only, or via a virtual machine on macOS/Linux).
-- [ ] Learn how to log in to the **TUM PC lab** and launch ArcGIS Pro from there
-- [ ] Download the raw data from Moodle and **save your work to your TUM WebDisk**(his way, you can access your files from any device, anywhere.).
-- [ ] Follow proper naming conventions when creating folders and files for your project. 
-
 ### Descriptions
 Detailed instructions in {download}`Lesson 0 <../doc/Lesson 0.docx>`
 
 & You can [Click here to look](./lessons/lesson0.md)
 
 #### Data 
-- Data-students.gdb
+- `Data-students.gdb`
 
-### Optional Task
+### Overview
+- [ ] **Install ArcGIS Pro** on your personal computer (Windows only, or via a virtual machine on macOS/Linux).
+- [ ] Learn how to log in to the **TUM PC lab** and launch ArcGIS Pro from there
+- [ ] Download the raw data from Moodle and **save your work to your TUM WebDisk**(his way, you can access your files from any device, anywhere.).
+- [ ] Follow proper naming conventions when creating folders and files for your project. 
+
+
+
+### Advanced Task
 - For principle:
     - What is _.gbd_?
 - For Python: 

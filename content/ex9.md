@@ -6,7 +6,12 @@
 
 You may be want to google but the answer actually is **"It depends on how small your ruler is."**.
 
-![Coastline Paradox](../images/ex9/coastline.png "The illustration of Coastline paradox")
+```{figure} ../images/ex9/coastline.png
+---
+name: Coastline-Paradox
+---
+The illustration of Coastline paradox
+```
 
 In short, the coastline paradox illustrates that the length of a coastline increases as the measurement scale becomes smaller. The more detail you try to capture (bays, inlets, tiny rocks), the longer the line becomes. In theory, with an infinitely small ruler, the length could approach infinity. Mathematically, this phenomenon relates to the concept of fractal dimensions, where natural features exhibit complexity at every scale. You can explore this concept further with [Fractals are typically not self-similar](https://www.youtube.com/watch?v=gB9n2gHsHN4&t=706s), [Coastline paradox, from Wikipedia](https://en.wikipedia.org/wiki/Coastline_paradox), [The Coastline Paradox Explained](https://www.youtube.com/watch?v=kFjq8PX6F7I&pp=ygURY29hc3RsaW5lIHBhcmFkb3g%3D).  
 
@@ -25,10 +30,19 @@ On the other hand, there are also several **objective methods** for quantifying 
 
 
 ## Task
+### Descriptions
 In this exercise, you will practice several **fundamental cartographic generalization techniques** in ArcGIS Pro.  
-The goal is to simplify and adapt map features for small-scale representation (1:25,000), while maintaining legibility and spatial logic.
+The goal is to simplify and adapt map features for small-scale representation (1:25,000), while maintaining legibility and spatial logic. Detailed instructions in {download}`Lesson 9 <../doc/Lesson 9.docx>`
 
-### Overview  
+& You can [Click here to look](./lessons/lesson9.md)
+
+#### Data
+- `E8_data.gbd`  
+- `Template.aprx`
+
+### Overview
+```{note}
+:class: dropdown 
 - [ ] **Simplify Water Polygons**  
   - Reduce unnecessary nodes and smooth geometry of lakes and rivers.  
 - [ ] **Aggregate and Simplify Woodland Areas**  
@@ -47,15 +61,7 @@ The goal is to simplify and adapt map features for small-scale representation (1
   - Adjust symbol placement for better readability in dense areas.  
 - [ ] **Adjust Visual Layer Order**  
   - Organize and style layers to produce a clean and readable 1:25,000 map. 
-### Descriptions
-Detailed instructions in {download}`Lesson 9 <../doc/Lesson 9.docx>`
-
-& You can [Click here to look](./lessons/lesson9.md)
-
-
-#### Data
-- `E8_data.gbd`  
-- `Template.aprx`
+```
 
 #### 1. Simplify Water Polygons 
 - Select `osm_water` polygons & Use *Simplify Polygon* with Douglas-Peucker algorithm.  
@@ -98,7 +104,7 @@ Detailed instructions in {download}`Lesson 9 <../doc/Lesson 9.docx>`
 - Style and order necessary layers properly.  
 - Export the 1:25,000 map layout to *PDF*.
 
-### Optional Task
+### Advance Task
 You can check [cartography-playground](https://cartography-playground.gitlab.io/playgrounds/cartographic-generalization/) for easier hands-on about catrographical generalization.
 
 

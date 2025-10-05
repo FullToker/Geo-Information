@@ -39,10 +39,19 @@ Spatial data analysis can be seen as consisting of several main branches, each f
   Deals with prediction at unsampled locations, including deterministic interpolation (e.g., IDW) and geostatistical methods (e.g., kriging).
 
 ## Task
+### Descriptions
 In this exercise, you will practice several **fundamental spatial analysis methods** in ArcGIS Pro.
-The goal is to understand how spatial relationships can be modeled and analyzed with GIS.  
+The goal is to understand how spatial relationships can be modeled and analyzed with GIS. Detailed instructions in {download}`Lesson 5 <../doc/Lesson 5.docx>`
+
+& You can [Click here to look](./lessons/lesson5.md)
+
+#### Data
+- `Data Students.gdb` (Buildings, Roads, Underground Stations, Tram Stops, Cafés)
+- `orthophoto.tif` (optional reference imagery)
 
 ### Overview
+```{note}
+:class: dropdown
 - [ ] **Thiessen (Voronoi) Polygons**  
   - Divide space into catchment areas around underground stations.  
 - [ ] **Buffer Analysis**  
@@ -62,15 +71,8 @@ The goal is to understand how spatial relationships can be modeled and analyzed 
 - [ ] **Spatial Autocorrelation** && **Generate Near Table**  
   - Calculate Moran’s I for café distribution patterns. 
   - Compute nearest public transport points for each café and visualize connections.  
+```
 
-### Descriptions & Steps
-Detailed instructions in {download}`Lesson 5 <../doc/Lesson 5.docx>`
-
-& You can [Click here to look](./lessons/lesson5.md)
-
-#### Data
-- `Data Students.gdb` (Buildings, Roads, Underground Stations, Tram Stops, Cafés)
-- `orthophoto.tif` (optional reference imagery)
 
 #### 1. Thiessen Polygons
 - Input: underground stations.  
@@ -97,12 +99,11 @@ Detailed instructions in {download}`Lesson 5 <../doc/Lesson 5.docx>`
 - Run **Moran’s I** on cafés to check if they are clustered, dispersed, or random.  
 
 
-### Optional Task
+### Advance Task
 - Try to build up some **basic statistics knowledge** — such as *Gaussian distribution*, *hypothesis testing*, *principal component analysis (PCA)*, and *linear regression*. Meanwhile, practice using **R** or **Jupyter Notebook** to explore these concepts through hands-on examples and simple experiments. 
   - You can check some examples in [Python Statistics Fundamentals: How to Describe Your Data](https://realpython.com/python-statistics/), [How to calculate summary statistics](https://pandas.pydata.org/docs/getting_started/intro_tutorials/06_calculate_statistics.html), [Gaussian_Distribution_Function](https://github.com/amirjahantab/Gaussian_Distribution_Function), [PCA, Sci-kit Learn](https://scikit-learn.org/stable/modules/generated/sklearn.decomposition.PCA.html)
 - Write a program to load your analysis results (e.g., Thiessen polygons, buffers, or Near table), **visualize them**, and **export the map** to an image (PNG/SVG) or an interactive HTML map
-  - Visualizing standard media files such as images is usually straightforward — for example, with [PIL](https://pypi.org/project/pillow/) or [OpenCV](https://opencv.org/).  
-  - In contrast, directly displaying **geo-related data** (like Shapefiles) is often more challenging and not very beginner-friendly. In practice, using a **web map service** is often much easier, like **[folium](https://python-visualization.github.io/folium/)** for interactive web maps. 
+  - Visualizing standard media files such as images is usually straightforward — for example, with [PIL](https://pypi.org/project/pillow/) or [OpenCV](https://opencv.org/).
 
 ## Materials
 - [Spatial analysis in ArcGIS Pro](https://pro.arcgis.com/en/pro-app/latest/help/analysis/introduction/spatial-analysis-in-arcgis-pro.htm)

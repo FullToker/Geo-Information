@@ -33,32 +33,17 @@ We’ll work with multiple styles today:
 ---
 
 ## Task
-You will build on the project based on the _**Students.gdb**_ and the project you created in **Exercise2**.
 
-### Overview
-- [ ] **Add and symbolize public transport points**  
-  - Symbolize bus stops with meaningful icons.
-  - Symbolize tram stops & underground stations using official MVG vector logos.
-- [ ] **Apply qualitative symbolization** to polygons:  
-  - Show museums and TUM buildings in distinct, meaningful colors.
-- [ ] **Apply quantitative symbolization**:
-    - **Apply graduated color symbology** to buildings based on height (calculated from number of floors × 3.5m).
-    - **Classify data** using different classification methods (equal interval, quantile, natural breaks, etc.).
-    - **Apply proportional line symbols** to roads based on maximum speed.
-- [ ] Create **cased** road symbols and adjust drawing order to join/merge features visually.
-- [ ] **Use scale-based symbolization**:  
-  - Show main roads only at certain zoom levels.  
-  - Adjust public transport symbol size by scale.
-- [ ] **Apply transparency** to blend buildings with the orthophoto.
-- [ ] **Combine skills** to symbolize underground lines with dashed strokes for shared routes.
-
----
-
-### Descriptions & Steps
+### Descriptions
 Detailed instructions in {download}`Lesson 2 <../doc/Lesson 2.docx>`
 
 & You can [Click here to look](./lessons/lesson2.md)
 
+#### Data
+- `Students.gdb`
+- Project created in **E1**.
+
+### Overview
 #### 1. Uniform Symbolization – Bus Stops
 - Add **bus_stops** layer from `Data Students.gdb`.
 - Use **Single Symbol** style → choose an appropriate point symbol from the gallery.
@@ -107,7 +92,7 @@ Detailed instructions in {download}`Lesson 2 <../doc/Lesson 2.docx>`
 
 ---
 
-## Optional Task
+## Advance Task
 - Use **Arcade expressions** to create new fields dynamically.
 - Use online tools such as [Maputnik](https://maputnik.github.io/) to explore and experiment with additional map styles you like.
 
