@@ -39,16 +39,13 @@ This is no accident. The trend was popularized by **Harry Beck’s 1933 London U
 - Used **equal station spacing** to reduce clutter
 
 This style became so successful that it’s now the **universal design language** for transit maps worldwide.
-:::{figure}
-:label: metro
-:align: center
+```{figure} ../images/ex8/london_metro.png
+The iconic Tube map of London
+```
+```{figure} ../images/ex8/real_london.jpg
+Real geography map of London Underground
+```
 
-![The iconic Tube map of London](../images/ex8/london_metro.png)
-
-![Real geography map of London Underground](../images/ex8/real_london.jpg)
-
-Comprision between a “real geography” metro map & a “schematic” version
-:::
 
 ## Task
 ### Descriptions
