@@ -56,7 +56,7 @@ In this exercise, your job is to create a well-designed **site map** of the TUM 
 #### Data
 - {download}`Data-students.gdb <../data/E1/Data Students.gdb.zip>`
 - `orthophoto.tif`
-- {download} `Layout Pictures <../data/Portfolio/Layout Pictures.zip>`
+- {download}`Layout Pictures <../data/Portfolio/Layout Pictures.zip>`
 
 ### Overview
 ```{note}
