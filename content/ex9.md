@@ -37,6 +37,7 @@ The goal is to simplify and adapt map features for small-scale representation (1
 & You can [Click here to look](./lessons/lesson9.md)
 
 #### Data
+- {download}`All data <../data/E9/Data for Exercise 8.zip>`
 - `E8_data.gbd`  
 - `Template.aprx`
 

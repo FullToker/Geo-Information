@@ -46,7 +46,7 @@ The goal is to understand how spatial relationships can be modeled and analyzed 
 & You can [Click here to look](./lessons/lesson5.md)
 
 #### Data
-- `Data Students.gdb` (Buildings, Roads, Underground Stations, Tram Stops, Cafés)
+- {download}`Data-students.gdb <../data/E1/Data Students.gdb.zip>`
 - `orthophoto.tif` (optional reference imagery)
 
 ### Overview
