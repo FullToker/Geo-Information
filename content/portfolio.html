@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Exercises &#8212; Geo-Information</title>
+    <title>Portfolio: Map Design &#8212; Geo-Information</title>
   
   
   
@@ -57,13 +57,13 @@
     <script async="async" src="../_static/sphinx-thebe.js?v=c100c467"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'content/info_ex';</script>
-    <link rel="canonical" href="/Geo-Information/content/info_ex.html" />
+    <script>DOCUMENTATION_OPTIONS.pagename = 'content/portfolio';</script>
+    <link rel="canonical" href="/Geo-Information/content/portfolio.html" />
     <link rel="icon" href="../_static/TUM.ico"/>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="E0: Introduction" href="ex0.html" />
-    <link rel="prev" title="Lecture05: Selected cartographic techniques" href="../lectures/lec05.html" />
+    <link rel="next" title="E9: Generalization" href="ex9.html" />
+    <link rel="prev" title="E7: Network Analysis" href="ex7.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -186,7 +186,7 @@
 <li class="toctree-l2"><a class="reference internal" href="../lectures/lec05.html">Lecture05: Selected cartographic techniques</a></li>
 </ul>
 </details></li>
-<li class="toctree-l1 current active has-children"><a class="current reference internal" href="#">Exercises</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="info_ex.html">Exercises</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="ex0.html">E0: Introduction</a></li>
 <li class="toctree-l2"><a class="reference internal" href="ex1.html">E1: Selecting and Editinfg Features</a></li>
 <li class="toctree-l2"><a class="reference internal" href="ex2.html">E2: Symbolization in a GIS</a></li>
@@ -195,7 +195,7 @@
 <li class="toctree-l2"><a class="reference internal" href="ex5.html">E5: Spatial Analysis Methods</a></li>
 <li class="toctree-l2"><a class="reference internal" href="ex6.html">E6: Vertical and Hydrological Analysis</a></li>
 <li class="toctree-l2"><a class="reference internal" href="ex7.html">E7: Network Analysis</a></li>
-<li class="toctree-l2"><a class="reference internal" href="portfolio.html">Portfolio: Map Design</a></li>
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">Portfolio: Map Design</a></li>
 <li class="toctree-l2"><a class="reference internal" href="ex9.html">E9: Generalization</a></li>
 </ul>
 </details></li>
@@ -266,7 +266,7 @@
       
       
       
-      <li><a href="../_sources/content/info_ex.md" target="_blank"
+      <li><a href="../_sources/content/portfolio.md" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
    title="Download source file"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -337,7 +337,9 @@ document.write(`
   </button>
 `);
 </script>
-
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
 </div></div>
       
     </div>
@@ -348,11 +350,33 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Exercises</h1>
+    <h1>Portfolio: Map Design</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
             
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#warm-up">Warm Up</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#history-of-maps">History of Maps</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#how-were-ancient-maps-made">How Were Ancient Maps Made?</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#interesting-facts-about-subway-maps">Interesting Facts about Subway Maps</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#task">Task</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#descriptions">Descriptions</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#data">Data</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#overview">Overview</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#materials">Materials</a></li>
+</ul>
+            </nav>
         </div>
     </div>
 </div>
@@ -362,30 +386,136 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="exercises">
-<h1>Exercises<a class="headerlink" href="#exercises" title="Link to this heading">#</a></h1>
-<div class="admonition-a-quick-note-on-using-ai admonition">
-<p class="admonition-title">🤖 A quick note on using AI</p>
-<p>Sure, AI tools like ChatGPT, Copilot, and their cousins can be helpful — sometimes they explain things better than your textbooks, while sometimes they confidently make things up that sound real. 😅
-We’re not here to ban them — feel free to ask them for help. But here’s the deal:</p>
-<p><strong>Don’t let AI do all the thinking for you &amp; Don’t indulge in idle queries</strong>. It’s like letting a GPS plan your road trip without checking if it’s sending you into a lake.
-If you really want to learn, go beyond AI:
-→ Read the official docs, watch a real tutorial, check the source code, struggle a bit — that’s how the magic happens.</p>
+  <section class="tex2jax_ignore mathjax_ignore" id="portfolio-map-design">
+<h1>Portfolio: Map Design<a class="headerlink" href="#portfolio-map-design" title="Link to this heading">#</a></h1>
+<section id="warm-up">
+<h2>Warm Up<a class="headerlink" href="#warm-up" title="Link to this heading">#</a></h2>
+<section id="history-of-maps">
+<h3>History of Maps<a class="headerlink" href="#history-of-maps" title="Link to this heading">#</a></h3>
+<p>Maps are <strong>as old as civilization itself</strong> — they helped early humans navigate the land, organize society, and make sense of the unknown.</p>
+<ul class="simple">
+<li><p>The <strong><a class="reference external" href="https://www.laphamsquarterly.org/roundtable/oldest-maps-world">oldest known world map</a></strong> (Babylonian, ~6th century BCE) was etched on clay, showing a stylized world with Babylon at its center.</p></li>
+<li><p>Ancient Greek scholars like <strong>Ptolemy</strong> introduced concepts such as latitude, longitude, and map projections.</p></li>
+<li><p>In medieval Europe, <strong>T and O maps</strong> placed Jerusalem at the center, blending geography with theology.</p></li>
+</ul>
+</section>
+<section id="how-were-ancient-maps-made">
+<h3>How Were Ancient Maps Made?<a class="headerlink" href="#how-were-ancient-maps-made" title="Link to this heading">#</a></h3>
+<p>Before satellites and GPS, mapmakers relied on:</p>
+<ul class="simple">
+<li><p><strong>Direct observation</strong>: using landmarks, sun position, and time to estimate distances.</p></li>
+<li><p><strong>Compass &amp; pacing</strong>: early land surveyors walked and recorded angles using simple tools.</p></li>
+<li><p><strong>Dead reckoning</strong> on ships: estimating position from speed and direction.</p></li>
+<li><p><strong>Triangulation</strong>: from the 17th century onward, measuring distances via angles from known points.</p></li>
+</ul>
+<p>Many early maps were <strong>symbolic</strong>, not literal — prioritizing cultural or religious meaning over geometric precision.</p>
+<figure class="align-default" id="ancient-map">
+<img alt="../_images/ancient_map.jpg" src="../_images/ancient_map.jpg" />
+<figcaption>
+<p><span class="caption-number">Fig. 5 </span><span class="caption-text">Map of ancient world</span><a class="headerlink" href="#ancient-map" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+</section>
+<section id="interesting-facts-about-subway-maps">
+<h3>Interesting Facts about Subway Maps<a class="headerlink" href="#interesting-facts-about-subway-maps" title="Link to this heading">#</a></h3>
+<p>Have you ever noticed that subway or metro maps often use <strong>only horizontal, vertical, or 45° diagonal lines</strong>?</p>
+<p>This is no accident. The trend was popularized by <strong>Harry Beck’s 1933 London Underground map</strong>, which:</p>
+<ul class="simple">
+<li><p>Abandoned geographical accuracy</p></li>
+<li><p>Focused on <strong>clarity and simplicity</strong></p></li>
+<li><p>Aligned all lines to a <strong>grid of 0°, 45°, 90°, 135°</strong> for visual ease</p></li>
+<li><p>Used <strong>equal station spacing</strong> to reduce clutter</p></li>
+</ul>
+<p>This style became so successful that it’s now the <strong>universal design language</strong> for transit maps worldwide.</p>
+<figure class="align-default" id="id1">
+<img alt="../_images/london_metro.png" src="../_images/london_metro.png" />
+<figcaption>
+<p><span class="caption-number">Fig. 6 </span><span class="caption-text">The iconic Tube map of London</span><a class="headerlink" href="#id1" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<figure class="align-default" id="id2">
+<img alt="../_images/real_london.jpg" src="../_images/real_london.jpg" />
+<figcaption>
+<p><span class="caption-number">Fig. 7 </span><span class="caption-text">Real geography map of London Underground</span><a class="headerlink" href="#id2" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+</section>
+</section>
+<section id="task">
+<h2>Task<a class="headerlink" href="#task" title="Link to this heading">#</a></h2>
+<section id="descriptions">
+<h3>Descriptions<a class="headerlink" href="#descriptions" title="Link to this heading">#</a></h3>
+<p>In this exercise, your job is to create a well-designed <strong>site map</strong> of the TUM campus area. Step-by-step guide in <a class="reference download internal" download="" href="../_downloads/a47f6d6e9abd70ad7bdc3ea717bd32e5/Portfolio.docx"><code class="xref download docutils literal notranslate"><span class="pre">Lesson</span> <span class="pre">8</span></code></a></p>
+<p>&amp; You can <a class="reference internal" href="lessons/portfolio.html"><span class="std std-doc">Click here to look</span></a></p>
+<section id="data">
+<h4>Data<a class="headerlink" href="#data" title="Link to this heading">#</a></h4>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">Data</span> <span class="pre">Students.gdb</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">orthophoto.tif</span></code></p></li>
+</ul>
+</section>
+</section>
+<section id="overview">
+<h3>Overview<a class="headerlink" href="#overview" title="Link to this heading">#</a></h3>
+<div class="dropdown admonition note">
+<p class="admonition-title">Note</p>
+<ul class="contains-task-list simple">
+<li class="task-list-item"><p><input class="task-list-item-checkbox" disabled="disabled" type="checkbox"> <strong>Edit Public Transport Points</strong></p>
+<ul>
+<li><p>Add missing tram stops and correct bus stop symbols.</p></li>
+</ul>
+</li>
+<li class="task-list-item"><p><input class="task-list-item-checkbox" disabled="disabled" type="checkbox"> <strong>Labelling</strong></p>
+<ul>
+<li><p>Add and style labels for bus stops, museums, streets using halo, font style, and size.</p></li>
+</ul>
+</li>
+<li class="task-list-item"><p><input class="task-list-item-checkbox" disabled="disabled" type="checkbox"> <strong>Adjust Label Priorities</strong></p>
+<ul>
+<li><p>Avoid overlaps by setting feature/label weights and rules.</p></li>
+</ul>
+</li>
+<li class="task-list-item"><p><input class="task-list-item-checkbox" disabled="disabled" type="checkbox"> <strong>Map Layout (A3 size)</strong></p>
+<ul>
+<li><p>Insert guides, main map frame, inset map, and define extent.</p></li>
+</ul>
+</li>
+<li class="task-list-item"><p><input class="task-list-item-checkbox" disabled="disabled" type="checkbox"> <strong>Add Map Elements</strong></p>
+<ul>
+<li><p>Title, legend, north arrow, scale bar, and grid.</p></li>
+</ul>
+</li>
+<li class="task-list-item"><p><input class="task-list-item-checkbox" disabled="disabled" type="checkbox"> <strong>Design &amp; Symbology</strong></p>
+<ul>
+<li><p>Refine appearance, hierarchy, and layout logic.</p></li>
+</ul>
+</li>
+<li class="task-list-item"><p><input class="task-list-item-checkbox" disabled="disabled" type="checkbox"> <strong>Export</strong></p>
+<ul>
+<li><p>Save and export your final layout as PDF (A3, 240 dpi).</p></li>
+</ul>
+</li>
+</ul>
 </div>
 <ul class="simple">
-<li><p><a class="reference internal" href="ex0.html"><span class="std std-doc">E0</span></a>: Introduction</p></li>
-<li><p><a class="reference internal" href="ex1.html"><span class="std std-doc">E1</span></a>: Selecting and Editinfg Features</p></li>
-<li><p><a class="reference internal" href="ex2.html"><span class="std std-doc">E2</span></a>: Symbolization in a GIS</p></li>
-<li><p><a class="reference internal" href="ex3.html"><span class="std std-doc">E3</span></a>: Georeferencing and Modifying Features</p></li>
-<li><p><a class="reference internal" href="ex4.html"><span class="std std-doc">E4</span></a>: 3D Visualization and 3D Animation</p></li>
-<li><p><a class="reference internal" href="ex5.html"><span class="std std-doc">E5</span></a>: Spatial Analysis Methods</p></li>
-<li><p><a class="reference internal" href="ex6.html"><span class="std std-doc">E6</span></a>: Vertical and Hydrological Analysis</p></li>
-<li><p><a class="reference internal" href="ex7.html"><span class="std std-doc">E7</span></a>: Network Analysis</p></li>
-<li><p><a class="reference internal" href="portfolio.html"><span class="std std-doc">Portfolio</span></a>: Map Design</p></li>
-<li><p><a class="reference internal" href="ex9.html"><span class="std std-doc">E9</span></a>: Generalization</p></li>
+<li><p>Edit data layers (e.g., correcting names, symbols, labels)</p></li>
+<li><p>Apply visual hierarchy and symbology</p></li>
+<li><p>Build a map layout in A3 format (portrait or landscape)</p></li>
+<li><p>Add map elements (title, legend, inset, scale bar, north arrow)</p></li>
+<li><p>Export the final design as a high-resolution PDF</p></li>
 </ul>
-<div class="toctree-wrapper compound">
-</div>
+</section>
+</section>
+<section id="materials">
+<h2>Materials<a class="headerlink" href="#materials" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p><a class="reference external" href="https://learn.arcgis.com/en/paths/mapping-and-visualization-in-arcgis-pro/">Mapping and visualization in ArcGIS Pro</a></p></li>
+<li><p><a class="reference external" href="https://pro.arcgis.com/en/pro-app/latest/get-started/add-maps-to-a-layout.htm">Make a layout</a></p></li>
+<li><p><a class="reference external" href="https://pro.arcgis.com/en/pro-app/latest/get-started/symbolize-your-data.htm">Symbolize map layers</a></p></li>
+<li><p><a class="reference external" href="https://www.esri.com/arcgis-blog/products/mapping/mapping/map-making-step-by-step">Map-making, step by step, by Heather Smith</a></p></li>
+<li><p><a class="reference external" href="https://www.youtube.com/watch?v=YqkxsTUbgks">Making a Map using ArcGIS Pro, by GeoDelta Labs</a></p></li>
+</ul>
+</section>
 </section>
 
     <script type="text/x-thebe-config">
@@ -419,20 +549,20 @@ If you really want to learn, go beyond AI:
                   
 <div class="prev-next-area">
     <a class="left-prev"
-       href="../lectures/lec05.html"
+       href="ex7.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Lecture05: Selected cartographic techniques</p>
+        <p class="prev-next-title">E7: Network Analysis</p>
       </div>
     </a>
     <a class="right-next"
-       href="ex0.html"
+       href="ex9.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">E0: Introduction</p>
+        <p class="prev-next-title">E9: Generalization</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -442,6 +572,35 @@ If you really want to learn, go beyond AI:
             </div>
             
             
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#warm-up">Warm Up</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#history-of-maps">History of Maps</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#how-were-ancient-maps-made">How Were Ancient Maps Made?</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#interesting-facts-about-subway-maps">Interesting Facts about Subway Maps</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#task">Task</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#descriptions">Descriptions</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#data">Data</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#overview">Overview</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#materials">Materials</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
               
             
           </div>
