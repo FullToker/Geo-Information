@@ -87,7 +87,7 @@ Detailed instructions in {download}`Lesson 1 <../doc/Lesson 1.docx>`
 & You can [Click here to look](./lessons/lesson1.md)
 
 #### Data
-- `Data Students.gdb`
+- {download}`Data-students.gdb <../data/E1/Data Students.gdb.zip>`
 - `orthophoto.tif`
 
 ### Overview

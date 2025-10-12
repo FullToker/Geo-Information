@@ -78,11 +78,11 @@ In this exercise, you’ll deepen your understanding of **coordinate reference s
 & You can [Click here to look](./lessons/lesson3.md)
 
 #### Data
-  - `Data Students.gdb`
-  - `orthophoto.tif`
-  - `construction_plan.png`
-  - `Address_points.txt`
-  - `Housenumbers.txt`
+- {download}`Data-students.gdb <../data/E1/Data Students.gdb.zip>`
+- `orthophoto.tif`
+- {download}`construction_plan.png <../data/E3/construction_plan.png>`
+- {download}`Address_points.txt <../data/E3/Address_points.txt>`
+- {download}`Housenumbers.txt <../data/E3/Housenumbers.txt>`
 
 
 ### Overview

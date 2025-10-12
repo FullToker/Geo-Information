@@ -40,7 +40,7 @@ Detailed instructions in {download}`Lesson 2 <../doc/Lesson 2.docx>`
 & You can [Click here to look](./lessons/lesson2.md)
 
 #### Data
-- `Students.gdb`
+- {download}`Data-students.gdb <../data/E1/Data Students.gdb.zip>`
 - Project created in **E1**.
 
 ### Overview

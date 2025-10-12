@@ -54,7 +54,7 @@ The goal is to understand how networks can be built from road data and analyzed 
 & You can [Click here to look](./lessons/lesson7.md)
 
 #### Data
-- `Data Students.gdb`
+- {download}`Data-students.gdb <../data/E1/Data Students.gdb.zip>`
 
 ### Overview
 ```{note}

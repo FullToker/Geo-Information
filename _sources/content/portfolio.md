@@ -54,8 +54,9 @@ In this exercise, your job is to create a well-designed **site map** of the TUM 
 & You can [Click here to look](./lessons/portfolio.md)
 
 #### Data
-- `Data Students.gdb`
+- {download}`Data-students.gdb <../data/E1/Data Students.gdb.zip>`
 - `orthophoto.tif`
+- {download} `Layout Pictures <../data/Portfolio/Layout Pictures.zip>`
 
 ### Overview
 ```{note}

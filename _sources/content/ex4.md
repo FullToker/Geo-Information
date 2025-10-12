@@ -73,12 +73,13 @@ In this exercise, you’ll move from **2D mapping** to **3D visualization** in A
 & You can [Click here to look](./lessons/lesson4.md)
 
 #### Data
-  - `Data Students.gdb` (buildings, roads)  
-  - `Park-cadastral.tif`  
-  - `TUM.dae`  
-  - `Old_Pinakothek.dae`  
-  - `Monuments.gpx`  
-  - `Track.gpx`
+- {download}`Data-students.gdb <../data/E1/Data Students.gdb.zip>` 
+- {download}`Park-cadastral.tif <../data/E4/Park_cadastral.zip>`  
+- `TUM.dae`  
+- `Old_Pinakothek.dae`  
+- {download} `Monuments <../data/E4/Monuments and Track from the Grey Receiver.zip>`  
+- {download} `Monuments <../data/E4/Monuments and Track from the Orange Receiver.zip>` 
+- `Track.gpx`
 
 
 ### Overview
