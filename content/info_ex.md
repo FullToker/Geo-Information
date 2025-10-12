@@ -17,5 +17,5 @@ If you really want to learn, go beyond AI:
 - [E5](./ex5.md): Spatial Analysis Methods
 - [E6](./ex6.md): Vertical and Hydrological Analysis
 - [E7](./ex7.md): Network Analysis
-- [E8](./ex8.md): Map Design
+- [Portfolio](./portfolio.md): Map Design
 - [E9](./ex9.md): Generalization

@@ -63,7 +63,7 @@ Detailed instructions in {download}`Lesson 0 <../doc/Lesson 0.docx>`
 & You can [Click here to look](./lessons/lesson0.md)
 
 #### Data 
-- `Data-students.gdb`
+- {download}`Data-students.gdb <../data/E1/Data Students.gdb>`
 
 ### Overview
 - [ ] **Install ArcGIS Pro** on your personal computer (Windows only, or via a virtual machine on macOS/Linux).
