@@ -77,8 +77,8 @@ In this exercise, you’ll move from **2D mapping** to **3D visualization** in A
 - {download}`Park-cadastral.tif <../data/E4/Park_cadastral.zip>`  
 - `TUM.dae`  
 - `Old_Pinakothek.dae`  
-- {download} `Monuments <../data/E4/Monuments and Track from the Grey Receiver.zip>`  
-- {download} `Monuments <../data/E4/Monuments and Track from the Orange Receiver.zip>` 
+- {download}`Monuments <../data/E4/Monuments and Track from the Grey Receiver.zip>`  
+- {download}`Monuments <../data/E4/Monuments and Track from the Orange Receiver.zip>` 
 - `Track.gpx`
 
 
