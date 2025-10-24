@@ -14,7 +14,7 @@ In GIS, understanding how things work is important — but knowing why and where
 - Analyzing anonymized mobile phone data to understand how people move through the city during a big festival, then optimizing bus schedules to handle the crowds.
 
 Based on our experience, there are various ways to implement above tasks:
-- Use commerical and powerful(expensive at the same time) software like [ArcGIS Pro](https://www.esri.com/en-us/arcgis/products/arcgis-pro/overview){target="_blank"}.
+- Use commerical and powerful(expensive at the same time) software like [ArcGIS Pro](https://www.esri.com/en-us/arcgis/products/arcgis-pro/overview).
 - Write lightweight Python scripts using geo-libraries such as [ArcPy](https://pro.arcgis.com/en/pro-app/arcpy/main/arcpy-a-python-package.htm), [Shapely](https://shapely.readthedocs.io/), [GeoPandas](https://geopandas.org/).
 - Develop custom applications using pro SDK, like [ArcGIS Engine](https://desktop.arcgis.com/en/arcobjects/latest/net/webframe.htm), [ArcGIS Pro SDK](https://pro.arcgis.com/en/pro-app/latest/sdk/).
 - Build standalone desktop applications based on open-source library such as [GDAL](https://gdal.org/en/stable/) and [QT](https://www.qt.io/).
