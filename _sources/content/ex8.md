@@ -37,3 +37,25 @@ name: Stc-fig
 Space Time Cube
 ```
 > Space-Time Cubes are especially useful for dynamic data like population movement, traffic flow, or disease spread.
+
+## Task
+### Data
+
+
+### Advanced Task
+
+
+
+### Reference
+This exercise is primarily based on the works:
+
+- Huang, W. et al. (2015). *Predicting human mobility with activity changes*. **International Journal of Geographical Information Science**, 29(9), 1569–1587. https://doi.org/10.1080/13658816.2015.1033421
+- Long Y, Liu X, 2013, *How mixed is Beijing, China? A visual exploration of mixed land use* Environment and Planning A 45: 2797–2798
+
+
+## Materials
+- [Geospatial Data Integration, by Thierry Warin](https://warin.ca/geospatial/12-data_integration.html)
+- [Overview of georeferencing, by ESRI ArcGIS Pro](https://pro.arcgis.com/en/pro-app/latest/help/data/imagery/overview-of-georeferencing.htm)
+- [Georeferencing, Wiki](https://en.wikipedia.org/wiki/Georeferencing)
+- [Unlocking the Power of Spatial Data Integration, by ESRI](https://mediaspace.esri.com/media/Regional%20and%20Cross-Jurisdictional%20Collaboration%3A%20Unlocking%20the%20Power%20of%20Spatial%20Data%20Integration/1_i39tp96v)
+
