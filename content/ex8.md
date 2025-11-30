@@ -40,9 +40,39 @@ Space Time Cube
 
 ## Task
 ### Data
-
+- {download}`Geolife_user_153.csv <../data/E8/153_stay.csv>`
+- {download}`Geolife_multipleusers.csv <../data/E8/users_66_150_stay_points.csv>`
+- {download}`Beijing_road <../data/E8/北京路网.rar>`
+- {download}`Weibo_check_in_data <../data/E8/Beijing+Check‑In+Records+from Sina+Weibo.zip>`
+- {download}`affine.csv <../data/E8/affine.csv>`
 
 ### Advanced Task
+
+#### Extracting Stationary and Moving Points from GPS Data
+Work with full-scale GPS trajectory data to distinguish between stationary points (e.g., home, workplace) and moving points (e.g., travel, commute). You can take our code as a [reference](https://github.com/FullToker/geo-information_ex08).
+**Steps:**
+- Download the entire GPS dataset (Geolife full trajectories).
+- Use clustering or stay-point detection methods to identify relatively fixed points.
+- Map these points over the city road network & Analyze distribution patterns.
+
+#### Extracting Location Info from Raw Social Media Data
+Work with original social media datasets (JSON or CSV format) to parse and georeference geographic information. You can look for datasets from [awesome-twitter-data](https://github.com/shaypal5/awesome-twitter-data) or other sources.
+
+**Steps:**
+- Extract place names, coordinates, or geo-tags.
+- Perform **geocoding** if only place names are given.
+- Integrate results into your base map (e.g., city districts, roads).
+- Evaluate accuracy and coverage.
+
+#### Merging and Comparing Road Network Data
+Work with different road network datasets (e.g., official shapefiles and OSM data) to merge, simplify or validate topology.
+
+**Steps:**
+- Merge multiple segments into unified roads where possible.
+- Compare with OpenStreetMap (OSM) data:
+  - Are all roads captured?
+  - Are there mismatches or topological errors?
+- Use topology tools to **check overlaps, gaps, or pseudo nodes**.
 
 
 
