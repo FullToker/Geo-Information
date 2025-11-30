@@ -368,7 +368,12 @@ document.write(`
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#task">Task</a><ul class="visible nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#data">Data</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#advanced-task">Advanced Task</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#advanced-task">Advanced Task</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#extracting-stationary-and-moving-points-from-gps-data">Extracting Stationary and Moving Points from GPS Data</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#extracting-location-info-from-raw-social-media-data">Extracting Location Info from Raw Social Media Data</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#merging-and-comparing-road-network-data">Merging and Comparing Road Network Data</a></li>
+</ul>
+</li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#reference">Reference</a></li>
 </ul>
 </li>
@@ -443,9 +448,52 @@ Spatial analysis today is about finding location <strong>within messy, real-worl
 <h2>Task<a class="headerlink" href="#task" title="Link to this heading">#</a></h2>
 <section id="data">
 <h3>Data<a class="headerlink" href="#data" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p><a class="reference download internal" download="" href="../_downloads/dc7588ad75e23e7663cb854b4ebc5130/153_stay.csv"><code class="xref download docutils literal notranslate"><span class="pre">Geolife_user_153.csv</span></code></a></p></li>
+<li><p><a class="reference download internal" download="" href="../_downloads/dec1886617539abdc5823aa335cfc08c/users_66_150_stay_points.csv"><code class="xref download docutils literal notranslate"><span class="pre">Geolife_multipleusers.csv</span></code></a></p></li>
+<li><p><a class="reference download internal" download="" href="../_downloads/22cf85583cd13df000397f2295f1469c/%E5%8C%97%E4%BA%AC%E8%B7%AF%E7%BD%91.rar"><code class="xref download docutils literal notranslate"><span class="pre">Beijing_road</span></code></a></p></li>
+<li><p><code class="xref download docutils literal notranslate"><span class="pre">Weibo_check_in_data</span></code></p></li>
+<li><p><a class="reference download internal" download="" href="../_downloads/e432048e8a5a1f2b4ff0a1e44aa7d218/affine.csv"><code class="xref download docutils literal notranslate"><span class="pre">affine.csv</span></code></a></p></li>
+</ul>
 </section>
 <section id="advanced-task">
 <h3>Advanced Task<a class="headerlink" href="#advanced-task" title="Link to this heading">#</a></h3>
+<section id="extracting-stationary-and-moving-points-from-gps-data">
+<h4>Extracting Stationary and Moving Points from GPS Data<a class="headerlink" href="#extracting-stationary-and-moving-points-from-gps-data" title="Link to this heading">#</a></h4>
+<p>Work with full-scale GPS trajectory data to distinguish between stationary points (e.g., home, workplace) and moving points (e.g., travel, commute). You can take our code as a <a class="reference external" href="https://github.com/FullToker/geo-information_ex08">reference</a>.
+<strong>Steps:</strong></p>
+<ul class="simple">
+<li><p>Download the entire GPS dataset (Geolife full trajectories).</p></li>
+<li><p>Use clustering or stay-point detection methods to identify relatively fixed points.</p></li>
+<li><p>Map these points over the city road network &amp; Analyze distribution patterns.</p></li>
+</ul>
+</section>
+<section id="extracting-location-info-from-raw-social-media-data">
+<h4>Extracting Location Info from Raw Social Media Data<a class="headerlink" href="#extracting-location-info-from-raw-social-media-data" title="Link to this heading">#</a></h4>
+<p>Work with original social media datasets (JSON or CSV format) to parse and georeference geographic information. You can look for datasets from <a class="reference external" href="https://github.com/shaypal5/awesome-twitter-data">awesome-twitter-data</a> or other sources.</p>
+<p><strong>Steps:</strong></p>
+<ul class="simple">
+<li><p>Extract place names, coordinates, or geo-tags.</p></li>
+<li><p>Perform <strong>geocoding</strong> if only place names are given.</p></li>
+<li><p>Integrate results into your base map (e.g., city districts, roads).</p></li>
+<li><p>Evaluate accuracy and coverage.</p></li>
+</ul>
+</section>
+<section id="merging-and-comparing-road-network-data">
+<h4>Merging and Comparing Road Network Data<a class="headerlink" href="#merging-and-comparing-road-network-data" title="Link to this heading">#</a></h4>
+<p>Work with different road network datasets (e.g., official shapefiles and OSM data) to merge, simplify or validate topology.</p>
+<p><strong>Steps:</strong></p>
+<ul class="simple">
+<li><p>Merge multiple segments into unified roads where possible.</p></li>
+<li><p>Compare with OpenStreetMap (OSM) data:</p>
+<ul>
+<li><p>Are all roads captured?</p></li>
+<li><p>Are there mismatches or topological errors?</p></li>
+</ul>
+</li>
+<li><p>Use topology tools to <strong>check overlaps, gaps, or pseudo nodes</strong>.</p></li>
+</ul>
+</section>
 </section>
 <section id="reference">
 <h3>Reference<a class="headerlink" href="#reference" title="Link to this heading">#</a></h3>
@@ -538,7 +586,12 @@ Spatial analysis today is about finding location <strong>within messy, real-worl
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#task">Task</a><ul class="visible nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#data">Data</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#advanced-task">Advanced Task</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#advanced-task">Advanced Task</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#extracting-stationary-and-moving-points-from-gps-data">Extracting Stationary and Moving Points from GPS Data</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#extracting-location-info-from-raw-social-media-data">Extracting Location Info from Raw Social Media Data</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#merging-and-comparing-road-network-data">Merging and Comparing Road Network Data</a></li>
+</ul>
+</li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#reference">Reference</a></li>
 </ul>
 </li>
