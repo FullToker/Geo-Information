@@ -43,7 +43,7 @@ Space Time Cube
 - {download}`Geolife_user_153.csv <../data/E8/153_stay.csv>`
 - {download}`Geolife_multipleusers.csv <../data/E8/users_66_150_stay_points.csv>`
 - {download}`Beijing_road <../data/E8/北京路网.rar>`
-- {download}`Weibo_check_in_data <../data/E8/Beijing+Check‑In+Records+from Sina+Weibo.zip>`
+- {download}`Weibo_check_in_data <../data/E8/BeijingCheckInRecordsfromSinaWeibo.zip>`
 - {download}`affine.csv <../data/E8/affine.csv>`
 
 ### Advanced Task
