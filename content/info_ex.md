@@ -20,3 +20,4 @@ If you really want to learn, go beyond AI:
 - [E8](./ex8.md): Spatial Data Integration
 - [Portfolio](./portfolio.md): Map Design
 - [E9](./ex9.md): Generalization
+- [E10](./ex10.md): Open Geospatial Data
