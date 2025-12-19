@@ -377,9 +377,15 @@ document.write(`
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#task">Task</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#description">Description</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#data">Data</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#task-1-download-osm-data-using-quickosm-in-qgis">Task 1: Download OSM Data using QuickOSM in QGIS</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#task-2-analyze-and-compare-road-networks">Task 2: Analyze and Compare Road Networks</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#plugins-and-basemap-services">1. Plugins and Basemap Services</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#load-multi-source-basemaps-from-quickmapservices">Load Multi-Source Basemaps from <code class="docutils literal notranslate"><span class="pre">QuickMapServices</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#load-multi-source-basemaps-from-quickosm">Load Multi-Source Basemaps from <code class="docutils literal notranslate"><span class="pre">QuickOSM</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#open-processing-toolbox">2. Open Processing Toolbox</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#analyze-and-compare-road-networks">3: Analyze and Compare Road Networks</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#task-3-spatial-analysis-with-osm-features">Task 3: Spatial Analysis with OSM Features</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#advanced-task">Advanced Task</a></li>
 </ul>
@@ -555,35 +561,151 @@ Open models allow researchers and developers to experiment freely and drive inno
 </section>
 <section id="task">
 <h2>Task<a class="headerlink" href="#task" title="Link to this heading">#</a></h2>
+<section id="description">
+<h3>Description<a class="headerlink" href="#description" title="Link to this heading">#</a></h3>
+</section>
 <section id="data">
 <h3>Data<a class="headerlink" href="#data" title="Link to this heading">#</a></h3>
-<ul class="simple">
-<li><p><code class="xref download docutils literal notranslate"><span class="pre">Beijing_roads_OSM</span></code></p></li>
-<li><p><code class="xref download docutils literal notranslate"><span class="pre">Beijing_roads_official</span></code></p></li>
-<li><p><code class="xref download docutils literal notranslate"><span class="pre">Districts_shapefile</span></code></p></li>
-<li><p><code class="xref download docutils literal notranslate"><span class="pre">School_POI_OSM</span></code></p></li>
-</ul>
 </section>
-<section id="task-1-download-osm-data-using-quickosm-in-qgis">
-<h3>Task 1: Download OSM Data using QuickOSM in QGIS<a class="headerlink" href="#task-1-download-osm-data-using-quickosm-in-qgis" title="Link to this heading">#</a></h3>
-<p>Use the QuickOSM plugin to directly query OSM features.</p>
-<p><strong>Steps:</strong></p>
+<section id="plugins-and-basemap-services">
+<h3>1. Plugins and Basemap Services<a class="headerlink" href="#plugins-and-basemap-services" title="Link to this heading">#</a></h3>
+<p>In <em>ArcGIS</em>, adding high-quality imagery like Google or Bing Maps usually requires:</p>
 <ul class="simple">
-<li><p>Install QuickOSM plugin in QGIS.</p></li>
-<li><p>Query for features like:</p>
-<ul>
-<li><p><code class="docutils literal notranslate"><span class="pre">highway</span> <span class="pre">=</span> <span class="pre">primary</span></code></p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">amenity</span> <span class="pre">=</span> <span class="pre">school</span></code></p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">building</span> <span class="pre">=</span> <span class="pre">hospital</span></code></p></li>
+<li><p>Complicated configuration</p></li>
+<li><p>Paid services</p></li>
+<li><p>Or reliance on slower official basemaps</p></li>
+</ul>
+<p>In contrast, <strong>QGIS</strong> offers a more flexible, open solution using community-developed plugins.</p>
+<ol class="arabic simple">
+<li><p>Open the <strong>QGIS Plugin Manager</strong>(Plugins -&gt; Manage and Install Plugins…)</p></li>
+<li><p>Search and install the following:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">QuickMapServices</span></code> – for basemaps</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">QuickOSM</span></code> – for OpenStreetMap vector data</p></li>
 </ul>
 </li>
-<li><p>Explore the structure of downloaded data and visualize by category.</p></li>
-<li><p>Save layers locally as GeoJSON or Shapefile.</p></li>
+</ol>
+<blockquote>
+<div><p>The QGIS plugin ecosystem is powered by global contributors and updates frequently — one of the reasons QGIS is so powerful. This is why we love open-source: it allows contributions from people all around the world, not just a small group of engineers in commercial companies like Esri.</p>
+</div></blockquote>
+<section id="load-multi-source-basemaps-from-quickmapservices">
+<h4>Load Multi-Source Basemaps from <code class="docutils literal notranslate"><span class="pre">QuickMapServices</span></code><a class="headerlink" href="#load-multi-source-basemaps-from-quickmapservices" title="Link to this heading">#</a></h4>
+<ol class="arabic simple">
+<li><p>Open the <em>Settings</em> of this plugin.</p></li>
+<li><p>In <em>More services</em> page, select the <em>Get contributed pack</em></p></li>
+<li><p>Then you can load various basemaps in a single click:</p></li>
+</ol>
+<ul class="simple">
+<li><p>Google Satellite</p></li>
+<li><p>OpenStreetMap Standard</p></li>
+<li><p>CartoDB Dark Matter <em>(dark background, great for data visualization)</em></p></li>
 </ul>
+<figure class="align-default" id="oms-plugin">
+<img alt="../_images/osm_getpack.png" src="../_images/osm_getpack.png" />
+<figcaption>
+<p><span class="caption-text">OMS Tool Bar</span><a class="headerlink" href="#oms-plugin" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<figure class="align-default" id="oms-settings">
+<img alt="../_images/oms_settings.png" src="../_images/oms_settings.png" />
+<figcaption>
+<p><span class="caption-text">OMS Settings</span><a class="headerlink" href="#oms-settings" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<figure class="align-default" id="oms-esri-demo">
+<img alt="../_images/osm_esri.png" src="../_images/osm_esri.png" />
+<figcaption>
+<p><span class="caption-text">Demo of loading data from OMS</span><a class="headerlink" href="#oms-esri-demo" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
 </section>
-<hr class="docutils" />
-<section id="task-2-analyze-and-compare-road-networks">
-<h3>Task 2: Analyze and Compare Road Networks<a class="headerlink" href="#task-2-analyze-and-compare-road-networks" title="Link to this heading">#</a></h3>
+<section id="load-multi-source-basemaps-from-quickosm">
+<h4>Load Multi-Source Basemaps from <code class="docutils literal notranslate"><span class="pre">QuickOSM</span></code><a class="headerlink" href="#load-multi-source-basemaps-from-quickosm" title="Link to this heading">#</a></h4>
+<p>The traditional workflow for acquiring city-scale spatial data is:</p>
+<ol class="arabic simple">
+<li><p>Search and download a Shapefile from a website</p></li>
+<li><p>Unzip it</p></li>
+<li><p>Clean the data</p></li>
+<li><p>Import into your GIS software</p></li>
+</ol>
+<p>But with <strong>QGIS + QuickOSM</strong>, you can skip all of that — and request data directly from OpenStreetMap (OSM) in seconds.</p>
+<ol class="arabic simple">
+<li><p>Open the <strong>QuickOSM</strong> plugin and <em>quick query</em> page</p></li>
+<li><p>Set the following fields:</p></li>
+</ol>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>Key: shop       Value: convenience
+</pre></div>
+</div>
+<ol class="arabic simple" start="3">
+<li><p>Choose the location:</p>
+<ul class="simple">
+<li><p>Canvas Extent (the current visible map area), or</p></li>
+<li><p>Type a city name (e.g., “Beijing”)</p></li>
+</ul>
+</li>
+<li><p>Click Run Query</p></li>
+</ol>
+<figure class="align-default" id="osm-query-page">
+<img alt="../_images/osm_query.png" src="../_images/osm_query.png" />
+<figcaption>
+<p><span class="caption-text">Example of query in <em>QuickOSM</em></span><a class="headerlink" href="#osm-query-page" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<blockquote>
+<div><p>You can change the <strong>Overpass API</strong> in <strong>Parameter</strong> page of OSM if you find query is super slow.</p>
+</div></blockquote>
+<ol class="arabic simple" start="5">
+<li><p>Analyze</p></li>
+</ol>
+<ul class="simple">
+<li><p>The data will be downloaded and added directly to your QGIS project as a new vector layer.</p>
+<ul>
+<li><p>Open the attribute table to explore the OSM tag system.</p></li>
+<li><p>You’ll see a wide range of metadata from contributors worldwide.</p></li>
+</ul>
+</li>
+<li><p>You can try with a wide range of queries, including different keywords and boundaries. You can also export the query results for further use.</p></li>
+</ul>
+<ol class="arabic simple" start="6">
+<li><p>Export layers
+Simply right-click the layer and select “Export” → “Save Features As…”. Choose your preferred format and adjust the settings as needed. You can also download raster tiles using the <em>Generate XYZ Tiles(Directory)</em> tool.</p></li>
+</ol>
+<figure class="align-default" id="osm-export-tiles">
+<img alt="../_images/osm_export_tiles.png" src="../_images/osm_export_tiles.png" />
+<figcaption>
+<p><span class="caption-text">Download Raster Tiles using Raster Tools</span><a class="headerlink" href="#osm-export-tiles" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+</section>
+</section>
+<section id="open-processing-toolbox">
+<h3>2. Open Processing Toolbox<a class="headerlink" href="#open-processing-toolbox" title="Link to this heading">#</a></h3>
+<p>ArcGIS provides a powerful toolbox, but it is largely <em>closed and proprietary</em>.
+In contrast, QGIS integrates a wide variety of third-party geospatial engines, including:</p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://grass.osgeo.org/learn/">GRASS GIS</a></p></li>
+<li><p><a class="reference external" href="https://saga-gis.sourceforge.io/en/index.html">SAGA GIS</a></p></li>
+<li><p><a class="reference external" href="https://gdal.org/en/stable/">GDAL</a></p></li>
+<li><p><a class="reference external" href="https://plugins.qgis.org/plugins/">Many Python-based tools</a></p></li>
+</ul>
+<p>These are all accessible through one unified interface: the <strong>Processing Toolbox</strong>.</p>
+<ol class="arabic simple">
+<li><p>Open the <strong>Processing Toolbox</strong> panel in QGIS.</p></li>
+<li><p>Instead of using the default QGIS <strong>Buffer</strong> tool, try using:</p>
+<ul class="simple">
+<li><p><strong>GRASS → v.buffer</strong></p></li>
+<li><p><strong>SAGA → Rasterize</strong></p></li>
+<li><p><strong>SAGA → Kernel Density Estimation</strong></p></li>
+</ul>
+</li>
+<li><p>Observe the flexibility and different parameter options offered by these tools.</p></li>
+</ol>
+<blockquote>
+<div><p>QGIS is more than just a GIS software — it’s a graphical front-end that orchestrates a wide range of open-source geospatial engines. You’re using GRASS, SAGA, GDAL, and others all at once, without even leaving the interface.</p>
+</div></blockquote>
+</section>
+<section id="analyze-and-compare-road-networks">
+<h3>3: Analyze and Compare Road Networks<a class="headerlink" href="#analyze-and-compare-road-networks" title="Link to this heading">#</a></h3>
 <p>Use two sources of road data: official shapefile vs. OSM data.</p>
 <p><strong>Steps:</strong></p>
 <ul class="simple">
@@ -698,9 +820,15 @@ Open models allow researchers and developers to experiment freely and drive inno
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#task">Task</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#description">Description</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#data">Data</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#task-1-download-osm-data-using-quickosm-in-qgis">Task 1: Download OSM Data using QuickOSM in QGIS</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#task-2-analyze-and-compare-road-networks">Task 2: Analyze and Compare Road Networks</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#plugins-and-basemap-services">1. Plugins and Basemap Services</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#load-multi-source-basemaps-from-quickmapservices">Load Multi-Source Basemaps from <code class="docutils literal notranslate"><span class="pre">QuickMapServices</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#load-multi-source-basemaps-from-quickosm">Load Multi-Source Basemaps from <code class="docutils literal notranslate"><span class="pre">QuickOSM</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#open-processing-toolbox">2. Open Processing Toolbox</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#analyze-and-compare-road-networks">3: Analyze and Compare Road Networks</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#task-3-spatial-analysis-with-osm-features">Task 3: Spatial Analysis with OSM Features</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#advanced-task">Advanced Task</a></li>
 </ul>
