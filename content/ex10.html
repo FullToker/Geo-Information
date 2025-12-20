@@ -62,6 +62,8 @@
     <link rel="icon" href="../_static/TUM.ico"/>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Detailed Instructions" href="lessons/info_les.html" />
+    <link rel="prev" title="E9: Generalization" href="ex9.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -124,8 +126,6 @@
       
       
       
-        
-      
       <div class="bd-sidebar-primary bd-sidebar">
         
 
@@ -173,7 +173,7 @@
 </form></div>
         <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item navbar-nav active">
-        <ul class="nav bd-sidenav">
+        <ul class="current nav bd-sidenav">
 <li class="toctree-l1 has-children"><a class="reference internal" href="Home.html">About</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="about.html">Acknoledgement</a></li>
 </ul>
@@ -186,7 +186,7 @@
 <li class="toctree-l2"><a class="reference internal" href="../lectures/lec05.html">Lecture05: Selected cartographic techniques</a></li>
 </ul>
 </details></li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="info_ex.html">Exercises</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="info_ex.html">Exercises</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="ex0.html">E0: Introduction</a></li>
 <li class="toctree-l2"><a class="reference internal" href="ex1.html">E1: Selecting and Editinfg Features</a></li>
 <li class="toctree-l2"><a class="reference internal" href="ex2.html">E2: Symbolization in a GIS</a></li>
@@ -198,6 +198,7 @@
 <li class="toctree-l2"><a class="reference internal" href="ex8.html">E8: Spatial Data Integration</a></li>
 <li class="toctree-l2"><a class="reference internal" href="portfolio.html">Portfolio: Map Design</a></li>
 <li class="toctree-l2"><a class="reference internal" href="ex9.html">E9: Generalization</a></li>
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">E10: Open geospatial Data</a></li>
 </ul>
 </details></li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="lessons/info_les.html">Instructions</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
@@ -378,15 +379,14 @@ document.write(`
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#task">Task</a><ul class="visible nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#description">Description</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#data">Data</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#plugins-and-basemap-services">1. Plugins and Basemap Services</a><ul class="visible nav section-nav flex-column">
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#load-multi-source-basemaps-from-quickmapservices">Load Multi-Source Basemaps from <code class="docutils literal notranslate"><span class="pre">QuickMapServices</span></code></a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#load-multi-source-basemaps-from-quickosm">Load Multi-Source Basemaps from <code class="docutils literal notranslate"><span class="pre">QuickOSM</span></code></a></li>
 </ul>
 </li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#open-processing-toolbox">2. Open Processing Toolbox</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#analyze-and-compare-road-networks">3: Analyze and Compare Road Networks</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#task-3-spatial-analysis-with-osm-features">Task 3: Spatial Analysis with OSM Features</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#lightweight-3d-visualization">3: Lightweight 3D Visualization</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id1"></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#advanced-task">Advanced Task</a></li>
 </ul>
 </li>
@@ -563,9 +563,17 @@ Open models allow researchers and developers to experiment freely and drive inno
 <h2>Task<a class="headerlink" href="#task" title="Link to this heading">#</a></h2>
 <section id="description">
 <h3>Description<a class="headerlink" href="#description" title="Link to this heading">#</a></h3>
-</section>
-<section id="data">
-<h3>Data<a class="headerlink" href="#data" title="Link to this heading">#</a></h3>
+<p>Today’s lab will focus on <code class="docutils literal notranslate"><span class="pre">QGIS</span></code> and its related tools. Please keep the following points:</p>
+<ul class="simple">
+<li><p><strong>No detailed handout</strong> is provided for this chapter — all instructions will be given here.</p></li>
+<li><p>This exercise is highly flexible and exploratory. You are encouraged to explore freely — from data handling to geoprocessing tasks. <strong>We provide only the foundational workflows and concepts.</strong></p>
+<ul>
+<li><p>You can choose to work on a topic that interests you, or try to replicate a previous exercise or an online case study.</p></li>
+</ul>
+</li>
+<li><p>The QGIS interface may vary slightly across different versions or operating systems, but the <strong>core logic and operations remain the same</strong>.</p></li>
+<li><p>While <strong>open data</strong> is a key component of the open GIS ecosystem, this session <strong>does not focus</strong> on it (such as web data services or OpenStreetMap). These topics will be covered in more detail in other lectures.</p></li>
+</ul>
 </section>
 <section id="plugins-and-basemap-services">
 <h3>1. Plugins and Basemap Services<a class="headerlink" href="#plugins-and-basemap-services" title="Link to this heading">#</a></h3>
@@ -590,6 +598,7 @@ Open models allow researchers and developers to experiment freely and drive inno
 </div></blockquote>
 <section id="load-multi-source-basemaps-from-quickmapservices">
 <h4>Load Multi-Source Basemaps from <code class="docutils literal notranslate"><span class="pre">QuickMapServices</span></code><a class="headerlink" href="#load-multi-source-basemaps-from-quickmapservices" title="Link to this heading">#</a></h4>
+<p><strong>Steps:</strong></p>
 <ol class="arabic simple">
 <li><p>Open the <em>Settings</em> of this plugin.</p></li>
 <li><p>In <em>More services</em> page, select the <em>Get contributed pack</em></p></li>
@@ -603,19 +612,19 @@ Open models allow researchers and developers to experiment freely and drive inno
 <figure class="align-default" id="oms-plugin">
 <img alt="../_images/osm_getpack.png" src="../_images/osm_getpack.png" />
 <figcaption>
-<p><span class="caption-text">OMS Tool Bar</span><a class="headerlink" href="#oms-plugin" title="Link to this image">#</a></p>
+<p><span class="caption-number">Fig. 10 </span><span class="caption-text">OMS Tool Bar</span><a class="headerlink" href="#oms-plugin" title="Link to this image">#</a></p>
 </figcaption>
 </figure>
 <figure class="align-default" id="oms-settings">
 <img alt="../_images/oms_settings.png" src="../_images/oms_settings.png" />
 <figcaption>
-<p><span class="caption-text">OMS Settings</span><a class="headerlink" href="#oms-settings" title="Link to this image">#</a></p>
+<p><span class="caption-number">Fig. 11 </span><span class="caption-text">OMS Settings</span><a class="headerlink" href="#oms-settings" title="Link to this image">#</a></p>
 </figcaption>
 </figure>
 <figure class="align-default" id="oms-esri-demo">
 <img alt="../_images/osm_esri.png" src="../_images/osm_esri.png" />
 <figcaption>
-<p><span class="caption-text">Demo of loading data from OMS</span><a class="headerlink" href="#oms-esri-demo" title="Link to this image">#</a></p>
+<p><span class="caption-number">Fig. 12 </span><span class="caption-text">Demo of loading data from OMS</span><a class="headerlink" href="#oms-esri-demo" title="Link to this image">#</a></p>
 </figcaption>
 </figure>
 </section>
@@ -628,7 +637,7 @@ Open models allow researchers and developers to experiment freely and drive inno
 <li><p>Clean the data</p></li>
 <li><p>Import into your GIS software</p></li>
 </ol>
-<p>But with <strong>QGIS + QuickOSM</strong>, you can skip all of that — and request data directly from OpenStreetMap (OSM) in seconds.</p>
+<p>But with <strong>QGIS + QuickOSM</strong>, you can skip all of that — and request data directly from OpenStreetMap (OSM) in seconds. <strong>Steps:</strong></p>
 <ol class="arabic simple">
 <li><p>Open the <strong>QuickOSM</strong> plugin and <em>quick query</em> page</p></li>
 <li><p>Set the following fields:</p></li>
@@ -648,7 +657,7 @@ Open models allow researchers and developers to experiment freely and drive inno
 <figure class="align-default" id="osm-query-page">
 <img alt="../_images/osm_query.png" src="../_images/osm_query.png" />
 <figcaption>
-<p><span class="caption-text">Example of query in <em>QuickOSM</em></span><a class="headerlink" href="#osm-query-page" title="Link to this image">#</a></p>
+<p><span class="caption-number">Fig. 13 </span><span class="caption-text">Example of query in <em>QuickOSM</em></span><a class="headerlink" href="#osm-query-page" title="Link to this image">#</a></p>
 </figcaption>
 </figure>
 <blockquote>
@@ -673,7 +682,7 @@ Simply right-click the layer and select “Export” → “Save Features As…�
 <figure class="align-default" id="osm-export-tiles">
 <img alt="../_images/osm_export_tiles.png" src="../_images/osm_export_tiles.png" />
 <figcaption>
-<p><span class="caption-text">Download Raster Tiles using Raster Tools</span><a class="headerlink" href="#osm-export-tiles" title="Link to this image">#</a></p>
+<p><span class="caption-number">Fig. 14 </span><span class="caption-text">Download Raster Tiles using Raster Tools</span><a class="headerlink" href="#osm-export-tiles" title="Link to this image">#</a></p>
 </figcaption>
 </figure>
 </section>
@@ -703,32 +712,45 @@ In contrast, QGIS integrates a wide variety of third-party geospatial engines, i
 <blockquote>
 <div><p>QGIS is more than just a GIS software — it’s a graphical front-end that orchestrates a wide range of open-source geospatial engines. You’re using GRASS, SAGA, GDAL, and others all at once, without even leaving the interface.</p>
 </div></blockquote>
-</section>
-<section id="analyze-and-compare-road-networks">
-<h3>3: Analyze and Compare Road Networks<a class="headerlink" href="#analyze-and-compare-road-networks" title="Link to this heading">#</a></h3>
-<p>Use two sources of road data: official shapefile vs. OSM data.</p>
-<p><strong>Steps:</strong></p>
+<p>Some datasets may require additional access or credentials. For example, using the <em>SRTM-Downloader</em> plugin may require a valid NASA account. Also, to enable integration between SAGA and QGIS, extra configuration may be needed. You can refer to the <a class="reference external" href="https://plugins.qgis.org/plugins/processing_saga_nextgen/">Processing SAGA NextGen Provider</a> for more information.
+Feel free to experiment with various open-source tools to reproduce earlier tasks — for instance:</p>
 <ul class="simple">
-<li><p>Load both layers into QGIS.</p></li>
-<li><p>Use topology tools to check connectivity.</p></li>
-<li><p>Compare coverage using <code class="docutils literal notranslate"><span class="pre">Difference</span></code> or <code class="docutils literal notranslate"><span class="pre">Intersection</span></code>.</p></li>
-<li><p>Count and visualize roads missing from one dataset.</p></li>
-<li><p>Optional: Buffer main roads and analyze coverage of public amenities.</p></li>
+<li><p>Shortest path and network analysis from <a class="reference internal" href="ex7.html"><span class="std std-doc">E7</span></a></p>
+<ul>
+<li><p>Spatial analysis workflows from <a class="reference internal" href="ex7.html"><span class="std std-doc">E5</span></a></p></li>
 </ul>
+</li>
+</ul>
+<figure class="align-default" id="qgis-open-tools">
+<img alt="../_images/qgis_tools.png" src="../_images/qgis_tools.png" />
+<figcaption>
+<p><span class="caption-number">Fig. 15 </span><span class="caption-text">You can find a variety of tools available in the QGIS folder.</span><a class="headerlink" href="#qgis-open-tools" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
 </section>
-<hr class="docutils" />
-<section id="task-3-spatial-analysis-with-osm-features">
-<h3>Task 3: Spatial Analysis with OSM Features<a class="headerlink" href="#task-3-spatial-analysis-with-osm-features" title="Link to this heading">#</a></h3>
-<p><strong>Example use case:</strong> Are schools evenly distributed across districts?</p>
+<section id="lightweight-3d-visualization">
+<h3>3: Lightweight 3D Visualization<a class="headerlink" href="#lightweight-3d-visualization" title="Link to this heading">#</a></h3>
+<p>While ArcGIS Pro offers powerful 3D capabilities, sharing your work is often difficult — requiring large project packages or uploading to ArcGIS Online. Meanwhile, starting from scratch to learn web development and front-end technologies can be too time-consuming. We once considered making “publishing a web map” an advanced task — but even as an advanced task, it may be too challenging for most students.</p>
 <p><strong>Steps:</strong></p>
-<ul class="simple">
-<li><p>Use OSM school POIs.</p></li>
-<li><p>Use <code class="docutils literal notranslate"><span class="pre">Count</span> <span class="pre">points</span> <span class="pre">in</span> <span class="pre">polygon</span></code> to aggregate by district.</p></li>
-<li><p>Normalize by area or population (if available).</p></li>
-<li><p>Visualize as a choropleth map.</p></li>
-</ul>
+<ol class="arabic simple">
+<li><p>Use the <strong>SRTM Downloader</strong> plugin (if available)<br />
+or  Load an <strong>online DEM (Digital Elevation Model)</strong> service directly into QGIS.</p></li>
+<li><p>Install and open the <strong>qgis2threejs</strong> plugin.</p></li>
+<li><p>Overlay a <strong>satellite basemap</strong> on top of the DEM.</p></li>
+<li><p>If you have <strong>buildings from OSM</strong> (with height attributes), use extrusion to make them 3D.</p></li>
+<li><p>Click <code class="docutils literal notranslate"><span class="pre">Export</span> <span class="pre">to</span> <span class="pre">Web</span></code>. Then the plugin will generate a <code class="docutils literal notranslate"><span class="pre">.html</span></code> file.</p></li>
+<li><p>You can open it directly in a browser or send it to others — no software installation is needed to view the <strong>interactive 3D map</strong>.</p></li>
+</ol>
+<figure class="align-default" id="qgis-thressjs-html">
+<img alt="../_images/qgis_3dweb.png" src="../_images/qgis_3dweb.png" />
+<figcaption>
+<p><span class="caption-number">Fig. 16 </span><span class="caption-text"><em>qgis2threejs</em> Panel</span><a class="headerlink" href="#qgis-thressjs-html" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
 </section>
-<hr class="docutils" />
+<section id="id1">
+<h3><a class="headerlink" href="#id1" title="Link to this heading">#</a></h3>
+</section>
 <section id="advanced-task">
 <h3>Advanced Task<a class="headerlink" href="#advanced-task" title="Link to this heading">#</a></h3>
 <ul class="simple">
@@ -740,12 +762,6 @@ In contrast, QGIS integrates a wide variety of third-party geospatial engines, i
 </section>
 <section id="references">
 <h2>References<a class="headerlink" href="#references" title="Link to this heading">#</a></h2>
-<ul class="simple">
-<li><p><a class="reference external" href="https://wiki.openstreetmap.org/wiki/Main_Page">OpenStreetMap Wiki</a></p></li>
-<li><p><a class="reference external" href="https://docs.qgis.org/">QGIS Documentation</a></p></li>
-<li><p><a class="reference external" href="https://github.com/3liz/QuickOSM">QuickOSM Plugin Documentation</a></p></li>
-<li><p><a class="reference external" href="https://wiki.openstreetmap.org/wiki/Overpass_turbo">Overpass Turbo Guide</a></p></li>
-</ul>
 </section>
 <section id="materials">
 <h2>Materials<a class="headerlink" href="#materials" title="Link to this heading">#</a></h2>
@@ -788,6 +804,24 @@ In contrast, QGIS integrates a wide variety of third-party geospatial engines, i
                 <footer class="prev-next-footer d-print-none">
                   
 <div class="prev-next-area">
+    <a class="left-prev"
+       href="ex9.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">E9: Generalization</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="lessons/info_les.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Detailed Instructions</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
 </div>
                 </footer>
               
@@ -821,15 +855,14 @@ In contrast, QGIS integrates a wide variety of third-party geospatial engines, i
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#task">Task</a><ul class="visible nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#description">Description</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#data">Data</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#plugins-and-basemap-services">1. Plugins and Basemap Services</a><ul class="visible nav section-nav flex-column">
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#load-multi-source-basemaps-from-quickmapservices">Load Multi-Source Basemaps from <code class="docutils literal notranslate"><span class="pre">QuickMapServices</span></code></a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#load-multi-source-basemaps-from-quickosm">Load Multi-Source Basemaps from <code class="docutils literal notranslate"><span class="pre">QuickOSM</span></code></a></li>
 </ul>
 </li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#open-processing-toolbox">2. Open Processing Toolbox</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#analyze-and-compare-road-networks">3: Analyze and Compare Road Networks</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#task-3-spatial-analysis-with-osm-features">Task 3: Spatial Analysis with OSM Features</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#lightweight-3d-visualization">3: Lightweight 3D Visualization</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id1"></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#advanced-task">Advanced Task</a></li>
 </ul>
 </li>
