@@ -26,6 +26,7 @@ entries:
   - file: content/ex8
   - file: content/portfolio
   - file: content/ex9
+  - file: content/ex10
 - file: content/lessons/info_les
   title: Instructions
   entries:
