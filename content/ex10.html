@@ -364,7 +364,7 @@ document.write(`
                 <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#warm-up">Warm Up</a><ul class="visible nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#open-source-vs-closed-source">Open Source vs Closed Source</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#open-source-licenses-whats-allowed">Open Source Licenses: What’s Allowed?</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#open-source-licenses">Open Source Licenses</a><ul class="visible nav section-nav flex-column">
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#why-people-include-me-still-believe-in-open-source">Why People(Include me) Still Believe in Open Source</a></li>
 </ul>
 </li>
@@ -386,11 +386,10 @@ document.write(`
 </li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#open-processing-toolbox">2. Open Processing Toolbox</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#lightweight-3d-visualization">3: Lightweight 3D Visualization</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id1"></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#flow-lines-using-geometry-generator">4: Flow Lines using Geometry Generator</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#advanced-task">Advanced Task</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#references">References</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#materials">Materials</a></li>
 </ul>
             </nav>
@@ -461,10 +460,9 @@ Open models allow researchers and developers to experiment freely and drive inno
 <div><p>Open-source LLMs are especially valuable because training foundational models is largely limited to a few big tech companies. For other companies and universities, it’s just impossible to train such models from scratch. Open-source releases make it possible for researchers and startups to study, fine-tune, and deploy models locally. This openness has enabled a wave of innovation in AI applications, allowing broader participation rather than leaving the field entirely dominated by tech giants.</p>
 </div></blockquote>
 </section>
-<section id="open-source-licenses-whats-allowed">
-<h3>Open Source Licenses: What’s Allowed?<a class="headerlink" href="#open-source-licenses-whats-allowed" title="Link to this heading">#</a></h3>
-<p>Just because something is open-source doesn’t mean you can do anything with it.</p>
-<p>Different licenses come with different freedoms and responsibilities. Here are a few major ones:</p>
+<section id="open-source-licenses">
+<h3>Open Source Licenses<a class="headerlink" href="#open-source-licenses" title="Link to this heading">#</a></h3>
+<p>Just because something is open-source doesn’t mean you can do anything with it. Different licenses come with different freedoms and responsibilities. Here are a few major ones:</p>
 <div class="pst-scrollable-table-container"><table class="table">
 <thead>
 <tr class="row-odd"><th class="head"><p>License</p></th>
@@ -739,7 +737,7 @@ or  Load an <strong>online DEM (Digital Elevation Model)</strong> service direct
 <li><p>Overlay a <strong>satellite basemap</strong> on top of the DEM.</p></li>
 <li><p>If you have <strong>buildings from OSM</strong> (with height attributes), use extrusion to make them 3D.</p></li>
 <li><p>Click <code class="docutils literal notranslate"><span class="pre">Export</span> <span class="pre">to</span> <span class="pre">Web</span></code>. Then the plugin will generate a <code class="docutils literal notranslate"><span class="pre">.html</span></code> file.</p></li>
-<li><p>You can open it directly in a browser or send it to others — no software installation is needed to view the <strong>interactive 3D map</strong>.</p></li>
+<li><p>You can open it directly in a browser or send it to others.</p></li>
 </ol>
 <figure class="align-default" id="qgis-thressjs-html">
 <img alt="../_images/qgis_3dweb.png" src="../_images/qgis_3dweb.png" />
@@ -748,28 +746,88 @@ or  Load an <strong>online DEM (Digital Elevation Model)</strong> service direct
 </figcaption>
 </figure>
 </section>
-<section id="id1">
-<h3><a class="headerlink" href="#id1" title="Link to this heading">#</a></h3>
+<section id="flow-lines-using-geometry-generator">
+<h3>4: Flow Lines using Geometry Generator<a class="headerlink" href="#flow-lines-using-geometry-generator" title="Link to this heading">#</a></h3>
+<p>Traditional GIS tools like ArcGIS often require generating new shapefiles for visual effects like “glowing buffers” or “flight paths.”  In contrast, QGIS allows real-time visual styling with <strong>Geometry Generator</strong> withput modifying your original data. What you see on the map doesn’t necessarily have to be stored on disk, it can be dynamically generated through <strong>data-driven styling</strong>.</p>
+<p><strong>Steps:</strong></p>
+<ol class="arabic simple">
+<li><p>Add a Dark Base Map</p></li>
+</ol>
+<ul class="simple">
+<li><p>Go to <code class="docutils literal notranslate"><span class="pre">Web</span> <span class="pre">→</span> <span class="pre">QuickMapServices</span> <span class="pre">→</span> <span class="pre">CartoDB</span> <span class="pre">→</span> <span class="pre">Dark</span> <span class="pre">Matter</span></code>.<br />
+<em>(If you don’t see it, go to QuickMapServices settings → More services → Get contributed pack)</em></p></li>
+<li><p>Your canvas should now display a dark gray basemap.</p></li>
+</ul>
+<ol class="arabic simple" start="2">
+<li><p>Create Temporary Airport Points</p></li>
+</ol>
+<ul class="simple">
+<li><p>Click the <strong>New Temporary Scratch Layer</strong> icon.</p></li>
+<li><p>Name: <code class="docutils literal notranslate"><span class="pre">Airports</span></code></p></li>
+<li><p>Geometry type: <code class="docutils literal notranslate"><span class="pre">Point</span></code></p></li>
+<li><p>CRS: Use default (EPSG:3857 recommended)</p></li>
+<li><p>Click the <strong>Toggle Editing</strong> (pencil icon).</p></li>
+<li><p>Use <strong>Add Point Feature</strong> tool to add 10–20 points across the world (e.g., New York, Tokyo, Sydney…).</p></li>
+</ul>
+<ol class="arabic simple" start="3">
+<li><p>Generate Lines with Geometry Generator</p></li>
+</ol>
+<ul class="simple">
+<li><p>Press <code class="docutils literal notranslate"><span class="pre">F7</span></code> to open the <strong>Layer Styling Panel</strong>.</p></li>
+<li><p>Select the <code class="docutils literal notranslate"><span class="pre">Airports</span></code> layer.</p></li>
+<li><p>Change <strong>Simple Marker</strong> to <code class="docutils literal notranslate"><span class="pre">Geometry</span> <span class="pre">Generator</span></code>.</p></li>
+<li><p>Set Geometry Type to <code class="docutils literal notranslate"><span class="pre">LineString</span> <span class="pre">/</span> <span class="pre">MultiLineString</span></code>.</p></li>
+<li><p>In the expression box, paste:</p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">$geometry</span></code>: current point</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">make_point(-0.12,</span> <span class="pre">51.5)</span></code>: coordinate of London</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">make_line</span></code>: draw a line between the two points</p></li>
+</ul>
+</li>
+</ul>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>make_line($geometry, make_point(-0.12, 51.5))
+</pre></div>
+</div>
+<blockquote>
+<div><p>Try moving any point using the <strong>Vertex Tool</strong> — the lines update instantly.</p>
+</div></blockquote>
+<ol class="arabic simple" start="4">
+<li><p>Add Glow Effects with Blending</p></li>
+</ol>
+<ul class="simple">
+<li><p>Under the <strong>Geometry Generator</strong>, click <code class="docutils literal notranslate"><span class="pre">Simple</span> <span class="pre">Line</span></code>.</p></li>
+<li><p>Width: <code class="docutils literal notranslate"><span class="pre">0.5</span></code> or thinner</p></li>
+<li><p><strong>Layer Rendering</strong>:</p></li>
+<li><p><strong>Opacity</strong>: <code class="docutils literal notranslate"><span class="pre">20%</span> <span class="pre">-</span> <span class="pre">30%</span></code></p></li>
+<li><p><strong>Blending Mode</strong>: <code class="docutils literal notranslate"><span class="pre">Addition</span></code> / <code class="docutils literal notranslate"><span class="pre">Plus</span></code> / <code class="docutils literal notranslate"><span class="pre">Screen</span></code></p></li>
+</ul>
+<p>Now, the center of convergence (London) glows brightly.</p>
+<figure class="align-default" id="qgis-flowlines">
+<img alt="../_images/qgid_flowmaps.png" src="../_images/qgid_flowmaps.png" />
+<figcaption>
+<p><span class="caption-number">Fig. 17 </span><span class="caption-text">Visulaization of Flow Lines</span><a class="headerlink" href="#qgis-flowlines" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
 </section>
 <section id="advanced-task">
 <h3>Advanced Task<a class="headerlink" href="#advanced-task" title="Link to this heading">#</a></h3>
 <ul class="simple">
-<li><p>Write your own Overpass API query using <a class="reference external" href="https://overpass-turbo.eu/">Overpass Turbo</a></p></li>
-<li><p>Export the result as GeoJSON and import into QGIS.</p></li>
-<li><p>Try querying different <code class="docutils literal notranslate"><span class="pre">amenity</span></code>, <code class="docutils literal notranslate"><span class="pre">landuse</span></code>, or <code class="docutils literal notranslate"><span class="pre">public_transport</span></code> tags.</p></li>
+<li><p>Try building your own Python plugin for QGIS. You can either extend a feature you’ve already worked on, or explore and recreate a plugin that you find interesting. You can check the official QGIS Plugin Development Guide <a class="reference external" href="https://docs.qgis.org/3.40/en/docs/pyqgis_developer_cookbook/plugins/index.html">here</a> to get started.</p></li>
+<li><p>Try more demos like <a class="reference external" href="https://www.youtube.com/watch?v=9ETEGlIYgis&amp;amp;t=665s">Monitoring irrigated areas using QGIS &amp; Sentinel-2 satellite images</a></p></li>
 </ul>
 </section>
-</section>
-<section id="references">
-<h2>References<a class="headerlink" href="#references" title="Link to this heading">#</a></h2>
 </section>
 <section id="materials">
 <h2>Materials<a class="headerlink" href="#materials" title="Link to this heading">#</a></h2>
 <ul class="simple">
-<li><p><a class="reference external" href="https://wiki.openstreetmap.org/wiki/Using_OpenStreetMap_data">OpenStreetMap Data for GIS Users</a></p></li>
+<li><p><a class="reference external" href="https://qgis.org/project/overview/">QGIS Overview</a></p></li>
+<li><p><a class="reference external" href="https://www.ogc.org/">Open Geospatial Consortium(OGC)</a></p></li>
+<li><p><a class="reference external" href="https://en.wikipedia.org/wiki/Open_source">Open Source, from Wiki</a></p></li>
+<li><p><a class="reference external" href="https://www.osgeo.org/">The Open Source Geospatial Foundation</a></p></li>
+<li><p><a class="reference external" href="https://freegisdata.rtwilson.com/">Free GIS Data</a></p></li>
 <li><p><a class="reference external" href="https://download.geofabrik.de/">Geofabrik Download Server</a></p></li>
 <li><p><a class="reference external" href="https://docs.qgis.org/3.28/en/docs/user_manual/working_with_vector/index.html">QGIS: Working with Vector Data</a></p></li>
-<li><p><a class="reference external" href="https://data.un.org/portal/unsd/open-mapping-for-development">Open Mapping for Development, UN</a></p></li>
+<li><p><a class="reference external" href="https://www.youtube.com/&#64;giswqs">Open Geospatial Solutions</a></p></li>
 </ul>
 </section>
 </section>
@@ -840,7 +898,7 @@ or  Load an <strong>online DEM (Digital Elevation Model)</strong> service direct
     <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#warm-up">Warm Up</a><ul class="visible nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#open-source-vs-closed-source">Open Source vs Closed Source</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#open-source-licenses-whats-allowed">Open Source Licenses: What’s Allowed?</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#open-source-licenses">Open Source Licenses</a><ul class="visible nav section-nav flex-column">
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#why-people-include-me-still-believe-in-open-source">Why People(Include me) Still Believe in Open Source</a></li>
 </ul>
 </li>
@@ -862,11 +920,10 @@ or  Load an <strong>online DEM (Digital Elevation Model)</strong> service direct
 </li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#open-processing-toolbox">2. Open Processing Toolbox</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#lightweight-3d-visualization">3: Lightweight 3D Visualization</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id1"></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#flow-lines-using-geometry-generator">4: Flow Lines using Geometry Generator</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#advanced-task">Advanced Task</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#references">References</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#materials">Materials</a></li>
 </ul>
   </nav></div>
